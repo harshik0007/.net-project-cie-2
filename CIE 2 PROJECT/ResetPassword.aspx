@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="CIE_2_PROJECT.Login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ResetPassword.aspx.cs" Inherits="CIE_2_PROJECT.ResetPassword" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 
-    <title>SkillLink - Login</title>
+    <title>SkillLink - Reset Password</title>
 
     <style>
 
@@ -64,48 +64,55 @@
             align-items: center;
         }
 
-        .login-card {
-            width: 340px;
-            min-height: 350px;
-            padding: 25px 20px;
+        .reset-card {
+            width: 425px;
+            padding: 40px 45px;
             background-color: #ffffff;
-            box-shadow: 0 3px 18px rgba(0, 0, 0, 0.08);
-            border-radius: 4px;
+            border: 1px solid #e7e9ee;
+            box-shadow: 0 3px 18px rgba(0, 0, 0, 0.07);
+            border-radius: 6px;
         }
 
-        .login-title {
+        .reset-logo {
             text-align: center;
-            font-size: 20px;
+            color: #075cff;
+            font-size: 32px;
             font-weight: bold;
-            margin-bottom: 8px;
-            color: #172033;
+            margin-bottom: 22px;
         }
 
-        .login-subtitle {
+        .reset-title {
             text-align: center;
-            font-size: 11px;
-            color: #666b75;
-            margin-bottom: 25px;
+            font-size: 23px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .reset-subtitle {
+            text-align: center;
+            font-size: 12px;
+            line-height: 18px;
+            color: #555d6d;
+            margin-bottom: 30px;
         }
 
         .form-group {
-            margin-bottom: 12px;
+            margin-bottom: 18px;
         }
 
         .form-label {
             display: block;
-            font-size: 9px;
+            font-size: 10px;
             font-weight: bold;
-            color: #333842;
-            margin-bottom: 6px;
+            margin-bottom: 7px;
         }
 
         .input-box {
             width: 100%;
-            height: 32px;
-            border: 1px solid #d8dce5;
+            height: 38px;
+            border: 1px solid #cfd4df;
             padding: 0 10px;
-            font-size: 10px;
+            font-size: 11px;
             color: #333;
             outline: none;
         }
@@ -114,82 +121,54 @@
             border-color: #075cff;
         }
 
-        .password-wrapper {
-            position: relative;
-        }
-
-        .password-wrapper .input-box {
-            padding-right: 35px;
-        }
-
-        .eye-icon {
-            position: absolute;
-            right: 10px;
-            top: 8px;
-            font-size: 12px;
-            color: #777;
-        }
-
         .validation-error {
             display: block;
-            margin-top: 4px;
+            margin-top: 5px;
             font-size: 9px;
             color: #dc3545;
         }
 
-        .forgot-password {
-            display: block;
-            margin-top: 3px;
-            margin-bottom: 17px;
-            font-size: 8px;
-            color: #075cff;
-            text-decoration: none;
-        }
-
-        .forgot-password:hover {
-            text-decoration: underline;
-        }
-
-        .login-button {
+        .reset-button {
             width: 100%;
-            height: 31px;
+            height: 37px;
+            margin-top: 8px;
             border: none;
             background-color: #075cff;
             color: white;
-            font-size: 9px;
+            font-size: 10px;
+            font-weight: bold;
             cursor: pointer;
+            border-radius: 4px;
         }
 
-        .login-button:hover {
+        .reset-button:hover {
             background-color: #004bd6;
         }
 
-        .signup-text {
+        .back-link {
+            display: block;
             text-align: center;
-            margin-top: 20px;
-            font-size: 8px;
-            color: #555;
-        }
-
-        .signup-link {
+            margin-top: 30px;
             color: #075cff;
             text-decoration: none;
+            font-size: 10px;
+            font-weight: 500;
         }
 
-        .signup-link:hover {
+        .back-link:hover {
             text-decoration: underline;
         }
 
         .footer {
-            height: 75px;
+            height: 60px;
             text-align: center;
-            padding-top: 15px;
+            padding-top: 10px;
             color: #666;
         }
 
         .copyright {
             font-size: 8px;
-            margin-bottom: 7px;
+            margin-bottom: 6px;
         }
 
         .footer-links {
@@ -212,9 +191,9 @@
                 padding-left: 20px;
             }
 
-            .login-card {
-                width: 90%;
-                max-width: 340px;
+            .reset-card {
+                width: 92%;
+                padding: 35px 25px;
             }
 
         }
@@ -246,119 +225,114 @@
 
             <main class="main">
 
-                <div class="login-card">
+                <div class="reset-card">
 
-                    <h1 class="login-title">
-                        Welcome Back
+                    <div class="reset-logo">
+                        S
+                    </div>
+
+                    <h1 class="reset-title">
+                        Create New Password
                     </h1>
 
-                    <p class="login-subtitle">
-                        Login to continue your learning journey
+                    <p class="reset-subtitle">
+                        Your identity has been verified. Create a new
+                        <br />
+                        password for your account.
                     </p>
 
 
                     <div class="form-group">
 
                         <label class="form-label">
-                            Email or Username
+                            New Password
                         </label>
 
                         <asp:TextBox
-                            ID="txtUsername"
+                            ID="txtNewPassword"
                             runat="server"
+                            TextMode="Password"
                             CssClass="input-box"
-                            placeholder="Enter your email or username">
+                            placeholder="Enter your new password">
                         </asp:TextBox>
 
                         <asp:RequiredFieldValidator
-                            ID="rfvUsername"
+                            ID="rfvNewPassword"
                             runat="server"
-                            ControlToValidate="txtUsername"
-                            ErrorMessage="Email or Username is required."
-                            CssClass="validation-error"
-                            Display="Dynamic"
-                            EnableClientScript="false">
-                        </asp:RequiredFieldValidator>
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label class="form-label">
-                            Password
-                        </label>
-
-                        <div class="password-wrapper">
-
-                            <asp:TextBox
-                                ID="txtPassword"
-                                runat="server"
-                                TextMode="Password"
-                                CssClass="input-box"
-                                placeholder="Enter your password">
-                            </asp:TextBox>
-
-                            <span class="eye-icon">
-                                ◉
-                            </span>
-
-                        </div>
-
-                        <asp:RequiredFieldValidator
-                            ID="rfvPassword"
-                            runat="server"
-                            ControlToValidate="txtPassword"
-                            ErrorMessage="Password is required."
+                            ControlToValidate="txtNewPassword"
+                            ErrorMessage="New password is required."
                             CssClass="validation-error"
                             Display="Dynamic"
                             EnableClientScript="false">
                         </asp:RequiredFieldValidator>
 
                         <asp:CustomValidator
-                            ID="cvPassword"
+                            ID="cvNewPassword"
                             runat="server"
-                            ControlToValidate="txtPassword"
-                            ErrorMessage="Password must contain at least 6 characters."
+                            ControlToValidate="txtNewPassword"
+                            ErrorMessage="Password must be at least 8 characters with letters, numbers and symbols."
                             CssClass="validation-error"
                             Display="Dynamic"
                             EnableClientScript="false"
-                            OnServerValidate="cvPassword_ServerValidate">
+                            OnServerValidate="cvNewPassword_ServerValidate">
                         </asp:CustomValidator>
 
                     </div>
 
 
-                    <asp:HyperLink
-                        ID="lnkForgotPassword"
-                        runat="server"
-                        CssClass="forgot-password"
-                        NavigateUrl="ForgotPassword.aspx">
-                        Forgot Password?
-                    </asp:HyperLink>
+                    <div class="form-group">
+
+                        <label class="form-label">
+                            Confirm New Password
+                        </label>
+
+                        <asp:TextBox
+                            ID="txtConfirmPassword"
+                            runat="server"
+                            TextMode="Password"
+                            CssClass="input-box"
+                            placeholder="Confirm your new password">
+                        </asp:TextBox>
+
+                        <asp:RequiredFieldValidator
+                            ID="rfvConfirmPassword"
+                            runat="server"
+                            ControlToValidate="txtConfirmPassword"
+                            ErrorMessage="Please confirm your new password."
+                            CssClass="validation-error"
+                            Display="Dynamic"
+                            EnableClientScript="false">
+                        </asp:RequiredFieldValidator>
+
+                        <asp:CustomValidator
+                            ID="cvConfirmPassword"
+                            runat="server"
+                            ControlToValidate="txtConfirmPassword"
+                            ErrorMessage="Passwords do not match."
+                            CssClass="validation-error"
+                            Display="Dynamic"
+                            EnableClientScript="false"
+                            OnServerValidate="cvConfirmPassword_ServerValidate">
+                        </asp:CustomValidator>
+
+                    </div>
 
 
                     <asp:Button
-                        ID="btnLogin"
+                        ID="btnResetPassword"
                         runat="server"
-                        Text="Login"
-                        CssClass="login-button"
-                        OnClick="btnLogin_Click" />
+                        Text="Reset Password"
+                        CssClass="reset-button"
+                        OnClick="btnResetPassword_Click" />
 
 
-                    <p class="signup-text">
-
-                        Don't have an account?
-
-                        <asp:HyperLink
-                            ID="lnkSignup"
-                            runat="server"
-                            CssClass="signup-link"
-                            NavigateUrl="SignUp.aspx">
-                            Sign up
-                        </asp:HyperLink>
-
-                    </p>
+                    <asp:HyperLink
+                        ID="lnkLogin"
+                        runat="server"
+                        NavigateUrl="Login.aspx"
+                        CssClass="back-link">
+                        ← Back to Login
+                    </asp:HyperLink>
 
                 </div>
 
@@ -373,17 +347,11 @@
 
                 <div class="footer-links">
 
-                    <a href="#">
-                        Privacy Policy
-                    </a>
+                    <a href="#">Privacy Policy</a>
 
-                    <a href="#">
-                        Terms of Service
-                    </a>
+                    <a href="#">Terms of Service</a>
 
-                    <a href="#">
-                        Help Center
-                    </a>
+                    <a href="#">Help Center</a>
 
                 </div>
 

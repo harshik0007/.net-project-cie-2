@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="CIE_2_PROJECT.Login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ForgotPassword.aspx.cs" Inherits="CIE_2_PROJECT.ForgotPassword" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 
-    <title>SkillLink - Login</title>
+    <title>SkillLink - Forgot Password</title>
 
     <style>
 
@@ -64,32 +64,34 @@
             align-items: center;
         }
 
-        .login-card {
-            width: 340px;
-            min-height: 350px;
-            padding: 25px 20px;
+        .forgot-card {
+            width: 365px;
+            min-height: 315px;
+            padding: 30px 24px;
             background-color: #ffffff;
-            box-shadow: 0 3px 18px rgba(0, 0, 0, 0.08);
-            border-radius: 4px;
+            border: 1px solid #e7e9ee;
+            box-shadow: 0 3px 18px rgba(0, 0, 0, 0.07);
+            border-radius: 5px;
         }
 
-        .login-title {
+        .forgot-title {
             text-align: center;
-            font-size: 20px;
+            font-size: 21px;
             font-weight: bold;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             color: #172033;
         }
 
-        .login-subtitle {
+        .forgot-subtitle {
             text-align: center;
             font-size: 11px;
+            line-height: 17px;
             color: #666b75;
-            margin-bottom: 25px;
+            margin-bottom: 27px;
         }
 
         .form-group {
-            margin-bottom: 12px;
+            margin-bottom: 16px;
         }
 
         .form-label {
@@ -97,13 +99,13 @@
             font-size: 9px;
             font-weight: bold;
             color: #333842;
-            margin-bottom: 6px;
+            margin-bottom: 7px;
         }
 
         .input-box {
             width: 100%;
-            height: 32px;
-            border: 1px solid #d8dce5;
+            height: 38px;
+            border: 1px solid #cfd4df;
             padding: 0 10px;
             font-size: 10px;
             color: #333;
@@ -114,82 +116,55 @@
             border-color: #075cff;
         }
 
-        .password-wrapper {
-            position: relative;
-        }
-
-        .password-wrapper .input-box {
-            padding-right: 35px;
-        }
-
-        .eye-icon {
-            position: absolute;
-            right: 10px;
-            top: 8px;
-            font-size: 12px;
-            color: #777;
-        }
-
         .validation-error {
             display: block;
-            margin-top: 4px;
+            margin-top: 5px;
             font-size: 9px;
             color: #dc3545;
         }
 
-        .forgot-password {
-            display: block;
-            margin-top: 3px;
-            margin-bottom: 17px;
-            font-size: 8px;
-            color: #075cff;
-            text-decoration: none;
-        }
-
-        .forgot-password:hover {
-            text-decoration: underline;
-        }
-
-        .login-button {
+        .reset-button {
             width: 100%;
-            height: 31px;
+            height: 37px;
             border: none;
             background-color: #075cff;
             color: white;
             font-size: 9px;
+            font-weight: bold;
             cursor: pointer;
+            border-radius: 4px;
         }
 
-        .login-button:hover {
+        .reset-button:hover {
             background-color: #004bd6;
         }
 
-        .signup-text {
+        .login-text {
             text-align: center;
-            margin-top: 20px;
-            font-size: 8px;
+            margin-top: 30px;
+            font-size: 9px;
             color: #555;
         }
 
-        .signup-link {
+        .login-link {
             color: #075cff;
             text-decoration: none;
         }
 
-        .signup-link:hover {
+        .login-link:hover {
             text-decoration: underline;
         }
 
         .footer {
-            height: 75px;
+            height: 60px;
             text-align: center;
-            padding-top: 15px;
+            padding-top: 10px;
             color: #666;
         }
 
         .copyright {
             font-size: 8px;
-            margin-bottom: 7px;
+            margin-bottom: 6px;
         }
 
         .footer-links {
@@ -212,9 +187,8 @@
                 padding-left: 20px;
             }
 
-            .login-card {
-                width: 90%;
-                max-width: 340px;
+            .forgot-card {
+                width: 92%;
             }
 
         }
@@ -246,116 +220,74 @@
 
             <main class="main">
 
-                <div class="login-card">
+                <div class="forgot-card">
 
-                    <h1 class="login-title">
-                        Welcome Back
+                    <h1 class="forgot-title">
+                        Forgot Your Password?
                     </h1>
 
-                    <p class="login-subtitle">
-                        Login to continue your learning journey
+                    <p class="forgot-subtitle">
+                        No worries! Enter your email address and we'll send
+                        <br />
+                        you a link to reset your password.
                     </p>
 
 
                     <div class="form-group">
 
                         <label class="form-label">
-                            Email or Username
+                            Email Address
                         </label>
 
                         <asp:TextBox
-                            ID="txtUsername"
+                            ID="txtEmail"
                             runat="server"
                             CssClass="input-box"
-                            placeholder="Enter your email or username">
+                            placeholder="Enter your email address">
                         </asp:TextBox>
 
                         <asp:RequiredFieldValidator
-                            ID="rfvUsername"
+                            ID="rfvEmail"
                             runat="server"
-                            ControlToValidate="txtUsername"
-                            ErrorMessage="Email or Username is required."
-                            CssClass="validation-error"
-                            Display="Dynamic"
-                            EnableClientScript="false">
-                        </asp:RequiredFieldValidator>
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label class="form-label">
-                            Password
-                        </label>
-
-                        <div class="password-wrapper">
-
-                            <asp:TextBox
-                                ID="txtPassword"
-                                runat="server"
-                                TextMode="Password"
-                                CssClass="input-box"
-                                placeholder="Enter your password">
-                            </asp:TextBox>
-
-                            <span class="eye-icon">
-                                ◉
-                            </span>
-
-                        </div>
-
-                        <asp:RequiredFieldValidator
-                            ID="rfvPassword"
-                            runat="server"
-                            ControlToValidate="txtPassword"
-                            ErrorMessage="Password is required."
+                            ControlToValidate="txtEmail"
+                            ErrorMessage="Email address is required."
                             CssClass="validation-error"
                             Display="Dynamic"
                             EnableClientScript="false">
                         </asp:RequiredFieldValidator>
 
                         <asp:CustomValidator
-                            ID="cvPassword"
+                            ID="cvEmail"
                             runat="server"
-                            ControlToValidate="txtPassword"
-                            ErrorMessage="Password must contain at least 6 characters."
+                            ControlToValidate="txtEmail"
+                            ErrorMessage="Enter a valid email address."
                             CssClass="validation-error"
                             Display="Dynamic"
                             EnableClientScript="false"
-                            OnServerValidate="cvPassword_ServerValidate">
+                            OnServerValidate="cvEmail_ServerValidate">
                         </asp:CustomValidator>
 
                     </div>
 
 
-                    <asp:HyperLink
-                        ID="lnkForgotPassword"
-                        runat="server"
-                        CssClass="forgot-password"
-                        NavigateUrl="ForgotPassword.aspx">
-                        Forgot Password?
-                    </asp:HyperLink>
-
-
                     <asp:Button
-                        ID="btnLogin"
+                        ID="btnReset"
                         runat="server"
-                        Text="Login"
-                        CssClass="login-button"
-                        OnClick="btnLogin_Click" />
+                        Text="Send Reset Link"
+                        CssClass="reset-button"
+                        OnClick="btnReset_Click" />
 
 
-                    <p class="signup-text">
+                    <p class="login-text">
 
-                        Don't have an account?
+                        Remember your password?
 
                         <asp:HyperLink
-                            ID="lnkSignup"
+                            ID="lnkLogin"
                             runat="server"
-                            CssClass="signup-link"
-                            NavigateUrl="SignUp.aspx">
-                            Sign up
+                            CssClass="login-link"
+                            NavigateUrl="Login.aspx">
+                            Login
                         </asp:HyperLink>
 
                     </p>
