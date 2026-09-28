@@ -1,69 +1,461 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="CIE_2_PROJECT.SiteMaster" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="CIE_2_PROJECT.SiteMaster" %>
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
 <head runat="server">
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - My ASP.NET Application</title>
 
-    <asp:PlaceHolder runat="server">
-        <%: Scripts.Render("~/bundles/modernizr") %>
-    </asp:PlaceHolder>
+    <title>SkillLink</title>
 
-    <webopt:bundlereference runat="server" path="~/Content/css" />
-    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
+        integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer">
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #ffffff;
+            color: #14213d;
+        }
+
+        .site-header {
+            height: 62px;
+            background: #ffffff;
+            border-bottom: 1px solid #dce2ec;
+            display: flex;
+            align-items: center;
+            padding: 0 30px;
+        }
+
+        .navbar {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #075cff;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            min-width: 220px;
+        }
+
+        .brand-logo {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: #075cff;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            height: 100%;
+        }
+
+        .nav-link {
+            height: 62px;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            color: #273142;
+            text-decoration: none;
+            font-size: 13px;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-link:hover {
+            color: #075cff;
+        }
+
+        .nav-link.active {
+            color: #075cff;
+            border-bottom-color: #075cff;
+            font-weight: bold;
+        }
+
+        .nav-icon {
+            font-size: 14px;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            min-width: 220px;
+            justify-content: flex-end;
+        }
+
+        .notification {
+            position: relative;
+            color: #263142;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        .notification-badge {
+            position: absolute;
+            top: -7px;
+            right: -7px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #c91f2c;
+            color: #ffffff;
+            font-size: 9px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .message-icon {
+            color: #263142;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        .profile-divider {
+            width: 1px;
+            height: 32px;
+            background: #dce2ec;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            cursor: pointer;
+        }
+
+        .profile-image {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #e1ebff;
+            color: #3562a8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+
+        .profile-info {
+            line-height: 1.2;
+        }
+
+        .profile-name {
+            font-size: 12px;
+            font-weight: bold;
+            color: #263142;
+        }
+
+        .profile-role {
+            font-size: 10px;
+            color: #596273;
+        }
+
+        .profile-arrow {
+            color: #263142;
+            font-size: 10px;
+            margin-left: 3px;
+        }
+
+        .main-content {
+            min-height: calc(100vh - 156px);
+        }
+
+        .site-footer {
+            min-height: 94px;
+            border-top: 1px solid #dce2ec;
+            display: flex;
+            align-items: center;
+            padding: 0 30px;
+            background: #ffffff;
+        }
+
+        .footer-content {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .footer-brand {
+            color: #075cff;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .footer-links {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+        }
+
+        .footer-link {
+            color: #3f4754;
+            text-decoration: none;
+            font-size: 10px;
+        }
+
+        .footer-link:hover {
+            color: #075cff;
+        }
+
+        .copyright {
+            color: #596273;
+            font-size: 10px;
+        }
+
+        @media (max-width: 1000px) {
+
+            .brand {
+                min-width: auto;
+            }
+
+            .nav-links {
+                gap: 14px;
+            }
+
+            .nav-right {
+                min-width: auto;
+            }
+
+            .footer-links {
+                gap: 12px;
+            }
+        }
+
+        @media (max-width: 750px) {
+
+            .site-header {
+                padding: 0 15px;
+            }
+
+            .brand {
+                font-size: 16px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .profile-info,
+            .profile-arrow {
+                display: none;
+            }
+
+            .site-footer {
+                padding: 20px 15px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .footer-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
+    </style>
 
 </head>
-<body>
-    <form runat="server">
-        <asp:ScriptManager runat="server">
-            <Scripts>
-                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
-                <%--Framework Scripts--%>
-                <asp:ScriptReference Name="MsAjaxBundle" />
-                <asp:ScriptReference Name="jquery" />
-                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
-                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
-                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
-                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
-                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
-                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
-                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
-                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
-                <asp:ScriptReference Name="WebFormsBundle" />
-                <%--Site Scripts--%>
-            </Scripts>
-        </asp:ScriptManager>
 
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
-            <div class="container">
-                <a class="navbar-brand" runat="server" href="~/">Application name</a>
-                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/About">About</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Contact">Contact</a></li>
-                    </ul>
+<body>
+
+    <form id="form1" runat="server">
+
+        <header class="site-header">
+
+            <div class="navbar">
+
+                <a href="FreelancerHome.aspx" class="brand">
+
+                    <span class="brand-logo">S</span>
+
+                    <span>SkillLink</span>
+
+                </a>
+
+
+                <nav class="nav-links">
+
+                    <a href="FreelancerHome.aspx" class="nav-link active">
+
+                        <i class="fa-solid fa-house nav-icon"></i>
+
+                        <span>Home</span>
+
+                    </a>
+
+
+                    <a href="FindProjects.aspx" class="nav-link">
+
+                        <i class="fa-solid fa-magnifying-glass nav-icon"></i>
+
+                        <span>Find Projects</span>
+
+                    </a>
+
+
+                    <a href="MyProposals.aspx" class="nav-link">
+
+                        <i class="fa-regular fa-circle-check nav-icon"></i>
+
+                        <span>My Proposals</span>
+
+                    </a>
+
+
+                    <a href="ActiveWork.aspx" class="nav-link">
+
+                        <i class="fa-solid fa-briefcase nav-icon"></i>
+
+                        <span>Active Work</span>
+
+                    </a>
+
+                </nav>
+
+
+                <div class="nav-right">
+
+                    <div class="notification">
+
+                        <i class="fa-regular fa-bell"></i>
+
+                        <span class="notification-badge">
+                            3
+                        </span>
+
+                    </div>
+
+
+                    <div class="message-icon">
+
+                        <i class="fa-regular fa-envelope"></i>
+
+                    </div>
+
+
+                    <div class="profile-divider"></div>
+
+
+                    <div class="profile">
+
+                        <div class="profile-image">
+
+                            <i class="fa-regular fa-user"></i>
+
+                        </div>
+
+
+                        <div class="profile-info">
+
+                            <div class="profile-name">
+                                xyz abc
+                            </div>
+
+                            <div class="profile-role">
+                                Freelancer
+                            </div>
+
+                        </div>
+
+
+                        <div class="profile-arrow">
+
+                            <i class="fa-solid fa-chevron-down"></i>
+
+                        </div>
+
+                    </div>
+
                 </div>
+
             </div>
-        </nav>
-        <div class="container body-content">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+
+        </header>
+
+
+        <main class="main-content">
+
+            <asp:ContentPlaceHolder
+                ID="MainContent"
+                runat="server">
             </asp:ContentPlaceHolder>
-            <hr />
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
-            </footer>
-        </div>
+
+        </main>
+
+
+        <footer class="site-footer">
+
+            <div class="footer-content">
+
+                <div class="footer-brand">
+                    SkillLink
+                </div>
+
+
+                <div class="footer-links">
+
+                    <a href="#" class="footer-link">
+                        Privacy Policy
+                    </a>
+
+                    <a href="#" class="footer-link">
+                        Terms of Service
+                    </a>
+
+                    <a href="#" class="footer-link">
+                        Support Center
+                    </a>
+
+                    <a href="#" class="footer-link">
+                        Community Guidelines
+                    </a>
+
+                </div>
+
+
+                <div class="copyright">
+                    © 2026 SkillLink Global. All rights reserved.
+                </div>
+
+            </div>
+
+        </footer>
+
     </form>
-    <asp:PlaceHolder runat="server">
-        <%: Scripts.Render("~/Scripts/bootstrap.js") %>
-    </asp:PlaceHolder>
+
 </body>
 </html>
