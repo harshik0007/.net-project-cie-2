@@ -118,17 +118,21 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Css\ActiveWork.css" />
+    <Content Include="Content\Css\CommunityGuidelines.css" />
     <Content Include="Content\Css\FindProjects.css" />
     <Content Include="Content\Css\ForgotPassword.css" />
     <Content Include="Content\Css\FreelancerHome.css" />
     <Content Include="Content\Css\Freelancerskills.css" />
     <Content Include="Content\Css\FProfile.css" />
+    <Content Include="Content\Css\PrivacyPolicy.css" />
     <Content Include="Content\Css\ProjectDetails.css" />
     <Content Include="Content\Css\Resetpassword.css" />
     <Content Include="Content\Css\Site.css" />
     <Content Include="Content\Css\Login.css" />
     <Content Include="Content\Css\MyProposals.css" />
     <Content Include="Content\Css\SubmitWork.css" />
+    <Content Include="Content\Css\SupportCenter.css" />
+    <Content Include="Content\Css\TermsOfService.css" />
     <Content Include="Freelancer\ActiveWork.aspx" />
     <Content Include="Freelancer\MyProposals.aspx" />
     <Content Include="Content\Css\SubmitProposal.css" />
@@ -146,6 +150,10 @@
     <Content Include="Global.asax" />
     <Content Include="Freelancer\ProjectDetails.aspx" />
     <Content Include="Authentication\ResetPassword.aspx" />
+    <Content Include="Guidelines\CommunityGuidelines.aspx" />
+    <Content Include="Guidelines\PrivacyPolicy.aspx" />
+    <Content Include="Guidelines\SupportCenter.aspx" />
+    <Content Include="Guidelines\TermsOfService.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -286,6 +294,34 @@
     <Compile Include="Freelancer\ProjectDetails.aspx.designer.cs">
       <DependentUpon>ProjectDetails.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Guidelines\CommunityGuidelines.aspx.cs">
+      <DependentUpon>CommunityGuidelines.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Guidelines\CommunityGuidelines.aspx.designer.cs">
+      <DependentUpon>CommunityGuidelines.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Guidelines\PrivacyPolicy.aspx.cs">
+      <DependentUpon>PrivacyPolicy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Guidelines\PrivacyPolicy.aspx.designer.cs">
+      <DependentUpon>PrivacyPolicy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Guidelines\SupportCenter.aspx.cs">
+      <DependentUpon>SupportCenter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Guidelines\SupportCenter.aspx.designer.cs">
+      <DependentUpon>SupportCenter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Guidelines\TermsOfService.aspx.cs">
+      <DependentUpon>TermsOfService.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Guidelines\TermsOfService.aspx.designer.cs">
+      <DependentUpon>TermsOfService.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Authentication\ResetPassword.aspx.cs">
       <DependentUpon>ResetPassword.aspx</DependentUpon>
@@ -353,7 +389,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Guidelines\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

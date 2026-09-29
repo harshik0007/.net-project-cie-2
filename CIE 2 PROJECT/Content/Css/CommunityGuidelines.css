@@ -1,0 +1,81 @@
+﻿.community-page {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px 30px 50px;
+}
+
+.community-header {
+    margin-bottom: 24px;
+}
+
+    .community-header h1 {
+        margin: 0 0 7px;
+        color: #14213d;
+        font-size: 26px;
+        font-weight: 700;
+    }
+
+    .community-header p {
+        margin: 0;
+        color: #687386;
+        font-size: 10px;
+    }
+
+.community-card {
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #e2e7ef;
+    border-radius: 10px;
+    padding: 28px 32px;
+    box-shadow: 0 2px 8px rgba(20, 33, 61, 0.04);
+}
+
+.community-section {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #edf0f4;
+}
+
+    .community-section h2 {
+        margin: 0 0 9px;
+        color: #263142;
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+    .community-section p {
+        margin: 0;
+        color: #596273;
+        font-size: 11px;
+        line-height: 1.7;
+    }
+
+.last-section {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+@media (max-width: 750px) {
+
+    .community-page {
+        padding: 25px 20px 40px;
+    }
+
+    .community-card {
+        padding: 22px;
+    }
+
+    .community-header h1 {
+        font-size: 22px;
+    }
+
+    .community-section h2 {
+        font-size: 13px;
+    }
+
+    .community-section p {
+        font-size: 10px;
+    }
+}

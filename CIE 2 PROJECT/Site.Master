@@ -162,19 +162,19 @@
 
                 <div class="footer-links">
 
-                    <a href="#" class="footer-link">
+                    <a runat="server" href="~/Guidelines/PrivacyPolicy.aspx" class="footer-link">
                         Privacy Policy
                     </a>
 
-                    <a href="#" class="footer-link">
+                    <a runat="server" href="~/Guidelines/TermsOfService.aspx" class="footer-link">
                         Terms of Service
                     </a>
 
-                    <a href="#" class="footer-link">
+                    <a runat="server" href="~/Guidelines/SupportCenter.aspx" class="footer-link">
                         Support Center
                     </a>
 
-                    <a href="#" class="footer-link">
+                    <a runat="server" href="~/Guidelines/CommunityGuidelines.aspx" class="footer-link">
                         Community Guidelines
                     </a>
 
