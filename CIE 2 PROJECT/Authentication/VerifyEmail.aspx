@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="VerifyEmail.aspx.cs" Inherits="CIE_2_PROJECT.VerifyEmail" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="VerifyEmail.aspx.cs" Inherits="CIE_2_PROJECT.VerifyEmail" %>
 
 <!DOCTYPE html>
 
@@ -7,7 +7,7 @@
 
     <title>SkillLink - Verify Email</title>
 
-    <link rel="stylesheet" href="Content/Css/Verifyemail.css" />
+    <link rel="stylesheet" href="../Content/Css/Verifyemail.css" />
 
 </head>
 
@@ -232,7 +232,7 @@
             <footer class="footer">
 
                 <div class="copyright">
-                    © 2025 SkillLink. All rights reserved.
+                    &copy; 2025 SkillLink. All rights reserved.
                 </div>
 
                 <div class="footer-links">

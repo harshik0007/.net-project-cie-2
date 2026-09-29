@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ResetPassword.aspx.cs" Inherits="CIE_2_PROJECT.ResetPassword" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ResetPassword.aspx.cs" Inherits="CIE_2_PROJECT.ResetPassword" %>
 
 <!DOCTYPE html>
 
@@ -6,7 +6,7 @@
 <head runat="server">
 
     <title>SkillLink - Reset Password</title>
-    <link rel="stylesheet" href="Content/Css/Resetpassword.css" />
+    <link rel="stylesheet" href="../Content/Css/Resetpassword.css" />
     
 </head>
 
@@ -139,7 +139,7 @@
                         runat="server"
                         NavigateUrl="Login.aspx"
                         CssClass="back-link">
-                        ← Back to Login
+                        Back to Login
                     </asp:HyperLink>
 
                 </div>
@@ -150,7 +150,7 @@
             <footer class="footer">
 
                 <div class="copyright">
-                    © 2025 SkillLink. All rights reserved.
+                    &copy; 2025 SkillLink. All rights reserved.
                 </div>
 
                 <div class="footer-links">

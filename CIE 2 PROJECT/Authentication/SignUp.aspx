@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SignUp.aspx.cs" Inherits="CIE_2_PROJECT.SignUp" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SignUp.aspx.cs" Inherits="CIE_2_PROJECT.SignUp" %>
 
 <!DOCTYPE html>
 
@@ -7,7 +7,7 @@
 
     <title>SkillLink - Sign Up</title>
 
-    <link rel="stylesheet" href="Content/Css/Signup.css" />
+    <link rel="stylesheet" href="../Content/Css/Signup.css" />
 
 </head>
 
@@ -410,7 +410,7 @@
             <footer class="footer">
 
                 <div class="copyright">
-                    © 2025 SkillLink. All rights reserved.
+                    &copy; 2025 SkillLink. All rights reserved.
                 </div>
 
                 <div class="footer-links">

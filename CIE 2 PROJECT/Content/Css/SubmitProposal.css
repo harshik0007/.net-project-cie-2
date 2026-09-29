@@ -1,0 +1,334 @@
+﻿.proposal-page {
+    width: 100%;
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 28px 0 70px;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: #075cff;
+    text-decoration: none;
+    font-size: 11px;
+    margin-bottom: 18px;
+}
+
+.project-summary-card {
+    min-height: 164px;
+    border: 1px solid #e1e6ee;
+    border-radius: 9px;
+    background: #ffffff;
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.project-summary-content {
+    flex: 1;
+}
+
+    .project-summary-content h1 {
+        margin: 0 0 12px;
+        color: #18233a;
+        font-size: 21px;
+    }
+
+.project-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #687386;
+    font-size: 10px;
+}
+
+    .project-meta span {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .project-meta a {
+        color: #075cff;
+        text-decoration: none;
+    }
+
+.project-summary-content p {
+    max-width: 650px;
+    margin: 18px 0 0;
+    color: #59677b;
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.summary-side {
+    width: 160px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.view-details-button {
+    height: 36px;
+    border: 1px solid #075cff;
+    border-radius: 5px;
+    color: #075cff;
+    background: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.budget-box {
+    min-height: 65px;
+    border: 1px solid #d4ebd2;
+    border-radius: 6px;
+    background: #f4fbf3;
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.budget-label {
+    color: #59677b;
+    font-size: 10px;
+}
+
+.budget-value {
+    color: #079447;
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 6px;
+}
+
+.proposal-card {
+    margin-top: 18px;
+    border: 1px solid #e1e6ee;
+    border-radius: 9px;
+    background: #fff;
+    padding: 28px 25px 24px;
+}
+
+.proposal-title {
+    margin: 0;
+    color: #18233a;
+    font-size: 17px;
+}
+
+.proposal-description {
+    margin: 10px 0 26px;
+    color: #59677b;
+    font-size: 11px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-label {
+    display: block;
+    color: #18233a;
+    font-size: 11px;
+    font-weight: 600;
+    margin-bottom: 9px;
+}
+
+.required {
+    color: #dc3545;
+}
+
+.optional {
+    color: #687386;
+    font-weight: 400;
+}
+
+.cover-letter {
+    width: 100%;
+    height: 205px;
+    resize: none;
+    border: 1px solid #dce2ec;
+    border-radius: 6px;
+    padding: 13px;
+    outline: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+}
+
+.input-box {
+    width: 100%;
+    height: 34px;
+    border: 1px solid #dce2ec;
+    border-radius: 6px;
+    padding: 0 12px;
+    background: #fff;
+    color: #263142;
+    outline: none;
+    font-size: 11px;
+}
+
+.two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.helper-text,
+.attachment-description {
+    color: #687386;
+    font-size: 9px;
+    margin-top: 7px;
+}
+
+.validation-error {
+    display: block;
+    color: #dc3545;
+    font-size: 10px;
+    margin-top: 7px;
+}
+
+.upload-box {
+    position: relative;
+    height: 142px;
+    border: 2px dashed #cbd8ea;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.file-upload {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.upload-content {
+    text-align: center;
+    pointer-events: none;
+}
+
+.upload-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #edf4ff;
+    color: #075cff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+}
+
+.upload-title {
+    color: #18233a;
+    font-size: 11px;
+    margin-bottom: 7px;
+}
+
+.upload-info {
+    color: #59677b;
+    font-size: 9px;
+}
+
+.note-box {
+    min-height: 44px;
+    border: 1px solid #bcd5ff;
+    border-radius: 7px;
+    background: #eef5ff;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 10px 13px;
+    color: #43536a;
+    font-size: 10px;
+}
+
+    .note-box i {
+        color: #075cff;
+    }
+
+.proposal-divider {
+    height: 1px;
+    background: #e5e9ef;
+    margin: 29px 0 19px;
+}
+
+.proposal-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cancel-button {
+    width: 88px;
+    height: 38px;
+    border: 1px solid #dce2ec;
+    border-radius: 6px;
+    background: #fff;
+    color: #263142;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 10px;
+}
+
+.submit-button {
+    width: 155px;
+    height: 38px;
+    border: none;
+    border-radius: 6px;
+    background: #075cff;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+@media (max-width: 750px) {
+
+    .proposal-page {
+        padding: 22px 20px 60px;
+    }
+
+    .project-summary-card {
+        flex-direction: column;
+    }
+
+    .summary-side {
+        width: 100%;
+        flex-direction: row;
+    }
+
+    .two-column {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .summary-side {
+        flex-direction: column;
+    }
+
+    .proposal-actions {
+        flex-direction: column-reverse;
+        gap: 10px;
+    }
+
+    .cancel-button,
+    .submit-button {
+        width: 100%;
+    }
+}

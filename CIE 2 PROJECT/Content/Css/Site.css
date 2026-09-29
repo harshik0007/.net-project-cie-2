@@ -1,4 +1,3 @@
-﻿
 * {
     box-sizing: border-box;
 }
@@ -65,21 +64,12 @@ body {
     color: #273142;
     text-decoration: none;
     font-size: 13px;
-    border-bottom: 2px solid transparent;
+    transition: color 0.2s ease;
 }
-
-    .nav-link:hover {
-        color: #075cff;
-    }
-
-    .nav-link.active {
-        color: #075cff;
-        border-bottom-color: #075cff;
-        font-weight: bold;
-    }
 
 .nav-icon {
     font-size: 14px;
+    transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .nav-right {
@@ -95,6 +85,7 @@ body {
     color: #263142;
     font-size: 17px;
     cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .notification-badge {
@@ -111,12 +102,14 @@ body {
     align-items: center;
     justify-content: center;
     font-weight: bold;
+    transition: background 0.2s ease;
 }
 
 .message-icon {
     color: #263142;
     font-size: 17px;
     cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .profile-divider {
@@ -142,6 +135,7 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 14px;
+    transition: background 0.2s ease, color 0.2s ease;
 }
 
 .profile-info {
@@ -152,6 +146,7 @@ body {
     font-size: 12px;
     font-weight: bold;
     color: #263142;
+    transition: color 0.2s ease;
 }
 
 .profile-role {
@@ -163,6 +158,44 @@ body {
     color: #263142;
     font-size: 10px;
     margin-left: 3px;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #075cff;
+}
+
+    .nav-link:hover .nav-icon {
+        color: #075cff;
+        transform: translateY(-1px);
+    }
+
+.notification:hover {
+    color: #075cff;
+    transform: translateY(-1px);
+}
+
+    .notification:hover .notification-badge {
+        background: #075cff;
+    }
+
+.message-icon:hover {
+    color: #075cff;
+    transform: translateY(-1px);
+}
+
+.profile:hover .profile-image {
+    background: #dbe8ff;
+    color: #075cff;
+}
+
+.profile:hover .profile-name {
+    color: #075cff;
+}
+
+.profile:hover .profile-arrow {
+    color: #075cff;
+    transform: translateY(-1px);
 }
 
 .main-content {
@@ -264,5 +297,3 @@ body {
         justify-content: center;
     }
 }
-
-              

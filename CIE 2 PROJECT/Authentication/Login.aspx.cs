@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -24,6 +24,8 @@ namespace CIE_2_PROJECT
             {
                 return;
             }
+
+            Response.Redirect("~/Freelancer/FreelancerHome.aspx");
         }
 
         protected void cvPassword_ServerValidate(

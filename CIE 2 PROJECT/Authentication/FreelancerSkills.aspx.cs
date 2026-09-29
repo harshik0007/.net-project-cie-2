@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -31,11 +31,13 @@ namespace CIE_2_PROJECT
             string selectedSkills = GetSelectedSkills();
 
             // Skill saving logic will be added later.
+            Response.Redirect("~/Freelancer/FreelancerHome.aspx");
         }
 
         protected void btnSkip_Click(object sender, EventArgs e)
         {
             // Skip logic will be added later.
+            Response.Redirect("~/Freelancer/FreelancerHome.aspx");
         }
 
         private int GetSelectedSkillCount()

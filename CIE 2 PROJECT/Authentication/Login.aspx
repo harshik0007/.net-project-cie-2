@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="CIE_2_PROJECT.Login" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="CIE_2_PROJECT.Login" %>
 
 <!DOCTYPE html>
 
@@ -6,7 +6,7 @@
 <head runat="server">
 
     <title>SkillLink - Login</title>
-    <link rel="stylesheet" href="Content/Css/Login.css" />
+    <link rel="stylesheet" href="../Content/Css/Login.css" />
 
 </head>
 
@@ -87,7 +87,7 @@
                             </asp:TextBox>
 
                             <span class="eye-icon">
-                                ◉
+                                <i class="fa-solid fa-eye"></i>
                             </span>
 
                         </div>
@@ -155,7 +155,7 @@
             <footer class="footer">
 
                 <div class="copyright">
-                    © 2025 SkillLink. All rights reserved.
+                    &copy; 2025 SkillLink. All rights reserved.
                 </div>
 
                 <div class="footer-links">

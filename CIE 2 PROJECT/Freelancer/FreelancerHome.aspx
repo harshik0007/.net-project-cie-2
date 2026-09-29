@@ -1,8 +1,8 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="FreelancerHome.aspx.cs" Inherits="CIE_2_PROJECT.FreelancerHome" %>
+<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="FreelancerHome.aspx.cs" Inherits="CIE_2_PROJECT.FreelancerHome" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
-    <link rel="stylesheet" href="Content/Css/FreelancerHome.css" />
+    <link rel="stylesheet" href="../Content/Css/FreelancerHome.css" />
 
 </asp:Content>
 
@@ -37,7 +37,7 @@
             </div>
 
             <img
-                src="Content/Images/freelancer-home-banner.png"
+                src="../Content/Images/freelancer-home-banner.png"
                 class="hero-image"
                 alt="Freelancer working on a project" />
 
@@ -64,9 +64,9 @@
 
             </select>
 
-            <button type="button" class="search-button">
+            <a href="FindProjects.aspx" class="search-button" style="display: inline-flex; align-items: center; justify-content: center; text-decoration: none;">
                 Search
-            </button>
+            </a>
 
         </div>
 
@@ -93,7 +93,7 @@
                     <div class="project-card">
 
                         <h3 class="project-title">
-                            Build a .NET Core E-commerce Website
+                            <a href="ProjectDetails.aspx" style="color: inherit; text-decoration: none;">Build a .NET Core E-commerce Website</a>
                         </h3>
 
                         <p class="project-description">
@@ -112,7 +112,7 @@
                         <div class="project-bottom">
 
                             <span class="project-price">
-                                ₹25,000 - ₹40,000
+                                &#8377;25,000 - &#8377;40,000
                             </span>
 
                             <span class="project-days">
@@ -127,7 +127,7 @@
                     <div class="project-card">
 
                         <h3 class="project-title">
-                            Unity Game Development for 2D Adventure Game
+                            <a href="ProjectDetails.aspx" style="color: inherit; text-decoration: none;">Unity Game Development for 2D Adventure Game</a>
                         </h3>
 
                         <p class="project-description">
@@ -146,7 +146,7 @@
                         <div class="project-bottom">
 
                             <span class="project-price">
-                                ₹18,000 - ₹30,000
+                                &#8377;18,000 - &#8377;30,000
                             </span>
 
                             <span class="project-days">
@@ -182,9 +182,9 @@
                         Complete your profile to get more project recommendations.
                     </p>
 
-                    <button type="button" class="complete-button">
-                        Complete Profile →
-                    </button>
+                    <a href="../Authentication/FreelancerSkills.aspx" class="complete-button" style="display: flex; align-items: center; justify-content: center; text-decoration: none;">
+                        Complete Profile
+                    </a>
 
 
                     <div class="profile-divider"></div>
@@ -196,7 +196,7 @@
                             My Skills
                         </span>
 
-                        <a href="FreelancerSkills.aspx" class="edit-link">
+                        <a href="../Authentication/FreelancerSkills.aspx" class="edit-link">
                             Edit
                         </a>
 
@@ -211,7 +211,7 @@
 
                     </div>
 
-                    <a href="FreelancerSkills.aspx" class="add-skill">
+                    <a href="../Authentication/FreelancerSkills.aspx" class="add-skill">
                         + Add more
                     </a>
 
@@ -297,7 +297,7 @@
 
                 <div class="stats-card">
 
-                    <div class="stat">
+                    <a href="MyProposals.aspx" class="stat" style="text-decoration: none; color: inherit;">
 
                         <div class="stat-icon">
                             <i class="fa-solid fa-paper-plane"></i>
@@ -311,7 +311,7 @@
                             Proposals Sent
                         </div>
 
-                    </div>
+                    </a>
 
 
                     <div class="stat">

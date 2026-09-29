@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FreelancerSkills.aspx.cs" Inherits="CIE_2_PROJECT.FreelancerSkills" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FreelancerSkills.aspx.cs" Inherits="CIE_2_PROJECT.FreelancerSkills" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>SkillLink - Select Skills</title>
-    <link rel="stylesheet" href="Content/Css/Freelancerskills.css" />
+    <link rel="stylesheet" href="../Content/Css/Freelancerskills.css" />
 </head>
 
 <body>
