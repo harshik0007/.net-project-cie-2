@@ -117,6 +117,15 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\Css\ForgotPassword.css" />
+    <Content Include="Content\Css\FreelancerHome.css" />
+    <Content Include="Content\Css\Freelancerskills.css" />
+    <Content Include="Content\Css\Resetpassword.css" />
+    <Content Include="Content\Css\Site.css" />
+    <Content Include="Content\Css\Login.css" />
+    <Content Include="Content\Css\Verifyemail.css" />
+    <Content Include="Content\Images\freelancer-home-banner.png" />
+    <Content Include="Content\Css\Signup.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
@@ -153,6 +162,7 @@
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="Login.aspx" />
+    <Content Include="FreelancerHome.aspx" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -269,6 +279,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FreelancerHome.aspx.cs">
+      <DependentUpon>FreelancerHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FreelancerHome.aspx.designer.cs">
+      <DependentUpon>FreelancerHome.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
