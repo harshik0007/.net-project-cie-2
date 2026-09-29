@@ -117,15 +117,19 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\Css\ActiveWork.css" />
     <Content Include="Content\Css\FindProjects.css" />
     <Content Include="Content\Css\ForgotPassword.css" />
     <Content Include="Content\Css\FreelancerHome.css" />
     <Content Include="Content\Css\Freelancerskills.css" />
+    <Content Include="Content\Css\FProfile.css" />
     <Content Include="Content\Css\ProjectDetails.css" />
     <Content Include="Content\Css\Resetpassword.css" />
     <Content Include="Content\Css\Site.css" />
     <Content Include="Content\Css\Login.css" />
     <Content Include="Content\Css\MyProposals.css" />
+    <Content Include="Content\Css\SubmitWork.css" />
+    <Content Include="Freelancer\ActiveWork.aspx" />
     <Content Include="Freelancer\MyProposals.aspx" />
     <Content Include="Content\Css\SubmitProposal.css" />
     <Content Include="Content\Css\Verifyemail.css" />
@@ -137,6 +141,8 @@
     <Content Include="Freelancer\FindProjects.aspx" />
     <Content Include="Authentication\ForgotPassword.aspx" />
     <Content Include="Authentication\FreelancerSkills.aspx" />
+    <Content Include="Freelancer\Profile.aspx" />
+    <Content Include="Freelancer\SubmitWork.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Freelancer\ProjectDetails.aspx" />
     <Content Include="Authentication\ResetPassword.aspx" />
@@ -228,6 +234,13 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Freelancer\ActiveWork.aspx.cs">
+      <DependentUpon>ActiveWork.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Freelancer\ActiveWork.aspx.designer.cs">
+      <DependentUpon>ActiveWork.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Freelancer\FindProjects.aspx.cs">
       <DependentUpon>FindProjects.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -248,6 +261,20 @@
     </Compile>
     <Compile Include="Authentication\FreelancerSkills.aspx.designer.cs">
       <DependentUpon>FreelancerSkills.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Freelancer\Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Freelancer\Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Freelancer\SubmitWork.aspx.cs">
+      <DependentUpon>SubmitWork.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Freelancer\SubmitWork.aspx.designer.cs">
+      <DependentUpon>SubmitWork.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -326,6 +353,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Guidelines\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -2,15 +2,30 @@
     box-sizing: border-box;
 }
 
+html,
 body {
     margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+body {
     font-family: Arial, Helvetica, sans-serif;
     background: #ffffff;
     color: #14213d;
 }
 
+/* =========================
+   HEADER / NAVBAR
+   ========================= */
+
 .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 62px;
+    z-index: 1000;
     background: #ffffff;
     border-bottom: 1px solid #dce2ec;
     display: flex;
@@ -20,6 +35,7 @@ body {
 
 .navbar {
     width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -35,6 +51,11 @@ body {
     text-decoration: none;
     min-width: 220px;
 }
+
+    .brand:hover {
+        color: #075cff;
+        text-decoration: none;
+    }
 
 .brand-logo {
     width: 22px;
@@ -67,10 +88,24 @@ body {
     transition: color 0.2s ease;
 }
 
+    .nav-link:hover {
+        color: #075cff;
+        text-decoration: none;
+    }
+
 .nav-icon {
     font-size: 14px;
     transition: color 0.2s ease, transform 0.2s ease;
 }
+
+.nav-link:hover .nav-icon {
+    color: #075cff;
+    transform: translateY(-1px);
+}
+
+/* =========================
+   RIGHT NAVBAR
+   ========================= */
 
 .nav-right {
     display: flex;
@@ -87,6 +122,11 @@ body {
     cursor: pointer;
     transition: color 0.2s ease, transform 0.2s ease;
 }
+
+    .notification:hover {
+        color: #075cff;
+        transform: translateY(-1px);
+    }
 
 .notification-badge {
     position: absolute;
@@ -105,6 +145,10 @@ body {
     transition: background 0.2s ease;
 }
 
+.notification:hover .notification-badge {
+    background: #075cff;
+}
+
 .message-icon {
     color: #263142;
     font-size: 17px;
@@ -112,22 +156,42 @@ body {
     transition: color 0.2s ease, transform 0.2s ease;
 }
 
+    .message-icon:hover {
+        color: #075cff;
+        transform: translateY(-1px);
+    }
+
 .profile-divider {
     width: 1px;
     height: 32px;
     background: #dce2ec;
 }
 
+/* =========================
+   PROFILE NAVBAR LINK
+   ========================= */
+
 .profile {
     display: flex;
     align-items: center;
     gap: 9px;
     cursor: pointer;
+    text-decoration: none;
+    color: #263142;
 }
+
+    .profile:link,
+    .profile:visited,
+    .profile:hover,
+    .profile:active {
+        text-decoration: none;
+        color: #263142;
+    }
 
 .profile-image {
     width: 30px;
     height: 30px;
+    flex-shrink: 0;
     border-radius: 50%;
     background: #e1ebff;
     color: #3562a8;
@@ -143,15 +207,24 @@ body {
 }
 
 .profile-name {
-    font-size: 12px;
-    font-weight: bold;
+    margin: 0;
+    padding: 0;
     color: #263142;
+    font-size: 12px;
+    line-height: 1.2;
+    font-weight: bold;
+    text-decoration: none;
     transition: color 0.2s ease;
 }
 
 .profile-role {
-    font-size: 10px;
+    margin: 0;
+    padding: 0;
     color: #596273;
+    font-size: 10px;
+    line-height: 1.2;
+    font-weight: normal;
+    text-decoration: none;
 }
 
 .profile-arrow {
@@ -159,29 +232,6 @@ body {
     font-size: 10px;
     margin-left: 3px;
     transition: color 0.2s ease, transform 0.2s ease;
-}
-
-.nav-link:hover {
-    color: #075cff;
-}
-
-    .nav-link:hover .nav-icon {
-        color: #075cff;
-        transform: translateY(-1px);
-    }
-
-.notification:hover {
-    color: #075cff;
-    transform: translateY(-1px);
-}
-
-    .notification:hover .notification-badge {
-        background: #075cff;
-    }
-
-.message-icon:hover {
-    color: #075cff;
-    transform: translateY(-1px);
 }
 
 .profile:hover .profile-image {
@@ -193,17 +243,36 @@ body {
     color: #075cff;
 }
 
+.profile:hover .profile-role {
+    color: #596273;
+}
+
 .profile:hover .profile-arrow {
     color: #075cff;
     transform: translateY(-1px);
 }
 
+/* =========================
+   MAIN CONTENT
+   ========================= */
+
 .main-content {
-    min-height: calc(100vh - 156px);
+    min-height: 100vh;
+    padding-top: 62px;
+    padding-bottom: 94px;
 }
 
+/* =========================
+   FOOTER
+   ========================= */
+
 .site-footer {
-    min-height: 94px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 94px;
+    z-index: 1000;
     border-top: 1px solid #dce2ec;
     display: flex;
     align-items: center;
@@ -238,12 +307,17 @@ body {
 
     .footer-link:hover {
         color: #075cff;
+        text-decoration: none;
     }
 
 .copyright {
     color: #596273;
     font-size: 10px;
 }
+
+/* =========================
+   RESPONSIVE
+   ========================= */
 
 @media (max-width: 1000px) {
 
@@ -284,6 +358,8 @@ body {
     }
 
     .site-footer {
+        height: auto;
+        min-height: 94px;
         padding: 20px 15px;
     }
 
@@ -295,5 +371,9 @@ body {
     .footer-links {
         flex-wrap: wrap;
         justify-content: center;
+    }
+
+    .main-content {
+        padding-bottom: 94px;
     }
 }

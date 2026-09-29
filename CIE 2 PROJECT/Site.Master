@@ -68,7 +68,7 @@
                     </a>
 
 
-                    <a href="#" class="nav-link">
+                    <a runat="server" href="~/Freelancer/ActiveWork.aspx" class="nav-link">
 
                         <i class="fa-solid fa-briefcase nav-icon"></i>
 
@@ -103,6 +103,7 @@
 
 
                     <div class="profile">
+                        <a runat="server" href="~/Freelancer/Profile.aspx" class="profile">
 
                         <div class="profile-image">
 
@@ -129,6 +130,7 @@
                             <i class="fa-solid fa-chevron-down"></i>
 
                         </div>
+                        </a>
 
                     </div>
 
