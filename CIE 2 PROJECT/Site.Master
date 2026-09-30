@@ -24,6 +24,9 @@
         ID="head"
         runat="server">
     </asp:ContentPlaceHolder>
+    <link rel="stylesheet"
+          href="~/Content/Css/DesignSystem.css?v=3"
+          runat="server" />
 
 </head>
 
@@ -32,6 +35,16 @@
 <form id="form1" runat="server">
 
 <header class="site-header">
+
+    <!-- CIE 2 TEMPORARY DEMO NAVIGATION
+         REMOVE BEFORE FINAL/PSE PRODUCTION VERSION -->
+    <div class="cie2-demo-nav">
+        <strong>CIE 2 Demo Navigation</strong>
+        <a runat="server" href="~/Default.aspx">Landing Page</a>
+        <a runat="server" href="~/Authentication/Login.aspx">Login</a>
+        <a runat="server" href="~/Freelancer/FreelancerHome.aspx">Freelancer Home</a>
+        <a runat="server" href="~/Client/ClientHome.aspx">Client Home</a>
+    </div>
 
     <div class="navbar">
 
@@ -45,9 +58,8 @@
            href="~/Freelancer/FreelancerHome.aspx"
            class="brand">
 
-            <span class="brand-logo">S</span>
-
-            <span>SkillLink</span>
+            <span class="site-brand-mark">S</span>
+            <span class="site-brand-wordmark">Skill<span>Link</span></span>
 
         </a>
 
@@ -180,7 +192,7 @@
 
             <!-- NOTIFICATIONS -->
 
-            <div class="notification">
+            <a runat="server" href="~/Notifications/Notifications.aspx" class="notification" aria-label="Notifications">
 
                 <i class="fa-regular fa-bell"></i>
 
@@ -188,16 +200,16 @@
                     3
                 </span>
 
-            </div>
+            </a>
 
 
             <!-- MESSAGES -->
 
-            <div class="message-icon">
+            <a runat="server" href="~/Messages/Messages.aspx" class="message-icon" aria-label="Messages">
 
                 <i class="fa-regular fa-envelope"></i>
 
-            </div>
+            </a>
 
 
             <!-- DIVIDER -->
