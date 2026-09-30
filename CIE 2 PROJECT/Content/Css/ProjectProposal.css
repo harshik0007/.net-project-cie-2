@@ -1,0 +1,411 @@
+﻿.proposal-page {
+    width: 100%;
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 16px 30px 55px;
+}
+
+/* =========================
+   BACK LINK
+   ========================= */
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 17px;
+    color: #075cff;
+    text-decoration: none;
+    font-size: 10px;
+}
+
+    .back-link:hover {
+        color: #004bd6;
+        text-decoration: none;
+    }
+
+    .back-link i {
+        font-size: 10px;
+    }
+
+/* =========================
+   PROJECT SUMMARY
+   ========================= */
+
+.project-summary {
+    min-height: 122px;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 24px 25px;
+    margin-bottom: 22px;
+    border: 1px solid #e1e6ee;
+    border-radius: 9px;
+    background: #ffffff;
+}
+
+.project-summary-main {
+    flex: 1;
+}
+
+    .project-summary-main h1 {
+        margin: 0 0 10px;
+        color: #172238;
+        font-size: 21px;
+    }
+
+    .project-summary-main p {
+        margin: 0 0 17px;
+        color: #59677d;
+        font-size: 10px;
+    }
+
+.skills {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+    .skills span,
+    .proposal-skills span {
+        display: inline-flex;
+        align-items: center;
+        padding: 5px 10px;
+        border-radius: 14px;
+        background: #eef5ff;
+        color: #075cff;
+        font-size: 8px;
+    }
+
+.project-summary-side {
+    min-width: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 16px;
+}
+
+.summary-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+}
+
+    .summary-item span {
+        color: #78859a;
+        font-size: 9px;
+    }
+
+    .summary-item strong {
+        color: #172238;
+        font-size: 15px;
+    }
+
+/* =========================
+   PROPOSAL HEADING
+   ========================= */
+
+.proposal-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 17px;
+}
+
+    .proposal-heading h2 {
+        margin: 0 0 5px;
+        color: #172238;
+        font-size: 17px;
+    }
+
+    .proposal-heading p {
+        margin: 0;
+        color: #69778d;
+        font-size: 9px;
+    }
+
+.sort-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+    .sort-container > span {
+        color: #68758a;
+        font-size: 9px;
+    }
+
+.sort-dropdown {
+    width: 145px;
+    height: 34px;
+    padding: 0 10px;
+    border: 1px solid #d9e0ea;
+    border-radius: 6px;
+    background: #ffffff;
+    color: #263142;
+    font-size: 9px;
+    outline: none;
+}
+
+    .sort-dropdown:focus {
+        border-color: #075cff;
+    }
+
+/* =========================
+   PROPOSAL CARD
+   ========================= */
+
+.proposal-card {
+    min-height: 165px;
+    display: grid;
+    grid-template-columns: 275px 1fr 225px;
+    gap: 28px;
+    align-items: center;
+    padding: 19px 20px;
+    margin-bottom: 14px;
+    border: 1px solid #edf0f5;
+    border-radius: 9px;
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(20, 33, 61, 0.025);
+}
+
+/* =========================
+   FREELANCER PROFILE
+   ========================= */
+
+.freelancer-profile {
+    display: flex;
+    align-items: flex-start;
+    gap: 17px;
+}
+
+.freelancer-avatar {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #e5e8ed;
+    color: #98a1af;
+    font-size: 21px;
+}
+
+.online-dot {
+    position: absolute;
+    right: 2px;
+    bottom: 3px;
+    width: 8px;
+    height: 8px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    background: #25b85a;
+}
+
+.freelancer-info {
+    display: flex;
+    flex-direction: column;
+}
+
+    .freelancer-info h3 {
+        margin: 2px 0 4px;
+        color: #172238;
+        font-size: 12px;
+    }
+
+.freelancer-title {
+    margin-bottom: 8px;
+    color: #6e7b90;
+    font-size: 9px;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    margin-bottom: 7px;
+}
+
+    .rating i {
+        color: #ffb300;
+        font-size: 9px;
+    }
+
+    .rating strong {
+        color: #263142;
+        font-size: 9px;
+    }
+
+    .rating span {
+        color: #718098;
+        font-size: 8px;
+    }
+
+.location {
+    color: #6e7b90;
+    font-size: 8px;
+}
+
+    .location i {
+        margin-right: 3px;
+    }
+
+/* =========================
+   PROPOSAL CONTENT
+   ========================= */
+
+.proposal-content {
+    align-self: center;
+}
+
+    .proposal-content p {
+        max-width: 410px;
+        margin: 0 0 14px;
+        color: #526078;
+        font-size: 9px;
+        line-height: 1.7;
+    }
+
+.proposal-skills {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    flex-wrap: wrap;
+}
+
+/* =========================
+   OFFER
+   ========================= */
+
+.proposal-offer {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.offer-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+    .offer-item span {
+        color: #758197;
+        font-size: 8px;
+    }
+
+    .offer-item strong {
+        color: #172238;
+        font-size: 15px;
+    }
+
+.proposal-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 3px;
+}
+
+.view-profile-btn,
+.hire-btn {
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 9px;
+}
+
+.view-profile-btn {
+    width: 86px;
+    border: 1px solid #075cff;
+    color: #075cff;
+    background: #ffffff;
+}
+
+    .view-profile-btn:hover {
+        background: #f1f6ff;
+        color: #075cff;
+        text-decoration: none;
+    }
+
+.hire-btn {
+    width: 92px;
+    border: 1px solid #075cff;
+    background: #075cff;
+    color: #ffffff;
+}
+
+    .hire-btn:hover {
+        background: #004bd6;
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 900px) {
+
+    .proposal-page {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .project-summary {
+        flex-direction: column;
+    }
+
+    .project-summary-side {
+        align-items: flex-start;
+        flex-direction: row;
+        gap: 40px;
+    }
+
+    .summary-item {
+        align-items: flex-start;
+    }
+
+    .proposal-card {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .proposal-content p {
+        max-width: none;
+    }
+
+    .proposal-offer {
+        height: auto;
+    }
+
+    .proposal-actions {
+        margin-top: 5px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .proposal-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 13px;
+    }
+
+    .project-summary-side {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .proposal-card {
+        padding: 17px;
+    }
+}

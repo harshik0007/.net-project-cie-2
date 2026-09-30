@@ -1,0 +1,499 @@
+﻿.profile-page {
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 22px 30px 55px;
+}
+
+/* =========================
+   PROFILE HEADER
+   ========================= */
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    margin-bottom: 16px;
+    border: 1px solid #dce3ee;
+    border-radius: 9px;
+    background: #ffffff;
+}
+
+.profile-main {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+}
+
+.profile-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: #e5efff;
+    color: #075cff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+}
+
+.profile-heading h1 {
+    margin: 0 0 7px;
+    color: #14213d;
+    font-size: 22px;
+}
+
+.profile-role {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: #075cff;
+    font-size: 10px;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+.profile-location,
+.member-since {
+    color: #69768a;
+    font-size: 10px;
+    margin-top: 4px;
+}
+
+    .profile-location i {
+        margin-right: 4px;
+    }
+
+.edit-profile-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    height: 32px;
+    padding: 0 13px;
+    border: 1px solid #075cff;
+    border-radius: 5px;
+    color: #075cff;
+    text-decoration: none;
+    font-size: 10px;
+}
+
+    .edit-profile-btn:hover {
+        background: #075cff;
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+/* =========================
+   COMMON CARDS
+   ========================= */
+
+.profile-card {
+    border: 1px solid #dce3ee;
+    border-radius: 9px;
+    background: #ffffff;
+    padding: 19px 21px;
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.card-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 17px;
+}
+
+    .card-title i {
+        color: #075cff;
+        font-size: 13px;
+    }
+
+    .card-title h2 {
+        margin: 0;
+        color: #172238;
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+/* =========================
+   ABOUT / ACCOUNT
+   ========================= */
+
+.info-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 32px;
+    border-bottom: 1px solid #edf0f5;
+}
+
+    .info-item:last-child {
+        border-bottom: none;
+    }
+
+.info-label {
+    color: #758197;
+    font-size: 9px;
+}
+
+.info-value {
+    color: #263142;
+    font-size: 10px;
+    font-weight: 600;
+    text-align: right;
+}
+
+.about-text {
+    margin-top: 15px;
+    padding-top: 14px;
+    border-top: 1px solid #edf0f5;
+    color: #68758a;
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+.verified-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: #1d9149;
+    font-size: 9px;
+    font-weight: 600;
+}
+
+    .verified-status i {
+        color: #22a653;
+        font-size: 9px;
+    }
+
+/* =========================
+   STATISTICS
+   ========================= */
+
+.statistics-card {
+    margin-bottom: 16px;
+}
+
+    .statistics-card .card-title {
+        margin-bottom: 10px;
+    }
+
+.statistics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.stat-item {
+    min-height: 58px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid #edf0f5;
+}
+
+    .stat-item:last-child {
+        border-right: none;
+    }
+
+    .stat-item strong {
+        color: #14213d;
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+
+    .stat-item span {
+        color: #718098;
+        font-size: 9px;
+    }
+
+/* =========================
+   REPUTATION
+   ========================= */
+
+.rating-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #edf0f5;
+}
+
+.rating-number {
+    color: #14213d;
+    font-size: 31px;
+    font-weight: 700;
+}
+
+.rating-details {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.stars {
+    letter-spacing: -2px;
+}
+
+    .stars i {
+        color: #ffc107 !important;
+        font-size: 13px !important;
+    }
+
+.rating-details span {
+    color: #718098;
+    font-size: 9px;
+}
+
+.reputation-info {
+    display: flex;
+    gap: 45px;
+    padding-top: 14px;
+}
+
+    .reputation-info div {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .reputation-info strong {
+        color: #263142;
+        font-size: 13px;
+    }
+
+    .reputation-info span {
+        color: #718098;
+        font-size: 9px;
+    }
+
+/* =========================
+   PAYMENT SUMMARY
+   ========================= */
+
+.payment-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.payment-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 9px;
+    border-bottom: 1px solid #edf0f5;
+}
+
+    .payment-item:last-child {
+        border-bottom: none;
+    }
+
+    .payment-item span {
+        color: #718098;
+        font-size: 9px;
+    }
+
+    .payment-item strong {
+        color: #263142;
+        font-size: 11px;
+    }
+
+.payment-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 8px;
+    color: #075cff;
+    text-decoration: none;
+    font-size: 9px;
+    font-weight: 600;
+}
+
+    .payment-link:hover {
+        text-decoration: none;
+        color: #004bd6;
+    }
+
+/* =========================
+   RECENT PROJECTS
+   ========================= */
+
+.recent-projects-card {
+    margin-bottom: 16px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+    .section-heading .card-title {
+        margin-bottom: 15px;
+    }
+
+.view-all {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #075cff;
+    font-size: 9px;
+    text-decoration: none;
+}
+
+    .view-all:hover {
+        color: #004bd6;
+        text-decoration: none;
+    }
+
+.recent-project {
+    min-height: 51px;
+    display: grid;
+    grid-template-columns: 2.5fr 1fr 0.8fr;
+    align-items: center;
+    gap: 15px;
+    border-top: 1px solid #edf0f5;
+}
+
+.recent-project-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+    .recent-project-info strong {
+        color: #263142;
+        font-size: 10px;
+    }
+
+    .recent-project-info span {
+        color: #718098;
+        font-size: 8px;
+    }
+
+.project-status {
+    width: fit-content;
+    padding: 5px 8px;
+    border-radius: 13px;
+    font-size: 8px;
+}
+
+.status-progress {
+    color: #176fc1;
+    background: #e7f2ff;
+}
+
+.status-completed {
+    color: #218541;
+    background: #e5f5e9;
+}
+
+.project-view {
+    justify-self: end;
+    color: #075cff;
+    text-decoration: none;
+    font-size: 9px;
+}
+
+    .project-view:hover {
+        color: #004bd6;
+        text-decoration: none;
+    }
+
+/* =========================
+   SECURITY
+   ========================= */
+
+.security-card {
+    margin-bottom: 10px;
+}
+
+.security-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.security-btn,
+.logout-btn {
+    height: 31px;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 0 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 9px;
+}
+
+.security-btn {
+    border: 1px solid #d5dce7;
+    color: #263142;
+}
+
+    .security-btn:hover {
+        border-color: #075cff;
+        color: #075cff;
+        text-decoration: none;
+    }
+
+.logout-btn {
+    border: 1px solid #e14a4a;
+    color: #d33a3a;
+}
+
+    .logout-btn:hover {
+        background: #fff2f2;
+        color: #c62828;
+        text-decoration: none;
+    }
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 750px) {
+
+    .profile-page {
+        padding: 18px;
+    }
+
+    .profile-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .statistics {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .stat-item {
+        border-bottom: 1px solid #edf0f5;
+    }
+
+    .recent-project {
+        grid-template-columns: 1fr;
+        padding: 12px 0;
+    }
+
+    .project-view {
+        justify-self: start;
+    }
+}

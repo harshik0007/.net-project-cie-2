@@ -1,0 +1,620 @@
+﻿.hire-page {
+    width: 100%;
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 18px 30px 55px;
+}
+
+/* =========================
+   BACK LINK
+   ========================= */
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 14px;
+    color: #075cff;
+    text-decoration: none;
+    font-size: 10px;
+}
+
+    .back-link:hover {
+        color: #004bd6;
+        text-decoration: none;
+    }
+
+/* =========================
+   PAGE HEADING
+   ========================= */
+
+.page-heading {
+    margin-bottom: 18px;
+}
+
+    .page-heading h1 {
+        margin: 0 0 6px;
+        color: #14213d;
+        font-size: 24px;
+    }
+
+    .page-heading p {
+        margin: 0;
+        color: #68758a;
+        font-size: 11px;
+    }
+
+/* =========================
+   PROJECT CARD
+   ========================= */
+
+.project-card {
+    min-height: 112px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 20px 18px;
+    margin-bottom: 18px;
+    border: 1px solid #dce4ef;
+    border-radius: 9px;
+    background: #ffffff;
+}
+
+.project-icon {
+    width: 72px;
+    height: 72px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9px;
+    background: #dcfae8;
+    color: #20b85b;
+    font-size: 26px;
+}
+
+.project-info {
+    flex: 1;
+}
+
+    .project-info h2 {
+        margin: 0 0 7px;
+        color: #172238;
+        font-size: 15px;
+    }
+
+    .project-info p {
+        margin: 0 0 11px;
+        color: #59677d;
+        font-size: 9px;
+        line-height: 1.5;
+    }
+
+.project-skills {
+    display: flex;
+    gap: 7px;
+}
+
+    .project-skills span,
+    .skill-list span {
+        padding: 4px 9px;
+        border-radius: 12px;
+        background: #eef5ff;
+        color: #075cff;
+        font-size: 8px;
+    }
+
+.project-meta {
+    min-width: 160px;
+    padding-left: 22px;
+    border-left: 1px solid #edf0f5;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    align-items: flex-end;
+}
+
+    .project-meta div {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 4px;
+    }
+
+    .project-meta span {
+        color: #748197;
+        font-size: 8px;
+    }
+
+    .project-meta strong {
+        color: #172238;
+        font-size: 12px;
+    }
+
+/* =========================
+   FREELANCER CARD
+   ========================= */
+
+.freelancer-card {
+    border: 1px solid #dce4ef;
+    border-radius: 9px;
+    background: #ffffff;
+    overflow: hidden;
+    margin-bottom: 17px;
+}
+
+.freelancer-header {
+    min-height: 135px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 25px;
+}
+
+.freelancer-main {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.freelancer-avatar {
+    position: relative;
+    width: 66px;
+    height: 66px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #e7ebf1;
+    color: #98a2b0;
+    font-size: 24px;
+}
+
+.online-dot {
+    position: absolute;
+    right: 1px;
+    bottom: 3px;
+    width: 9px;
+    height: 9px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    background: #27b95b;
+}
+
+.freelancer-info h2 {
+    margin: 0 0 6px;
+    color: #172238;
+    font-size: 17px;
+}
+
+.freelancer-title {
+    display: block;
+    margin-bottom: 9px;
+    color: #59677d;
+    font-size: 10px;
+}
+
+.freelancer-meta {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: #65738a;
+    font-size: 9px;
+}
+
+    .freelancer-meta i {
+        margin-right: 3px;
+    }
+
+.rating i {
+    color: #ffb300;
+}
+
+.rating {
+    color: #263142;
+}
+
+    .rating span {
+        color: #718098;
+    }
+
+.freelancer-side {
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding-left: 25px;
+    border-left: 1px solid #edf0f5;
+}
+
+    .freelancer-side > div {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+        .freelancer-side > div > span {
+            color: #718098;
+            font-size: 8px;
+        }
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 135px;
+    gap: 5px;
+}
+
+.side-info {
+    min-width: 90px;
+}
+
+    .side-info strong {
+        color: #263142;
+        font-size: 10px;
+    }
+
+/* =========================
+   PROPOSAL DETAILS
+   ========================= */
+
+.proposal-details {
+    border-top: 1px solid #edf0f5;
+    padding: 25px;
+}
+
+    .proposal-details > h3,
+    .proposal-message h3 {
+        margin: 0 0 18px;
+        color: #172238;
+        font-size: 13px;
+    }
+
+.proposal-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 28px;
+}
+
+.proposal-stat {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 55px;
+    border-right: 1px solid #edf0f5;
+    padding-left: 5px;
+}
+
+    .proposal-stat:last-child {
+        border-right: none;
+        padding-left: 25px;
+    }
+
+.stat-icon {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+}
+
+.price-icon {
+    color: #8d3bea;
+    background: #f1e5ff;
+}
+
+.delivery-icon {
+    color: #1aa257;
+    background: #e4f8ec;
+}
+
+.revision-icon {
+    color: #d78300;
+    background: #fff1d9;
+}
+
+.proposal-stat div:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.proposal-stat span {
+    color: #718098;
+    font-size: 9px;
+}
+
+.proposal-stat strong {
+    color: #172238;
+    font-size: 14px;
+}
+
+/* =========================
+   PROPOSAL MESSAGE
+   ========================= */
+
+.proposal-message {
+    margin-top: 4px;
+}
+
+.message-box {
+    position: relative;
+    padding: 20px 28px;
+    border-radius: 8px;
+    background: #f6f8fb;
+}
+
+    .message-box p {
+        max-width: 850px;
+        margin: 0;
+        color: #44536a;
+        font-size: 10px;
+        line-height: 1.7;
+    }
+
+.quote-left,
+.quote-right {
+    position: absolute;
+    color: #dfe5ee;
+    font-size: 15px;
+}
+
+.quote-left {
+    top: 14px;
+    left: 14px;
+}
+
+.quote-right {
+    right: 14px;
+    bottom: 13px;
+}
+
+/* =========================
+   IMPORTANT NOTE
+   ========================= */
+
+.important-note,
+.payment-note,
+.cancellation-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 15px 18px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+}
+
+.important-note {
+    border: 1px solid #f5df9b;
+    background: #fffaf0;
+    color: #b76200;
+}
+
+.note-icon {
+    color: #db8500;
+    font-size: 14px;
+    margin-top: 1px;
+}
+
+.important-note strong,
+.payment-note strong,
+.cancellation-note strong {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 11px;
+}
+
+.important-note p,
+.payment-note p,
+.cancellation-note p {
+    margin: 0;
+    font-size: 9px;
+    line-height: 1.5;
+}
+
+.payment-note {
+    border: 1px solid #d9e7fa;
+    background: #f6faff;
+    color: #526b8d;
+}
+
+.payment-note-icon {
+    color: #075cff;
+    font-size: 13px;
+}
+
+.payment-note strong {
+    color: #075cff;
+}
+
+.cancellation-note {
+    border: 1px solid #f0dcdc;
+    background: #fff8f8;
+    color: #796263;
+}
+
+.cancellation-icon {
+    color: #d14a4a;
+    font-size: 13px;
+}
+
+.cancellation-note strong {
+    color: #c63838;
+}
+
+/* =========================
+   ACTIONS
+   ========================= */
+
+.hire-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 22px;
+}
+
+.right-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.back-proposals-btn,
+.cancel-btn,
+.confirm-hire-btn {
+    height: 37px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 10px;
+}
+
+.back-proposals-btn {
+    min-width: 140px;
+    padding: 0 14px;
+    border: 1px solid #d3dce9;
+    color: #39475d;
+    background: #ffffff;
+}
+
+    .back-proposals-btn:hover {
+        border-color: #075cff;
+        color: #075cff;
+        text-decoration: none;
+    }
+
+.cancel-btn {
+    min-width: 120px;
+    padding: 0 15px;
+    border: 1px solid #d5dce7;
+    color: #39475d;
+    background: #ffffff;
+}
+
+    .cancel-btn:hover {
+        border-color: #075cff;
+        color: #075cff;
+        text-decoration: none;
+    }
+
+.confirm-hire-btn {
+    min-width: 152px;
+    padding: 0 18px;
+    border: 1px solid #075cff;
+    color: #ffffff;
+    background: #075cff;
+}
+
+    .confirm-hire-btn:hover {
+        border-color: #004bd6;
+        background: #004bd6;
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+/* =========================
+   SECURITY MESSAGE
+   ========================= */
+
+.security-message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    margin-top: 21px;
+    color: #687a96;
+    font-size: 9px;
+}
+
+    .security-message i {
+        color: #526d94;
+        font-size: 9px;
+    }
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 850px) {
+
+    .hire-page {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .project-card {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .project-meta {
+        width: 100%;
+        flex-direction: row;
+        align-items: flex-start;
+        border-left: none;
+        border-top: 1px solid #edf0f5;
+        padding: 15px 0 0;
+    }
+
+        .project-meta div {
+            align-items: flex-start;
+        }
+
+    .freelancer-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .freelancer-side {
+        width: 100%;
+        border-left: none;
+        border-top: 1px solid #edf0f5;
+        padding: 15px 0 0;
+    }
+
+    .proposal-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .proposal-stat,
+    .proposal-stat:last-child {
+        border-right: none;
+        border-bottom: 1px solid #edf0f5;
+        padding: 10px 0;
+    }
+
+        .proposal-stat:last-child {
+            border-bottom: none;
+        }
+}
+
+@media (max-width: 600px) {
+
+    .hire-actions {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .right-actions {
+        width: 100%;
+    }
+
+    .back-proposals-btn,
+    .cancel-btn,
+    .confirm-hire-btn {
+        flex: 1;
+    }
+
+    .freelancer-side {
+        flex-wrap: wrap;
+    }
+}

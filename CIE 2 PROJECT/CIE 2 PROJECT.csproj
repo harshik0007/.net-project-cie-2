@@ -101,6 +101,13 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="Client\ClientHome.aspx" />
+    <Content Include="Client\FindFreelancers.aspx" />
+    <Content Include="Client\HireFreelancer.aspx" />
+    <Content Include="Client\MyProjects.aspx" />
+    <Content Include="Client\Payments.aspx" />
+    <Content Include="Client\Profile.aspx" />
+    <Content Include="Client\ProjectProposal.aspx" />
+    <Content Include="Client\SecurePayment.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -121,14 +128,21 @@
     <Content Include="Content\Css\ActiveWork.css" />
     <Content Include="Content\Css\ClientHome.css" />
     <Content Include="Content\Css\CommunityGuidelines.css" />
+    <Content Include="Content\Css\FindFreelancers.css" />
     <Content Include="Content\Css\FindProjects.css" />
     <Content Include="Content\Css\ForgotPassword.css" />
     <Content Include="Content\Css\FreelancerHome.css" />
     <Content Include="Content\Css\Freelancerskills.css" />
     <Content Include="Content\Css\FProfile.css" />
+    <Content Include="Content\Css\HireFreelancer.css" />
+    <Content Include="Content\Css\MyProjects.css" />
+    <Content Include="Content\Css\Payments.css" />
     <Content Include="Content\Css\PrivacyPolicy.css" />
+    <Content Include="Content\Css\ClientProfile.css" />
     <Content Include="Content\Css\ProjectDetails.css" />
+    <Content Include="Content\Css\ProjectProposal.css" />
     <Content Include="Content\Css\Resetpassword.css" />
+    <Content Include="Content\Css\SecurePayment.css" />
     <Content Include="Content\Css\Site.css" />
     <Content Include="Content\Css\Login.css" />
     <Content Include="Content\Css\MyProposals.css" />
@@ -236,6 +250,55 @@
     </Compile>
     <Compile Include="Client\ClientHome.aspx.designer.cs">
       <DependentUpon>ClientHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\FindFreelancers.aspx.cs">
+      <DependentUpon>FindFreelancers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\FindFreelancers.aspx.designer.cs">
+      <DependentUpon>FindFreelancers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\HireFreelancer.aspx.cs">
+      <DependentUpon>HireFreelancer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\HireFreelancer.aspx.designer.cs">
+      <DependentUpon>HireFreelancer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\MyProjects.aspx.cs">
+      <DependentUpon>MyProjects.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\MyProjects.aspx.designer.cs">
+      <DependentUpon>MyProjects.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Payments.aspx.cs">
+      <DependentUpon>Payments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\Payments.aspx.designer.cs">
+      <DependentUpon>Payments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\ProjectProposal.aspx.cs">
+      <DependentUpon>ProjectProposal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\ProjectProposal.aspx.designer.cs">
+      <DependentUpon>ProjectProposal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\SecurePayment.aspx.cs">
+      <DependentUpon>SecurePayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\SecurePayment.aspx.designer.cs">
+      <DependentUpon>SecurePayment.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
