@@ -101,12 +101,15 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="Client\ClientHome.aspx" />
+    <Content Include="Client\CreateProject.aspx" />
     <Content Include="Client\FindFreelancers.aspx" />
     <Content Include="Client\HireFreelancer.aspx" />
     <Content Include="Client\MyProjects.aspx" />
     <Content Include="Client\Payments.aspx" />
     <Content Include="Client\Profile.aspx" />
+    <Content Include="Client\ProjectDetails.aspx" />
     <Content Include="Client\ProjectProposal.aspx" />
+    <Content Include="Client\ReviewSubmittedWork.aspx" />
     <Content Include="Client\SecurePayment.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -128,6 +131,7 @@
     <Content Include="Content\Css\ActiveWork.css" />
     <Content Include="Content\Css\ClientHome.css" />
     <Content Include="Content\Css\CommunityGuidelines.css" />
+    <Content Include="Content\Css\CreateProject.css" />
     <Content Include="Content\Css\FindFreelancers.css" />
     <Content Include="Content\Css\FindProjects.css" />
     <Content Include="Content\Css\ForgotPassword.css" />
@@ -135,13 +139,17 @@
     <Content Include="Content\Css\Freelancerskills.css" />
     <Content Include="Content\Css\FProfile.css" />
     <Content Include="Content\Css\HireFreelancer.css" />
+    <Content Include="Content\Css\Messages.css" />
     <Content Include="Content\Css\MyProjects.css" />
+    <Content Include="Content\Css\Notifications.css" />
     <Content Include="Content\Css\Payments.css" />
     <Content Include="Content\Css\PrivacyPolicy.css" />
     <Content Include="Content\Css\ClientProfile.css" />
     <Content Include="Content\Css\ProjectDetails.css" />
+    <Content Include="Content\Css\ClientProjectDetails.css" />
     <Content Include="Content\Css\ProjectProposal.css" />
     <Content Include="Content\Css\Resetpassword.css" />
+    <Content Include="Content\Css\ReviewSubmittedWork.css" />
     <Content Include="Content\Css\SecurePayment.css" />
     <Content Include="Content\Css\Site.css" />
     <Content Include="Content\Css\Login.css" />
@@ -170,6 +178,8 @@
     <Content Include="Guidelines\PrivacyPolicy.aspx" />
     <Content Include="Guidelines\SupportCenter.aspx" />
     <Content Include="Guidelines\TermsOfService.aspx" />
+    <Content Include="Messages\Messages.aspx" />
+    <Content Include="Notifications\Notifications.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -251,6 +261,13 @@
     <Compile Include="Client\ClientHome.aspx.designer.cs">
       <DependentUpon>ClientHome.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Client\CreateProject.aspx.cs">
+      <DependentUpon>CreateProject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\CreateProject.aspx.designer.cs">
+      <DependentUpon>CreateProject.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Client\FindFreelancers.aspx.cs">
       <DependentUpon>FindFreelancers.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -286,12 +303,26 @@
     <Compile Include="Client\Profile.aspx.designer.cs">
       <DependentUpon>Profile.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Client\ProjectDetails.aspx.cs">
+      <DependentUpon>ProjectDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\ProjectDetails.aspx.designer.cs">
+      <DependentUpon>ProjectDetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Client\ProjectProposal.aspx.cs">
       <DependentUpon>ProjectProposal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Client\ProjectProposal.aspx.designer.cs">
       <DependentUpon>ProjectProposal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\ReviewSubmittedWork.aspx.cs">
+      <DependentUpon>ReviewSubmittedWork.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\ReviewSubmittedWork.aspx.designer.cs">
+      <DependentUpon>ReviewSubmittedWork.aspx</DependentUpon>
     </Compile>
     <Compile Include="Client\SecurePayment.aspx.cs">
       <DependentUpon>SecurePayment.aspx</DependentUpon>
@@ -393,6 +424,20 @@
     </Compile>
     <Compile Include="Guidelines\TermsOfService.aspx.designer.cs">
       <DependentUpon>TermsOfService.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Messages\Messages.aspx.cs">
+      <DependentUpon>Messages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Messages\Messages.aspx.designer.cs">
+      <DependentUpon>Messages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Notifications\Notifications.aspx.cs">
+      <DependentUpon>Notifications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Notifications\Notifications.aspx.designer.cs">
+      <DependentUpon>Notifications.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Authentication\ResetPassword.aspx.cs">

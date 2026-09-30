@@ -1,0 +1,434 @@
+﻿.create-project-page {
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 34px 20px 45px;
+}
+
+.page-header {
+    margin-bottom: 24px;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: #075cff;
+    font-size: 11px;
+    text-decoration: none;
+    margin-bottom: 13px;
+}
+
+    .back-link:hover {
+        color: #0048d8;
+        text-decoration: none;
+    }
+
+.page-header h1 {
+    margin: 0 0 6px;
+    color: #14213d;
+    font-size: 25px;
+}
+
+.page-header p {
+    margin: 0;
+    color: #596273;
+    font-size: 11px;
+}
+
+.form-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 270px;
+    gap: 18px;
+    align-items: start;
+}
+
+.form-card {
+    background: #ffffff;
+    border: 1px solid #dce2ec;
+    border-radius: 9px;
+    padding: 23px;
+}
+
+.form-section {
+    width: 100%;
+}
+
+.section-title {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.section-icon {
+    width: 31px;
+    height: 31px;
+    flex-shrink: 0;
+    border-radius: 7px;
+    background: #e8f0ff;
+    color: #075cff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+}
+
+.section-title h2 {
+    margin: 0 0 4px;
+    color: #263142;
+    font-size: 14px;
+}
+
+.section-title p {
+    margin: 0;
+    color: #7a8494;
+    font-size: 9px;
+}
+
+.form-group {
+    margin-bottom: 17px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 7px;
+    color: #263142;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+    .form-label span {
+        color: #e22b35;
+        margin-left: 2px;
+    }
+
+    .form-label .optional {
+        color: #9aa2af;
+        font-weight: normal;
+        margin-left: 4px;
+    }
+
+.form-input,
+.form-select,
+.form-textarea {
+    width: 100%;
+    border: 1px solid #ccd3df;
+    border-radius: 6px;
+    background: #ffffff;
+    color: #263142;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    outline: none;
+}
+
+.form-input,
+.form-select {
+    height: 36px;
+    padding: 0 10px;
+}
+
+.form-textarea {
+    height: 105px;
+    resize: vertical;
+    padding: 10px;
+    line-height: 1.5;
+}
+
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus,
+    .prefix-input:focus {
+        border-color: #075cff;
+    }
+
+.field-help {
+    margin-top: 5px;
+    color: #9aa2af;
+    font-size: 8px;
+}
+
+.validation-error {
+    display: block;
+    margin-top: 5px;
+    color: #c91f2c;
+    font-size: 9px;
+}
+
+.form-divider {
+    height: 1px;
+    background: #e5e9f0;
+    margin: 22px 0;
+}
+
+.input-prefix {
+    display: flex;
+    align-items: center;
+    height: 36px;
+    border: 1px solid #ccd3df;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+    .input-prefix > span {
+        height: 100%;
+        width: 34px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f7f9fc;
+        border-right: 1px solid #dce2ec;
+        color: #596273;
+        font-size: 10px;
+        font-weight: bold;
+    }
+
+.prefix-input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    padding: 0 10px;
+    color: #263142;
+    font-size: 10px;
+}
+
+.upload-box {
+    padding: 27px 20px;
+    text-align: center;
+    border: 1px dashed #bfc9d8;
+    border-radius: 8px;
+    background: #fafbfe;
+}
+
+    .upload-box > i {
+        color: #075cff;
+        font-size: 23px;
+        margin-bottom: 10px;
+    }
+
+    .upload-box h3 {
+        margin: 0 0 5px;
+        color: #263142;
+        font-size: 11px;
+    }
+
+    .upload-box p {
+        margin: 0 0 13px;
+        color: #7a8494;
+        font-size: 9px;
+    }
+
+.file-upload {
+    display: block;
+    width: 220px;
+    margin: 0 auto 8px;
+    font-size: 9px;
+}
+
+.upload-box > span {
+    color: #9aa2af;
+    font-size: 8px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 9px;
+    margin-top: 23px;
+}
+
+.cancel-button,
+.post-button {
+    height: 36px;
+    padding: 0 17px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.cancel-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccd3df;
+    background: #ffffff;
+    color: #596273;
+}
+
+    .cancel-button:hover {
+        border-color: #075cff;
+        color: #075cff;
+        text-decoration: none;
+    }
+
+.post-button {
+    border: 1px solid #075cff;
+    background: #075cff;
+    color: #ffffff;
+}
+
+    .post-button:hover {
+        background: #0048d8;
+        border-color: #0048d8;
+    }
+
+.form-message {
+    display: block;
+    margin-top: 13px;
+    text-align: right;
+    font-size: 9px;
+    font-weight: bold;
+}
+
+.success-message {
+    color: #198754;
+}
+
+
+/* =========================
+   SIDEBAR
+   ========================= */
+
+.project-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.tips-card,
+.workflow-card {
+    background: #ffffff;
+    border: 1px solid #dce2ec;
+    border-radius: 9px;
+    padding: 18px;
+}
+
+    .tips-card h2,
+    .workflow-card h2 {
+        margin: 0 0 17px;
+        color: #263142;
+        font-size: 13px;
+    }
+
+.tip {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 13px;
+}
+
+    .tip:last-child {
+        margin-bottom: 0;
+    }
+
+    .tip i {
+        color: #198754;
+        font-size: 10px;
+        margin-top: 1px;
+    }
+
+    .tip span {
+        color: #596273;
+        font-size: 9px;
+        line-height: 1.45;
+    }
+
+.workflow-card {
+    background: #f7f9fc;
+}
+
+.workflow-icon {
+    width: 31px;
+    height: 31px;
+    margin-bottom: 11px;
+    border-radius: 7px;
+    background: #e8f0ff;
+    color: #075cff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+}
+
+.workflow-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    margin-bottom: 12px;
+}
+
+    .workflow-step:last-child {
+        margin-bottom: 0;
+    }
+
+    .workflow-step > span {
+        width: 19px;
+        height: 19px;
+        flex-shrink: 0;
+        border-radius: 50%;
+        background: #075cff;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 8px;
+        font-weight: bold;
+    }
+
+    .workflow-step p {
+        margin: 2px 0 0;
+        color: #596273;
+        font-size: 9px;
+        line-height: 1.4;
+    }
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 800px) {
+
+    .form-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .project-sidebar {
+        order: -1;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .create-project-page {
+        padding: 25px 12px 35px;
+    }
+
+    .form-card {
+        padding: 17px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .cancel-button,
+    .post-button {
+        width: 100%;
+    }
+}
