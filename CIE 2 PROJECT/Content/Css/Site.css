@@ -70,12 +70,25 @@ body {
     font-weight: bold;
 }
 
+/* =========================
+   NAVIGATION
+   ========================= */
+
 .nav-links {
     display: flex;
     align-items: center;
     gap: 28px;
     height: 100%;
 }
+
+    /* Freelancer / Client navigation container */
+
+    .nav-links > div {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        height: 100%;
+    }
 
 .nav-link {
     height: 62px;
@@ -328,6 +341,10 @@ body {
     .nav-links {
         gap: 14px;
     }
+
+        .nav-links > div {
+            gap: 14px;
+        }
 
     .nav-right {
         min-width: auto;

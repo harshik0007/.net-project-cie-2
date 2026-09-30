@@ -1,195 +1,376 @@
 <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="CIE_2_PROJECT.SiteMaster" %>
 
 <!DOCTYPE html>
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head runat="server">
 
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
     <title>SkillLink</title>
 
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
-        integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer">
-    <link rel="stylesheet" href="~/Content/Css/Site.css" runat="server" />
-    <asp:ContentPlaceHolder ID="head" runat="server">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
+          integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet"
+          href="~/Content/Css/Site.css"
+          runat="server" />
+
+    <asp:ContentPlaceHolder
+        ID="head"
+        runat="server">
     </asp:ContentPlaceHolder>
 
 </head>
 
 <body>
 
-    <form id="form1" runat="server">
+<form id="form1" runat="server">
 
-        <header class="site-header">
+<header class="site-header">
 
-            <div class="navbar">
+    <div class="navbar">
 
-                <a runat="server" href="~/Freelancer/FreelancerHome.aspx" class="brand">
 
-                    <span class="brand-logo">S</span>
+        <!-- =========================
+             SKILLLINK LOGO
+             ========================= -->
 
-                    <span>SkillLink</span>
+        <a id="brandLink"
+           runat="server"
+           href="~/Freelancer/FreelancerHome.aspx"
+           class="brand">
+
+            <span class="brand-logo">S</span>
+
+            <span>SkillLink</span>
+
+        </a>
+
+
+        <!-- =========================
+             NAVIGATION
+             ========================= -->
+
+        <nav class="nav-links">
+
+
+            <!-- =========================
+                 FREELANCER NAVIGATION
+                 ========================= -->
+
+            <div id="freelancerNav"
+                 runat="server"
+                 class="nav-links">
+
+
+                <a runat="server"
+                   href="~/Freelancer/FreelancerHome.aspx"
+                   class="nav-link">
+
+                    <i class="fa-solid fa-house nav-icon"></i>
+
+                    <span>Home</span>
 
                 </a>
 
 
-                <nav class="nav-links">
+                <a runat="server"
+                   href="~/Freelancer/FindProjects.aspx"
+                   class="nav-link">
 
-                    <a runat="server" href="~/Freelancer/FreelancerHome.aspx" class="nav-link">
+                    <i class="fa-solid fa-magnifying-glass nav-icon"></i>
 
-                        <i class="fa-solid fa-house nav-icon"></i>
+                    <span>Find Projects</span>
 
-                        <span>Home</span>
-
-                    </a>
-
-
-                    <a runat="server" href="~/Freelancer/FindProjects.aspx" class="nav-link">
-
-                        <i class="fa-solid fa-magnifying-glass nav-icon"></i>
-
-                        <span>Find Projects</span>
-
-                    </a>
+                </a>
 
 
-                    <a runat="server" href="~/Freelancer/MyProposals.aspx" class="nav-link">
+                <a runat="server"
+                   href="~/Freelancer/MyProposals.aspx"
+                   class="nav-link">
 
-                        <i class="fa-regular fa-circle-check nav-icon"></i>
+                    <i class="fa-regular fa-circle-check nav-icon"></i>
 
-                        <span>My Proposals</span>
+                    <span>My Proposals</span>
 
-                    </a>
-
-
-                    <a runat="server" href="~/Freelancer/ActiveWork.aspx" class="nav-link">
-
-                        <i class="fa-solid fa-briefcase nav-icon"></i>
-
-                        <span>Active Work</span>
-
-                    </a>
-
-                </nav>
+                </a>
 
 
-                <div class="nav-right">
+                <a runat="server"
+                   href="~/Freelancer/ActiveWork.aspx"
+                   class="nav-link">
 
-                    <div class="notification">
+                    <i class="fa-solid fa-briefcase nav-icon"></i>
 
-                        <i class="fa-regular fa-bell"></i>
+                    <span>Active Work</span>
 
-                        <span class="notification-badge">
-                            3
-                        </span>
-
-                    </div>
-
-
-                    <div class="message-icon">
-
-                        <i class="fa-regular fa-envelope"></i>
-
-                    </div>
-
-
-                    <div class="profile-divider"></div>
-
-
-                    <div class="profile">
-                        <a runat="server" href="~/Freelancer/Profile.aspx" class="profile">
-
-                        <div class="profile-image">
-
-                            <i class="fa-regular fa-user"></i>
-
-                        </div>
-
-
-                        <div class="profile-info">
-
-                            <div class="profile-name">
-                                xyz abc
-                            </div>
-
-                            <div class="profile-role">
-                                Freelancer
-                            </div>
-
-                        </div>
-
-
-                        <div class="profile-arrow">
-
-                            <i class="fa-solid fa-chevron-down"></i>
-
-                        </div>
-                        </a>
-
-                    </div>
-
-                </div>
+                </a>
 
             </div>
 
-        </header>
+
+            <!-- =========================
+                 CLIENT NAVIGATION
+                 ========================= -->
+
+            <div id="clientNav"
+                 runat="server"
+                 class="nav-links">
 
 
-        <main class="main-content">
+                <a runat="server"
+                   href="~/Client/ClientHome.aspx"
+                   class="nav-link">
 
-            <asp:ContentPlaceHolder
-                ID="MainContent"
-                runat="server">
-            </asp:ContentPlaceHolder>
+                    <i class="fa-solid fa-house nav-icon"></i>
 
-        </main>
+                    <span>Home</span>
 
-
-        <footer class="site-footer">
-
-            <div class="footer-content">
-
-                <div class="footer-brand">
-                    SkillLink
-                </div>
+                </a>
 
 
-                <div class="footer-links">
+                <a runat="server"
+                   href="~/Client/FindFreelancers.aspx"
+                   class="nav-link">
 
-                    <a runat="server" href="~/Guidelines/PrivacyPolicy.aspx" class="footer-link">
-                        Privacy Policy
-                    </a>
+                    <i class="fa-solid fa-magnifying-glass nav-icon"></i>
 
-                    <a runat="server" href="~/Guidelines/TermsOfService.aspx" class="footer-link">
-                        Terms of Service
-                    </a>
+                    <span>Find Freelancers</span>
 
-                    <a runat="server" href="~/Guidelines/SupportCenter.aspx" class="footer-link">
-                        Support Center
-                    </a>
-
-                    <a runat="server" href="~/Guidelines/CommunityGuidelines.aspx" class="footer-link">
-                        Community Guidelines
-                    </a>
-
-                </div>
+                </a>
 
 
-                <div class="copyright">
-                    &copy;2026 SkillLink Global. All rights reserved.
-                </div>
+                <a runat="server"
+                   href="~/Client/MyProjects.aspx"
+                   class="nav-link">
+
+                    <i class="fa-solid fa-briefcase nav-icon"></i>
+
+                    <span>My Projects</span>
+
+                </a>
+
+
+                <a runat="server"
+                   href="~/Client/Payments.aspx"
+                   class="nav-link">
+
+                    <i class="fa-regular fa-credit-card nav-icon"></i>
+
+                    <span>Payments</span>
+
+                </a>
 
             </div>
 
-        </footer>
+        </nav>
 
-    </form>
+
+        <!-- =========================
+             RIGHT NAVIGATION
+             ========================= -->
+
+        <div class="nav-right">
+
+
+            <!-- NOTIFICATIONS -->
+
+            <div class="notification">
+
+                <i class="fa-regular fa-bell"></i>
+
+                <span class="notification-badge">
+                    3
+                </span>
+
+            </div>
+
+
+            <!-- MESSAGES -->
+
+            <div class="message-icon">
+
+                <i class="fa-regular fa-envelope"></i>
+
+            </div>
+
+
+            <!-- DIVIDER -->
+
+            <div class="profile-divider"></div>
+
+
+            <!-- =========================
+                 FREELANCER PROFILE
+                 ========================= -->
+
+            <a id="freelancerProfile"
+               runat="server"
+               href="~/Freelancer/Profile.aspx"
+               class="profile">
+
+
+                <div class="profile-image">
+
+                    <i class="fa-regular fa-user"></i>
+
+                </div>
+
+
+                <div class="profile-info">
+
+                    <div class="profile-name">
+                        xyz abc
+                    </div>
+
+                    <div class="profile-role">
+                        Freelancer
+                    </div>
+
+                </div>
+
+
+                <div class="profile-arrow">
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </div>
+
+            </a>
+
+
+            <!-- =========================
+                 CLIENT PROFILE
+                 ========================= -->
+
+            <a id="clientProfile"
+               runat="server"
+               href="~/Client/Profile.aspx"
+               class="profile">
+
+
+                <div class="profile-image">
+
+                    <i class="fa-regular fa-user"></i>
+
+                </div>
+
+
+                <div class="profile-info">
+
+                    <div class="profile-name">
+                        xyz abc
+                    </div>
+
+                    <div class="profile-role">
+                        Client
+                    </div>
+
+                </div>
+
+
+                <div class="profile-arrow">
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     MAIN CONTENT
+     ========================= -->
+
+<main class="main-content">
+
+    <asp:ContentPlaceHolder
+        ID="MainContent"
+        runat="server">
+    </asp:ContentPlaceHolder>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+     ========================= -->
+
+<footer class="site-footer">
+
+    <div class="footer-content">
+
+
+        <div class="footer-brand">
+            SkillLink
+        </div>
+
+
+        <div class="footer-links">
+
+
+            <a runat="server"
+               href="~/Guidelines/PrivacyPolicy.aspx"
+               class="footer-link">
+
+                Privacy Policy
+
+            </a>
+
+
+            <a runat="server"
+               href="~/Guidelines/TermsOfService.aspx"
+               class="footer-link">
+
+                Terms of Service
+
+            </a>
+
+
+            <a runat="server"
+               href="~/Guidelines/SupportCenter.aspx"
+               class="footer-link">
+
+                Support Center
+
+            </a>
+
+
+            <a runat="server"
+               href="~/Guidelines/CommunityGuidelines.aspx"
+               class="footer-link">
+
+                Community Guidelines
+
+            </a>
+
+        </div>
+
+
+        <div class="copyright">
+
+            &copy;2026 SkillLink Global. All rights reserved.
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+</form>
 
 </body>
+
 </html>
