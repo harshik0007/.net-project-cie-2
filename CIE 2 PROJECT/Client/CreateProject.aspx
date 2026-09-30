@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Create Project" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CreateProject.aspx.cs" Inherits="CIE_2_PROJECT.CreateProject" %>
+<%@ Page Title="Create Project" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CreateProject.aspx.cs" Inherits="CIE_2_PROJECT.CreateProject" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="../Content/Css/CreateProject.css" />
@@ -269,7 +269,7 @@
                             </asp:Label>
 
                             <div class="input-prefix">
-                                <span>₹</span>
+                                <span>&#8377;</span>
 
                                 <asp:TextBox
                                     ID="txtMinBudget"
@@ -313,7 +313,7 @@
                             </asp:Label>
 
                             <div class="input-prefix">
-                                <span>₹</span>
+                                <span>&#8377;</span>
 
                                 <asp:TextBox
                                     ID="txtMaxBudget"

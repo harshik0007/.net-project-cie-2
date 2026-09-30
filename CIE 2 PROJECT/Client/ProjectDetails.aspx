@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Project Details" Language="C#" MasterPageFile="~/Site.Master"
+<%@ Page Title="Project Details" Language="C#" MasterPageFile="~/Site.Master"
     AutoEventWireup="true"
     CodeBehind="ProjectDetails.aspx.cs"
     Inherits="CIE_2_PROJECT.ClientProjectDetails" %>
@@ -222,7 +222,7 @@
                             </span>
 
                             <span>
-                                ₹20,000
+                                &#8377;20,000
                             </span>
                         </div>
 
@@ -250,7 +250,7 @@
 
                     <div class="summary-row">
                         <span>Budget</span>
-                        <strong>₹15,000 - ₹25,000</strong>
+                        <strong>&#8377;15,000 - &#8377;25,000</strong>
                     </div>
 
                     <div class="summary-row">
@@ -271,7 +271,7 @@
                     <div class="summary-row">
                         <span>Status</span>
                         <strong class="summary-status">
-                            Open for Proposals
+                            <%: Session["UnityProjectCompleted"] != null ? "Completed" : Session["UnityProjectInProgress"] != null ? "In Progress" : "Open for Proposals" %>
                         </strong>
                     </div>
 
@@ -283,7 +283,7 @@
                     <h3>Manage Project</h3>
 
                     <p>
-                        Review proposals or update your project information.
+                        <%: Session["UnityProjectInProgress"] != null ? "Review the freelancer's submitted work." : "Review proposals or update your project information." %>
                     </p>
 
                     <asp:Button

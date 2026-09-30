@@ -11,7 +11,7 @@ namespace CIE_2_PROJECT
 
         protected void btnConfirmHire_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ActiveProjects.aspx?projectId=1");
+            Response.Redirect("SecurePayment.aspx?projectId=1");
         }
     }
 }

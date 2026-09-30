@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Payments" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Payments.aspx.cs" Inherits="CIE_2_PROJECT.Payments" %>
+<%@ Page Title="Payments" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Payments.aspx.cs" Inherits="CIE_2_PROJECT.Payments" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="../Content/Css/Payments.css" />
@@ -31,7 +31,7 @@
 
                 <div class="summary-content">
                     <span>Total Escrow Held</span>
-                    <strong>₹45,000</strong>
+                    <strong>&#8377;45,000</strong>
                     <small>Across 3 active projects</small>
                 </div>
             </div>
@@ -43,7 +43,7 @@
 
                 <div class="summary-content">
                     <span>Total Paid</span>
-                    <strong>₹72,500</strong>
+                    <strong>&#8377;72,500</strong>
                     <small>To freelancers</small>
                 </div>
             </div>
@@ -55,7 +55,7 @@
 
                 <div class="summary-content">
                     <span>Pending Payments</span>
-                    <strong>₹25,000</strong>
+                    <strong>&#8377;25,000</strong>
                     <small>2 payments pending</small>
                 </div>
             </div>
@@ -67,7 +67,7 @@
 
                 <div class="summary-content">
                     <span>Completed Payments</span>
-                    <strong>₹62,500</strong>
+                    <strong>&#8377;62,500</strong>
                     <small>5 transactions</small>
                 </div>
             </div>

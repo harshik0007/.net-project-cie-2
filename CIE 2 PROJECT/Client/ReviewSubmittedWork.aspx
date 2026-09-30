@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Review Submitted Work" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ReviewSubmittedWork.aspx.cs" Inherits="CIE_2_PROJECT.ReviewSubmittedWork" %>
+<%@ Page Title="Review Submitted Work" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ReviewSubmittedWork.aspx.cs" Inherits="CIE_2_PROJECT.ReviewSubmittedWork" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="../Content/Css/ReviewSubmittedWork.css" />
@@ -11,7 +11,7 @@
         <div class="page-top">
 
             <div>
-                <a href="MyProjects.aspx" class="back-link">
+                <a href="ProjectDetails.aspx?id=1" class="back-link">
                     <i class="fa-solid fa-arrow-left"></i>
                     Back to Active Projects
                 </a>
@@ -414,7 +414,7 @@
                             Agreed Price
                         </span>
 
-                        <strong class="price">₹15,000</strong>
+                        <strong class="price">&#8377;15,000</strong>
                     </div>
 
 

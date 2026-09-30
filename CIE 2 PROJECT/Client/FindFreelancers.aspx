@@ -204,7 +204,7 @@
                     <div class="freelancer-actions">
 
                         <a
-                            href="Profile.aspx"
+                            href="../Freelancer/Profile.aspx"
                             class="profile-button">
 
                             View Profile
@@ -212,7 +212,7 @@
                         </a>
 
                         <a
-                            href="Messages.aspx"
+                            href="../Messages/Messages.aspx"
                             class="contact-button">
 
                             <i class="fa-regular fa-message"></i>

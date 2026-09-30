@@ -30,7 +30,8 @@ namespace CIE_2_PROJECT
                 return;
             }
 
-            Response.Redirect("ActiveProjects.aspx?projectId=1");
+            Session["UnityProjectInProgress"] = true;
+            Response.Redirect("MyProjects.aspx");
         }
     }
 }

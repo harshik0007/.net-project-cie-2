@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Project Proposals" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProjectProposal.aspx.cs" Inherits="CIE_2_PROJECT.ProjectProposal" %>
+<%@ Page Title="Project Proposals" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProjectProposal.aspx.cs" Inherits="CIE_2_PROJECT.ProjectProposal" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="../Content/Css/ProjectProposal.css" />
@@ -8,7 +8,7 @@
 
     <div class="proposal-page">
 
-        <a href="MyProjects.aspx" class="back-link">
+        <a href="ProjectDetails.aspx?id=1" class="back-link">
             <i class="fa-solid fa-arrow-left"></i>
             Back to My Projects
         </a>
@@ -41,7 +41,7 @@
                     <span>Budget</span>
 
                     <strong>
-                        ₹15,000 - ₹25,000
+                        &#8377;15,000 - &#8377;25,000
                     </strong>
 
                 </div>
@@ -190,7 +190,7 @@
                             <div class="proposal-actions">
 
                                 <a
-                                    href='<%# "Profile.aspx?id=" + Eval("FreelancerId") %>'
+                                    href="../Freelancer/Profile.aspx"
                                     class="view-profile-btn">
                                     View Profile
                                 </a>

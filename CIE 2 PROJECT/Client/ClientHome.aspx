@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Client Home" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ClientHome.aspx.cs" Inherits="CIE_2_PROJECT.ClientHome" %>
+<%@ Page Title="Client Home" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ClientHome.aspx.cs" Inherits="CIE_2_PROJECT.ClientHome" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="../Content/Css/ClientHome.css" />
@@ -161,7 +161,7 @@
                 <div class="stat-content">
 
                     <div class="stat-value">
-                        ₹7,500
+                        &#8377;7,500
                     </div>
 
                     <div class="stat-label">
@@ -244,7 +244,7 @@
                 <div class="project-budget">
 
                     <strong>
-                        ₹15,000 - ₹25,000
+                        &#8377;15,000 - &#8377;25,000
                     </strong>
 
                     <span>
@@ -313,7 +313,7 @@
                 <div class="project-budget">
 
                     <strong>
-                        ₹20,000 - ₹40,000
+                        &#8377;20,000 - &#8377;40,000
                     </strong>
 
                     <span>
@@ -382,7 +382,7 @@
                 <div class="project-budget">
 
                     <strong>
-                        ₹2,000 - ₹5,000
+                        &#8377;2,000 - &#8377;5,000
                     </strong>
 
                     <span>
@@ -469,7 +469,7 @@
                     </div>
 
                     <div class="hourly-rate">
-                        ₹800 <span>/hr</span>
+                        &#8377;800 <span>/hr</span>
                     </div>
 
                     <a href="FindFreelancers.aspx" class="profile-button">
@@ -505,7 +505,7 @@
                     </div>
 
                     <div class="hourly-rate">
-                        ₹700 <span>/hr</span>
+                        &#8377;700 <span>/hr</span>
                     </div>
 
                     <a href="FindFreelancers.aspx" class="profile-button">
@@ -541,7 +541,7 @@
                     </div>
 
                     <div class="hourly-rate">
-                        ₹600 <span>/hr</span>
+                        &#8377;600 <span>/hr</span>
                     </div>
 
                     <a href="FindFreelancers.aspx" class="profile-button">
@@ -577,7 +577,7 @@
                     </div>
 
                     <div class="hourly-rate">
-                        ₹500 <span>/hr</span>
+                        &#8377;500 <span>/hr</span>
                     </div>
 
                     <a href="FindFreelancers.aspx" class="profile-button">
@@ -652,7 +652,7 @@
                 </a>
 
 
-                <a href="Messages.aspx" class="quick-action">
+                    <a href="../Messages/Messages.aspx" class="quick-action">
 
                     <div class="quick-icon quick-yellow">
                         <i class="fa-regular fa-message"></i>

@@ -19,8 +19,10 @@ namespace CIE_2_PROJECT
 
         protected void btnApproveWork_Click(object sender, EventArgs e)
         {
+            Session["UnityProjectCompleted"] = true;
+            Session.Remove("UnityProjectInProgress");
             lblActionMessage.Text =
-                "Work approved successfully. The project can now be marked as completed.";
+                "Work approved successfully. Unity 2D Game Development is now marked as completed.";
             lblActionMessage.CssClass =
                 "action-message approval-message";
         }

@@ -6,10 +6,26 @@ namespace CIE_2_PROJECT
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string actionText = Session["UnityProjectInProgress"] != null
+                ? "Review Submitted Work"
+                : Session["UnityProjectCompleted"] != null
+                    ? "Project Completed"
+                    : "View Proposals";
+            btnViewProposals.Text = actionText;
+            btnProposals.Text = actionText;
         }
 
         protected void btnViewProposals_Click(object sender, EventArgs e)
         {
+            if (Session["UnityProjectCompleted"] != null)
+            {
+                return;
+            }
+            if (Session["UnityProjectInProgress"] != null)
+            {
+                Response.Redirect("ReviewSubmittedWork.aspx?projectId=1");
+                return;
+            }
             Response.Redirect("ProjectProposal.aspx?projectId=1");
         }
 

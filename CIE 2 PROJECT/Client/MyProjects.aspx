@@ -135,9 +135,9 @@
                         <div class="action">
 
                             <a
-                                href='<%# "ProjectDetails.aspx?id=" + Eval("Id") %>'
+                                href='<%# Eval("Status").ToString() == "In Progress" ? "ReviewSubmittedWork.aspx?projectId=1" : "ProjectDetails.aspx?id=1" %>'
                                 class="view-btn">
-                                View Project
+                                <%# Eval("Status").ToString() == "In Progress" ? "See Progress" : "View Project" %>
                             </a>
 
                         </div>

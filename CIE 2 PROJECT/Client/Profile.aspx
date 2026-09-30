@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Client Profile" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Profile.aspx.cs" Inherits="CIE_2_PROJECT.ClientProfile" %>
+<%@ Page Title="Client Profile" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Profile.aspx.cs" Inherits="CIE_2_PROJECT.ClientProfile" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="../Content/Css/ClientProfile.css" />
@@ -149,7 +149,7 @@
                 </div>
 
                 <div class="stat-item">
-                    <strong>₹72,500</strong>
+                    <strong>&#8377;72,500</strong>
                     <span>Total Spent</span>
                 </div>
 
@@ -215,17 +215,17 @@
 
                     <div class="payment-item">
                         <span>Total Spent</span>
-                        <strong>₹72,500</strong>
+                        <strong>&#8377;72,500</strong>
                     </div>
 
                     <div class="payment-item">
                         <span>Escrow Held</span>
-                        <strong>₹45,000</strong>
+                        <strong>&#8377;45,000</strong>
                     </div>
 
                     <div class="payment-item">
                         <span>Completed Payments</span>
-                        <strong>₹62,500</strong>
+                        <strong>&#8377;62,500</strong>
                     </div>
 
                 </div>

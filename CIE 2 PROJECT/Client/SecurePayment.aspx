@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Secure Payment" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="SecurePayment.aspx.cs" Inherits="CIE_2_PROJECT.SecurePayment" %>
+<%@ Page Title="Secure Payment" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="SecurePayment.aspx.cs" Inherits="CIE_2_PROJECT.SecurePayment" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="../Content/Css/SecurePayment.css" />
@@ -10,7 +10,7 @@
 
         <div class="page-header">
             <div>
-                <a href="ProjectProposal.aspx" class="back-link">
+                <a href="HireFreelancer.aspx?projectId=1" class="back-link">
                     <i class="fa-solid fa-arrow-left"></i>
                     Back to Proposals
                 </a>
@@ -67,24 +67,24 @@
 
                     <div class="amount-row">
                         <span>Agreed Project Amount</span>
-                        <strong>₹15,000</strong>
+                        <strong>&#8377;15,000</strong>
                     </div>
 
                     <div class="amount-row">
                         <span>Project Amount</span>
-                        <strong>₹15,000</strong>
+                        <strong>&#8377;15,000</strong>
                     </div>
 
                     <div class="amount-row">
                         <span>Platform Fee (2%)</span>
-                        <strong>₹300</strong>
+                        <strong>&#8377;300</strong>
                     </div>
 
                     <div class="amount-divider"></div>
 
                     <div class="amount-total">
                         <span>Total Amount</span>
-                        <strong>₹15,300</strong>
+                        <strong>&#8377;15,300</strong>
                     </div>
 
                     <div class="escrow-note">
@@ -282,25 +282,25 @@
 
                     <div class="summary-row">
                         <span>Project Amount</span>
-                        <span>₹15,000</span>
+                        <span>&#8377;15,000</span>
                     </div>
 
                     <div class="summary-row">
                         <span>Platform Fee</span>
-                        <span>₹300</span>
+                        <span>&#8377;300</span>
                     </div>
 
                     <div class="summary-divider"></div>
 
                     <div class="summary-total">
                         <span>Total</span>
-                        <strong>₹15,300</strong>
+                        <strong>&#8377;15,300</strong>
                     </div>
 
                     <asp:Button
                         ID="btnMakePayment"
                         runat="server"
-                        Text="Pay & Secure ₹15,300"
+                        Text="Pay & Secure &#8377;15,300"
                         CssClass="payment-button"
                         OnClick="btnMakePayment_Click" />
 

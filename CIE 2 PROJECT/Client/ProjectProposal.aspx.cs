@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.UI;
@@ -51,7 +51,7 @@ namespace CIE_2_PROJECT
                     Location = "India",
                     CoverLetter = "Hi! I have 4+ years of experience in Unity game development. I can build your 2D shooting game with clean code and smooth gameplay. I will deliver high quality work.",
                     Skills = "Unity,C#,Game Design,2D Animation",
-                    ProposedPrice = "₹20,000",
+                    ProposedPrice = "&#8377;20,000",
                     PriceValue = 20000,
                     DeliveryTime = 15
                 },
@@ -67,7 +67,7 @@ namespace CIE_2_PROJECT
                     Location = "India",
                     CoverLetter = "I can develop a fun and engaging 2D game for you using Unity. I will ensure quality, performance and on-time delivery.",
                     Skills = "Unity,C#,Game Design,UI/UX",
-                    ProposedPrice = "₹18,000",
+                    ProposedPrice = "&#8377;18,000",
                     PriceValue = 18000,
                     DeliveryTime = 12
                 },
@@ -83,7 +83,7 @@ namespace CIE_2_PROJECT
                     Location = "India",
                     CoverLetter = "I will create your 2D shooting game with multiple levels, enemies and in-game store. I have completed similar projects.",
                     Skills = "Unity,C#,2D Animation,Game Design",
-                    ProposedPrice = "₹22,000",
+                    ProposedPrice = "&#8377;22,000",
                     PriceValue = 22000,
                     DeliveryTime = 18
                 }
@@ -151,7 +151,7 @@ namespace CIE_2_PROJECT
             string proposalId = button.CommandArgument;
 
             Response.Redirect(
-                "ActiveProjects.aspx?proposalId=" + proposalId);
+                "HireFreelancer.aspx?projectId=1&proposalId=" + Server.UrlEncode(proposalId));
         }
     }
 }

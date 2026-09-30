@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Hire Freelancer" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="HireFreelancer.aspx.cs" Inherits="CIE_2_PROJECT.HireFreelancer" %>
+<%@ Page Title="Hire Freelancer" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="HireFreelancer.aspx.cs" Inherits="CIE_2_PROJECT.HireFreelancer" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="../Content/Css/HireFreelancer.css" />
@@ -45,7 +45,7 @@
 
                 <div>
                     <span>Budget</span>
-                    <strong>₹15,000 - ₹25,000</strong>
+                    <strong>&#8377;15,000 - &#8377;25,000</strong>
                 </div>
 
                 <div>
@@ -114,7 +114,7 @@
 
                     <div class="side-info">
                         <span>Total Earnings</span>
-                        <strong>₹1,25,000+</strong>
+                        <strong>&#8377;1,25,000+</strong>
                     </div>
 
                 </div>
@@ -135,7 +135,7 @@
 
                         <div>
                             <span>Proposed Price</span>
-                            <strong>₹20,000</strong>
+                            <strong>&#8377;20,000</strong>
                         </div>
 
                     </div>

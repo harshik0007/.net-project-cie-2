@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.UI;
@@ -40,34 +40,23 @@ namespace CIE_2_PROJECT
                     Id = 1,
                     Title = "Unity 2D Game Development",
                     Description = "Create a 2D shooting game with multiple levels, enemies, and in-game store.",
-                    Budget = "₹15,000 - ₹25,000",
+                    Budget = "&#8377;15,000 - &#8377;25,000",
                     Proposals = 12,
                     Deadline = "30 May, 2026",
                     Status = "Open for Proposals"
-                },
-
-                new Project
-                {
-                    Id = 2,
-                    Title = "E-commerce Website Development",
-                    Description = "Build a fully responsive e-commerce website with payment gateway integration.",
-                    Budget = "₹20,000 - ₹40,000",
-                    Proposals = 8,
-                    Deadline = "25 May, 2026",
-                    Status = "In Progress"
-                },
-
-                new Project
-                {
-                    Id = 3,
-                    Title = "Brand Logo Design",
-                    Description = "Design a modern and minimal logo for our new tech startup.",
-                    Budget = "₹2,000 - ₹5,000",
-                    Proposals = 5,
-                    Deadline = "18 May, 2026",
-                    Status = "Completed"
                 }
             };
+
+            projects.Add(new Project
+            {
+                Id = 2,
+                Title = "Unity 2D Game Development",
+                Description = "Create a 2D shooting game with multiple levels, enemies, and in-game store.",
+                Budget = "&#8377;15,000 - &#8377;25,000",
+                Proposals = 12,
+                Deadline = "30 May, 2026",
+                Status = "In Progress"
+            });
         }
 
         private void BindProjects(List<Project> data)

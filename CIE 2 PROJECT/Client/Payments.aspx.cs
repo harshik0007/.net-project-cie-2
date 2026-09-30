@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -56,7 +56,7 @@ namespace CIE_2_PROJECT
                     Freelancer = "Rahul Sharma",
                     Initials = "RS",
                     Role = "Game Developer",
-                    Amount = "₹25,000",
+                    Amount = "&#8377;25,000",
                     Milestone = "Milestone 2",
                     MilestoneDetails = "Game mechanics & levels",
                     DueDate = "30 May, 2026"
@@ -70,7 +70,7 @@ namespace CIE_2_PROJECT
                     Freelancer = "Priya Mehta",
                     Initials = "PM",
                     Role = "Full Stack Developer",
-                    Amount = "₹20,000",
+                    Amount = "&#8377;20,000",
                     Milestone = "Milestone 1",
                     MilestoneDetails = "Frontend development",
                     DueDate = "25 May, 2026"
@@ -93,7 +93,7 @@ namespace CIE_2_PROJECT
                     Freelancer = "Neha Patel",
                     Initials = "NP",
                     Role = "Graphic Designer",
-                    Amount = "₹5,000",
+                    Amount = "&#8377;5,000",
                     Milestone = "Full Payment",
                     MilestoneDetails = "Project completed",
                     PaidOn = "18 May, 2026"
@@ -107,7 +107,7 @@ namespace CIE_2_PROJECT
                     Freelancer = "Amit Verma",
                     Initials = "AV",
                     Role = "Web Developer",
-                    Amount = "₹18,000",
+                    Amount = "&#8377;18,000",
                     Milestone = "Full Payment",
                     MilestoneDetails = "Project completed",
                     PaidOn = "10 May, 2026"
@@ -121,7 +121,7 @@ namespace CIE_2_PROJECT
                     Freelancer = "Ananya Singh",
                     Initials = "AS",
                     Role = "UI/UX Designer",
-                    Amount = "₹12,500",
+                    Amount = "&#8377;12,500",
                     Milestone = "Full Payment",
                     MilestoneDetails = "Project completed",
                     PaidOn = "02 May, 2026"
