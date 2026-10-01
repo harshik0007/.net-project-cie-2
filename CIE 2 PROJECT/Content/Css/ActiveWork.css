@@ -1,4 +1,4 @@
-﻿.active-work-page {
+.active-work-page {
     width: 100%;
     max-width: 870px;
     margin: 0 auto;
@@ -86,7 +86,7 @@
 
 .summary-label {
     color: #596273;
-    font-size: 10px;
+    font-size: 12px;
     white-space: nowrap;
 }
 
@@ -173,13 +173,13 @@
     flex-wrap: wrap;
     gap: 8px;
     color: #596273;
-    font-size: 10px;
+    font-size: 12px;
     margin-bottom: 11px;
 }
 
     .project-meta i {
         margin-right: 3px;
-        font-size: 9px;
+        font-size: 12px;
     }
 
 .client-link {
@@ -200,7 +200,7 @@
     max-width: 480px;
     margin: 0;
     color: #4f5b70;
-    font-size: 11px;
+    font-size: 12px;
     line-height: 1.55;
 }
 
@@ -228,12 +228,12 @@
 
 .side-label {
     color: #596273;
-    font-size: 10px;
+    font-size: 12px;
 }
 
 .side-price {
     color: #07844f;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 700;
 }
 
@@ -243,7 +243,7 @@
     gap: 4px;
     padding: 4px 9px;
     border-radius: 12px;
-    font-size: 9px;
+    font-size: 12px;
     font-weight: 600;
     white-space: nowrap;
 }
@@ -264,7 +264,7 @@
 }
 
 .status-badge i {
-    font-size: 8px;
+    font-size: 12px;
 }
 
 .deadline-section {
@@ -275,7 +275,7 @@
 
     .deadline-section strong {
         color: #14213d;
-        font-size: 10px;
+        font-size: 12px;
     }
 
 .progress-row {
@@ -313,7 +313,7 @@
 
 .progress-value {
     color: #596273;
-    font-size: 9px;
+    font-size: 12px;
 }
 
 .open-project-button {
@@ -323,7 +323,7 @@
     border-radius: 6px;
     background: #ffffff;
     color: #075cff;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 600;
     text-decoration: none;
     display: inline-flex;
@@ -348,12 +348,12 @@
     display: flex;
     align-items: center;
     gap: 7px;
-    font-size: 11px;
+    font-size: 12px;
 }
 
     .work-note i {
         color: #075cff;
-        font-size: 11px;
+        font-size: 12px;
     }
 
 @media (max-width: 900px) {
