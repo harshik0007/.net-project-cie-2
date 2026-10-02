@@ -1,0 +1,40 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site2.master.cs" Inherits="CIE_2_PROJECT.SiteMaster2" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title><%: Page.Title %> - SkillLink</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="~/Content/Css/Site2.css?v=2" runat="server" />
+    <asp:ContentPlaceHolder ID="head" runat="server" />
+    <link rel="stylesheet" href="~/Content/Css/DesignSystem.css?v=3" runat="server" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <!-- CIE 2 TEMPORARY DEMO NAVIGATION
+             REMOVE BEFORE FINAL/PSE PRODUCTION VERSION -->
+        <div class="cie2-demo-nav">
+            <strong>CIE 2 Demo Navigation</strong>
+            <a runat="server" href="~/Default.aspx">Landing Page</a>
+            <a runat="server" href="~/Authentication/Login.aspx">Login</a>
+            <a runat="server" href="~/Freelancer/FreelancerHome.aspx">Freelancer Home</a>
+            <a runat="server" href="~/Client/ClientHome.aspx">Client Home</a>
+        </div>
+        <header class="public-header">
+            <div class="public-navbar">
+                <a runat="server" href="~/Default.aspx" class="site-brand" aria-label="SkillLink landing page">
+                    <span class="site-brand-mark">S</span>
+                    <span class="site-brand-wordmark">Skill<span>Link</span></span>
+                </a>
+                <nav class="public-actions" aria-label="Public navigation">
+                    <a runat="server" href="~/Authentication/Login.aspx" class="public-login">Log In</a>
+                    <a runat="server" href="~/Authentication/SignUp.aspx" class="public-signup">Sign Up</a>
+                </nav>
+            </div>
+        </header>
+        <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+    </form>
+</body>
+</html>

@@ -11,7 +11,7 @@ namespace CIE_2_PROJECT
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Response.Redirect("~/Authentication/Login.aspx");
+            Response.Redirect("~/Landing/Landing.aspx");
         }
     }
 }

@@ -1,35 +1,13 @@
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="VerifyEmail.aspx.cs" Inherits="CIE_2_PROJECT.VerifyEmail" %>
+<%@ Page Title="Verify Email" Language="C#" MasterPageFile="~/Site2.master" AutoEventWireup="true" CodeBehind="VerifyEmail.aspx.cs" Inherits="CIE_2_PROJECT.VerifyEmail" %>
 
-<!DOCTYPE html>
+<asp:Content ID="AuthHead" ContentPlaceHolderID="head" runat="server">
+    <link rel="stylesheet" href="../Content/Css/Verifyemail.css?v=2" />
+</asp:Content>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<asp:Content ID="AuthContent" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="page">
 
-    <title>SkillLink - Verify Email</title>
 
-    <link rel="stylesheet" href="../Content/Css/Verifyemail.css" />
-
-</head>
-
-<body>
-
-    <form id="form1" runat="server">
-
-        <div class="page">
-
-            <header class="header">
-
-                <div class="logo">
-
-                    <div class="logo-icon">
-                        S
-                    </div>
-
-                    <span>SkillLink</span>
-
-                </div>
-
-            </header>
 
 
             <main class="main">
@@ -232,23 +210,19 @@
             <footer class="footer">
 
                 <div class="copyright">
-                    &copy; 2025 SkillLink. All rights reserved.
+                    &copy; 2026 SkillLink Global. All rights reserved.
                 </div>
 
                 <div class="footer-links">
 
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                    <a href="#">Help Center</a>
+                    <a runat="server" href="~/Guidelines/PrivacyPolicy.aspx">Privacy Policy</a>
+                    <a runat="server" href="~/Guidelines/TermsOfService.aspx">Terms of Service</a>
+                    <a runat="server" href="~/Guidelines/SupportCenter.aspx">Support Center</a>
+                    <a runat="server" href="~/Guidelines/CommunityGuidelines.aspx">Community Guidelines</a>
 
                 </div>
 
             </footer>
 
         </div>
-
-    </form>
-
-</body>
-
-</html>
+</asp:Content>

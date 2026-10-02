@@ -1,35 +1,13 @@
-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SignUp.aspx.cs" Inherits="CIE_2_PROJECT.SignUp" %>
+<%@ Page Title="Sign Up" Language="C#" MasterPageFile="~/Site2.master" AutoEventWireup="true" CodeBehind="SignUp.aspx.cs" Inherits="CIE_2_PROJECT.SignUp" %>
 
-<!DOCTYPE html>
+<asp:Content ID="AuthHead" ContentPlaceHolderID="head" runat="server">
+    <link rel="stylesheet" href="../Content/Css/Signup.css?v=2" />
+</asp:Content>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<asp:Content ID="AuthContent" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="page">
 
-    <title>SkillLink - Sign Up</title>
 
-    <link rel="stylesheet" href="../Content/Css/Signup.css" />
-
-</head>
-
-<body>
-
-    <form id="form1" runat="server">
-
-        <div class="page">
-
-            <header class="header">
-
-                <div class="logo">
-
-                    <div class="logo-icon">
-                        S
-                    </div>
-
-                    <span>SkillLink</span>
-
-                </div>
-
-            </header>
 
 
             <main class="main">
@@ -266,13 +244,13 @@
 
                                 <div class="role-content">
 
-                                    <div class="role-name">
+                                    <label class="role-name" for="<%= rbFreelancer.ClientID %>">
                                         Freelancer
-                                    </div>
+                                    </label>
 
-                                    <div class="role-description">
+                                    <label class="role-description" for="<%= rbFreelancer.ClientID %>">
                                         I want to work and learn
-                                    </div>
+                                    </label>
 
                                 </div>
 
@@ -289,13 +267,13 @@
 
                                 <div class="role-content">
 
-                                    <div class="role-name">
+                                    <label class="role-name" for="<%= rbClient.ClientID %>">
                                         Client
-                                    </div>
+                                    </label>
 
-                                    <div class="role-description">
+                                    <label class="role-description" for="<%= rbClient.ClientID %>">
                                         I want to hire and get work done
-                                    </div>
+                                    </label>
 
                                 </div>
 
@@ -362,9 +340,9 @@
 
                         <span>
                             I agree to the
-                            <a href="#" class="terms-link">Terms of Service</a>
+                            <a runat="server" href="~/Guidelines/TermsOfService.aspx" class="terms-link">Terms of Service</a>
                             and
-                            <a href="#" class="terms-link">Privacy Policy</a>
+                            <a runat="server" href="~/Guidelines/PrivacyPolicy.aspx" class="terms-link">Privacy Policy</a>
                         </span>
 
                     </div>
@@ -410,22 +388,19 @@
             <footer class="footer">
 
                 <div class="copyright">
-                    &copy; 2025 SkillLink. All rights reserved.
+                    &copy; 2026 SkillLink Global. All rights reserved.
                 </div>
 
                 <div class="footer-links">
 
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                    <a href="#">Help Center</a>
+                    <a runat="server" href="~/Guidelines/PrivacyPolicy.aspx">Privacy Policy</a>
+                    <a runat="server" href="~/Guidelines/TermsOfService.aspx">Terms of Service</a>
+                    <a runat="server" href="~/Guidelines/SupportCenter.aspx">Support Center</a>
+                    <a runat="server" href="~/Guidelines/CommunityGuidelines.aspx">Community Guidelines</a>
 
                 </div>
 
             </footer>
 
         </div>
-
-    </form>
-
-</body>
-</html>
+</asp:Content>
