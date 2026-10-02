@@ -1,4 +1,4 @@
-﻿.notifications-page {
+.notifications-page {
     max-width: 1000px;
     margin: 0 auto;
     padding: 38px 30px 50px;
@@ -21,7 +21,7 @@
     .page-header p {
         margin: 7px 0 0;
         color: #697386;
-        font-size: 11px;
+        font-size: 12px;
     }
 
 .mark-read-button {
@@ -33,7 +33,7 @@
     border-radius: 6px;
     background: #ffffff;
     color: #075cff;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 600;
     text-decoration: none;
 }
@@ -59,7 +59,7 @@
     background: none;
     border: none;
     text-decoration: none;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 600;
 }
 
@@ -93,7 +93,7 @@
     border-radius: 10px;
     background: #075cff;
     color: #ffffff;
-    font-size: 8px;
+    font-size: 12px;
 }
 
 .notification-container {
@@ -107,7 +107,7 @@
     padding: 13px 18px 9px;
     background: #f8faff;
     color: #596273;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.3px;
@@ -184,13 +184,13 @@
 .notification-title {
     margin-bottom: 4px;
     color: #263142;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 700;
 }
 
 .notification-text {
     color: #596273;
-    font-size: 10px;
+    font-size: 12px;
     line-height: 1.6;
 }
 
@@ -201,7 +201,7 @@
 .notification-time {
     margin-top: 5px;
     color: #8a93a2;
-    font-size: 9px;
+    font-size: 12px;
 }
 
 .unread-dot {
@@ -217,7 +217,7 @@
     margin-top: 15px;
     padding: 10px 13px;
     border-radius: 6px;
-    font-size: 10px;
+    font-size: 12px;
 }
 
 .success-message {

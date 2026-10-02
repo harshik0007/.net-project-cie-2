@@ -1,11 +1,11 @@
-﻿* {
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Segoe UI", Arial, sans-serif;
     background-color: #ffffff;
     color: #172033;
 }
@@ -42,7 +42,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 9px;
+    font-size: 12px;
     font-weight: bold;
 }
 
@@ -72,7 +72,7 @@ body {
 
 .signup-subtitle {
     text-align: center;
-    font-size: 11px;
+    font-size: 12px;
     color: #666b75;
     margin-bottom: 25px;
 }
@@ -92,7 +92,7 @@ body {
 
 .form-label {
     display: block;
-    font-size: 9px;
+    font-size: 12px;
     font-weight: bold;
     color: #333842;
     margin-bottom: 6px;
@@ -103,7 +103,7 @@ body {
     height: 38px;
     border: 1px solid #cfd4df;
     padding: 0 10px;
-    font-size: 10px;
+    font-size: 12px;
     color: #333;
     outline: none;
 }
@@ -113,7 +113,7 @@ body {
     }
 
 .password-hint {
-    font-size: 8px;
+    font-size: 12px;
     color: #555;
     margin-top: 5px;
 }
@@ -121,12 +121,12 @@ body {
 .validation-error {
     display: block;
     margin-top: 4px;
-    font-size: 9px;
+    font-size: 12px;
     color: #dc3545;
 }
 
 .role-title {
-    font-size: 9px;
+    font-size: 12px;
     font-weight: bold;
     margin-bottom: 7px;
 }
@@ -143,6 +143,7 @@ body {
     padding: 9px;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .role-radio {
@@ -150,31 +151,41 @@ body {
 }
 
 .role-content {
-    font-size: 9px;
+    font-size: 14px;
     color: #333842;
 }
 
 .role-name {
+    display: block;
     font-weight: bold;
     margin-bottom: 3px;
+    cursor: pointer;
 }
 
 .role-description {
-    font-size: 8px;
-    line-height: 11px;
+    font-size: 13px;
+    line-height: 1.3;
+    cursor: pointer;
 }
 
 .terms-row {
     display: flex;
     align-items: flex-start;
     margin-top: 18px;
-    font-size: 8px;
+    font-size: 14px;
     color: #555;
 }
 
 .terms-checkbox {
     margin-right: 7px;
     margin-top: 1px;
+    cursor: pointer;
+}
+
+.terms-row,
+.terms-row label,
+.terms-link {
+    cursor: pointer;
 }
 
 .terms-link {
@@ -193,7 +204,7 @@ body {
     border: none;
     background-color: #075cff;
     color: white;
-    font-size: 9px;
+    font-size: 14px;
     font-weight: bold;
     cursor: pointer;
 }
@@ -205,12 +216,13 @@ body {
 .login-text {
     text-align: center;
     margin-top: 17px;
-    font-size: 8px;
+    font-size: 14px;
     color: #555;
 }
 
 .login-link {
     color: #075cff;
+    font-weight: 600;
     text-decoration: none;
 }
 
@@ -226,12 +238,12 @@ body {
 }
 
 .copyright {
-    font-size: 8px;
+    font-size: 12px;
     margin-bottom: 6px;
 }
 
 .footer-links {
-    font-size: 7px;
+    font-size: 12px;
 }
 
     .footer-links a {

@@ -1,4 +1,4 @@
-﻿.proposal-page {
+.proposal-page {
     width: 100%;
     max-width: 1060px;
     margin: 0 auto;
@@ -16,7 +16,7 @@
     margin-bottom: 17px;
     color: #075cff;
     text-decoration: none;
-    font-size: 10px;
+    font-size: 12px;
 }
 
     .back-link:hover {
@@ -25,7 +25,7 @@
     }
 
     .back-link i {
-        font-size: 10px;
+        font-size: 12px;
     }
 
 /* =========================
@@ -57,7 +57,7 @@
     .project-summary-main p {
         margin: 0 0 17px;
         color: #59677d;
-        font-size: 10px;
+        font-size: 12px;
     }
 
 .skills {
@@ -74,7 +74,7 @@
         border-radius: 14px;
         background: #eef5ff;
         color: #075cff;
-        font-size: 8px;
+        font-size: 12px;
     }
 
 .project-summary-side {
@@ -95,7 +95,7 @@
 
     .summary-item span {
         color: #78859a;
-        font-size: 9px;
+        font-size: 12px;
     }
 
     .summary-item strong {
@@ -123,7 +123,7 @@
     .proposal-heading p {
         margin: 0;
         color: #69778d;
-        font-size: 9px;
+        font-size: 12px;
     }
 
 .sort-container {
@@ -134,7 +134,7 @@
 
     .sort-container > span {
         color: #68758a;
-        font-size: 9px;
+        font-size: 12px;
     }
 
 .sort-dropdown {
@@ -145,7 +145,7 @@
     border-radius: 6px;
     background: #ffffff;
     color: #263142;
-    font-size: 9px;
+    font-size: 12px;
     outline: none;
 }
 
@@ -220,7 +220,7 @@
 .freelancer-title {
     margin-bottom: 8px;
     color: #6e7b90;
-    font-size: 9px;
+    font-size: 12px;
 }
 
 .rating {
@@ -232,22 +232,22 @@
 
     .rating i {
         color: #ffb300;
-        font-size: 9px;
+        font-size: 12px;
     }
 
     .rating strong {
         color: #263142;
-        font-size: 9px;
+        font-size: 12px;
     }
 
     .rating span {
         color: #718098;
-        font-size: 8px;
+        font-size: 12px;
     }
 
 .location {
     color: #6e7b90;
-    font-size: 8px;
+    font-size: 12px;
 }
 
     .location i {
@@ -266,7 +266,7 @@
         max-width: 410px;
         margin: 0 0 14px;
         color: #526078;
-        font-size: 9px;
+        font-size: 12px;
         line-height: 1.7;
     }
 
@@ -297,7 +297,7 @@
 
     .offer-item span {
         color: #758197;
-        font-size: 8px;
+        font-size: 12px;
     }
 
     .offer-item strong {
@@ -320,7 +320,7 @@
     justify-content: center;
     border-radius: 5px;
     text-decoration: none;
-    font-size: 9px;
+    font-size: 12px;
 }
 
 .view-profile-btn {

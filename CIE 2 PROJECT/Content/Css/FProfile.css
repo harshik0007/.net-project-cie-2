@@ -1,4 +1,4 @@
-﻿.profile-page {
+.profile-page {
     width: 100%;
     max-width: 1030px;
     margin: 0 auto;
@@ -19,7 +19,7 @@
 .page-subtitle {
     margin: 0;
     color: #687386;
-    font-size: 11px;
+    font-size: 12px;
 }
 
 .profile-layout {
@@ -98,7 +98,7 @@
     flex-wrap: wrap;
     gap: 8px;
     color: #687386;
-    font-size: 10px;
+    font-size: 12px;
     margin-bottom: 17px;
 }
 
@@ -109,7 +109,7 @@
     }
 
     .profile-location i {
-        font-size: 10px;
+        font-size: 12px;
     }
 
 .profile-separator {
@@ -120,7 +120,7 @@
     max-width: 500px;
     margin: 0 0 18px;
     color: #596273;
-    font-size: 11px;
+    font-size: 12px;
     line-height: 1.6;
 }
 
@@ -135,7 +135,7 @@
     align-items: center;
     justify-content: center;
     gap: 6px;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 600;
     transition: background 0.2s ease;
 }
@@ -171,7 +171,7 @@
     align-items: center;
     color: #364154;
     background: #ffffff;
-    font-size: 9px;
+    font-size: 12px;
 }
 
 .experience-card,
@@ -210,13 +210,13 @@
 
     .timeline-date strong {
         color: #263142;
-        font-size: 10px;
+        font-size: 12px;
         font-weight: 500;
     }
 
     .timeline-date span {
         color: #687386;
-        font-size: 9px;
+        font-size: 12px;
     }
 
 .timeline-content h3 {
@@ -228,7 +228,7 @@
 .company-link {
     color: #075cff;
     text-decoration: none;
-    font-size: 10px;
+    font-size: 12px;
 }
 
     .company-link:hover {
@@ -238,7 +238,7 @@
 .timeline-content p {
     margin: 10px 0 0;
     color: #596273;
-    font-size: 10px;
+    font-size: 12px;
     line-height: 1.55;
 }
 
@@ -257,7 +257,7 @@
 .edit-link {
     color: #075cff;
     text-decoration: none;
-    font-size: 9px;
+    font-size: 12px;
     font-weight: 600;
 }
 
@@ -280,7 +280,7 @@
 
     .payment-field label {
         color: #364154;
-        font-size: 9px;
+        font-size: 12px;
     }
 
 .payment-value {
@@ -292,7 +292,7 @@
     display: flex;
     align-items: center;
     color: #687386;
-    font-size: 10px;
+    font-size: 12px;
 }
 
 .side-card-title {
@@ -312,7 +312,7 @@
 
 .reputation-label {
     color: #687386;
-    font-size: 9px;
+    font-size: 12px;
     margin-bottom: 5px;
 }
 
@@ -344,14 +344,14 @@
 
 .reputation-status {
     color: #079447;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 700;
     margin-top: 3px;
 }
 
 .reputation-caption {
     color: #687386;
-    font-size: 9px;
+    font-size: 12px;
     margin-top: 3px;
 }
 
@@ -364,7 +364,7 @@
     align-items: center;
     justify-content: space-between;
     color: #687386;
-    font-size: 9px;
+    font-size: 12px;
     margin-bottom: 7px;
 }
 
@@ -428,7 +428,7 @@
 
     .reputation-stat span {
         color: #687386;
-        font-size: 8px;
+        font-size: 12px;
         margin-top: 2px;
     }
 
@@ -441,7 +441,7 @@
 .view-link {
     color: #075cff;
     text-decoration: none;
-    font-size: 9px;
+    font-size: 12px;
 }
 
     .view-link:hover {
@@ -476,7 +476,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 8px;
+    font-size: 12px;
     font-weight: 700;
 }
 
@@ -497,12 +497,12 @@
 
 .review-user strong {
     color: #263142;
-    font-size: 9px;
+    font-size: 12px;
 }
 
 .review-stars {
     color: #ffc107;
-    font-size: 7px;
+    font-size: 12px;
     margin-top: 2px;
     letter-spacing: -1px;
 }
@@ -516,18 +516,18 @@
 
     .review-rating strong {
         color: #263142;
-        font-size: 10px;
+        font-size: 12px;
     }
 
     .review-rating span {
         color: #a0a9b6;
-        font-size: 7px;
+        font-size: 12px;
     }
 
 .review-item > p {
     margin: 9px 0 0;
     color: #596273;
-    font-size: 9px;
+    font-size: 12px;
     line-height: 1.55;
 }
 
@@ -537,7 +537,7 @@
     gap: 5px;
     color: #075cff;
     text-decoration: none;
-    font-size: 9px;
+    font-size: 12px;
 }
 
     .reviews-bottom-link:hover {
@@ -594,12 +594,12 @@
 
     .completed-details strong {
         color: #263142;
-        font-size: 10px;
+        font-size: 12px;
     }
 
     .completed-details span {
         color: #687386;
-        font-size: 8px;
+        font-size: 12px;
     }
 
 .completed-badge {
@@ -607,7 +607,7 @@
     border-radius: 10px;
     background: #e3f8eb;
     color: #079447;
-    font-size: 7px;
+    font-size: 12px;
     font-weight: 600;
 }
 
@@ -625,20 +625,21 @@
     gap: 11px;
     min-height: 29px;
     color: #596273;
-    font-size: 9px;
+    font-size: 12px;
 }
 
     .contact-item i {
         width: 13px;
         color: #687386;
         text-align: center;
-        font-size: 11px;
+        font-size: 12px;
     }
 
 .logout-button {
     width: 100%;
-    height: 53px;
-    margin-top: 22px;
+    max-width: 240px;
+    height: 46px;
+    margin: 22px auto 0;
     border-radius: 9px;
     background: #ff343d;
     color: #ffffff;
@@ -646,13 +647,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 28px;
+    font-size: 16px;
     font-weight: 700;
     transition: background 0.2s ease;
 }
 
     .logout-button:hover {
-        background: #e9252f;
+        background: #c82333;
     }
 
 @media (max-width: 900px) {
@@ -711,6 +712,6 @@
     }
 
     .logout-button {
-        font-size: 22px;
+        font-size: 16px;
     }
 }

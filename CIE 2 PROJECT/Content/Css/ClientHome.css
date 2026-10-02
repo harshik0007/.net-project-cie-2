@@ -1,4 +1,4 @@
-﻿.client-home {
+.client-home {
     width: 100%;
     max-width: 1100px;
     margin: 0 auto;
@@ -31,7 +31,7 @@
 .welcome-text {
     margin: 0 0 12px;
     color: #596273;
-    font-size: 10px;
+    font-size: 12px;
 }
 
 .hero-section h1 {
@@ -45,7 +45,7 @@
 .hero-description {
     margin: 12px 0 18px;
     color: #596273;
-    font-size: 11px;
+    font-size: 12px;
     line-height: 1.6;
 }
 
@@ -64,7 +64,7 @@
     align-items: center;
     justify-content: center;
     gap: 7px;
-    font-size: 10px;
+    font-size: 12px;
     text-decoration: none;
     transition: all 0.2s ease;
 }
@@ -165,7 +165,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 7px;
+    font-size: 12px;
 }
 
 /* =========================
@@ -236,13 +236,13 @@
 
 .stat-label {
     color: #596273;
-    font-size: 9px;
+    font-size: 12px;
     margin-bottom: 4px;
 }
 
 .stat-link {
     color: #075cff;
-    font-size: 8px;
+    font-size: 12px;
     text-decoration: none;
 }
 
@@ -303,7 +303,7 @@
 
 .view-all-link {
     color: #075cff;
-    font-size: 9px;
+    font-size: 12px;
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -334,7 +334,7 @@
     align-items: center;
     position: relative;
     color: #596273;
-    font-size: 9px;
+    font-size: 12px;
     text-decoration: none;
 }
 
@@ -415,7 +415,7 @@
     .project-info h3 {
         margin: 0 0 5px;
         color: #263142;
-        font-size: 10px;
+        font-size: 12px;
         font-weight: 700;
         white-space: nowrap;
         overflow: hidden;
@@ -427,7 +427,7 @@
     align-items: center;
     gap: 7px;
     color: #687386;
-    font-size: 8px;
+    font-size: 12px;
 }
 
 .meta-dot {
@@ -442,14 +442,14 @@
 
     .project-budget strong {
         color: #263142;
-        font-size: 9px;
+        font-size: 12px;
         white-space: nowrap;
     }
 
     .project-budget span,
     .project-progress > span {
         color: #687386;
-        font-size: 7px;
+        font-size: 12px;
     }
 
 .project-progress {
@@ -462,7 +462,7 @@
 
     .progress-top strong {
         color: #263142;
-        font-size: 8px;
+        font-size: 12px;
     }
 
 .progress-track {
@@ -500,7 +500,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 7px;
+    font-size: 12px;
     white-space: nowrap;
 }
 
@@ -518,7 +518,7 @@
 
 .project-menu {
     color: #4d596b;
-    font-size: 11px;
+    font-size: 12px;
     cursor: pointer;
 }
 
@@ -547,14 +547,14 @@
     .freelancer-card h3 {
         margin: 0 0 4px;
         color: #263142;
-        font-size: 11px;
+        font-size: 12px;
         font-weight: 700;
     }
 
 .freelancer-role {
     margin: 0 0 6px;
     color: #687386;
-    font-size: 8px;
+    font-size: 12px;
 }
 
 .rating {
@@ -563,12 +563,12 @@
     gap: 4px;
     margin-bottom: 10px;
     color: #263142;
-    font-size: 8px;
+    font-size: 12px;
 }
 
     .rating i {
         color: #9b6d00;
-        font-size: 9px;
+        font-size: 12px;
     }
 
 .skill-tags {
@@ -586,20 +586,20 @@
         padding: 4px 6px;
         color: #596273;
         background: #f8faff;
-        font-size: 7px;
+        font-size: 12px;
         white-space: nowrap;
     }
 
 .hourly-rate {
     color: #263142;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 700;
     margin-bottom: 10px;
 }
 
     .hourly-rate span {
         color: #687386;
-        font-size: 8px;
+        font-size: 12px;
         font-weight: normal;
     }
 
@@ -613,7 +613,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 9px;
+    font-size: 12px;
     text-decoration: none;
     margin-top: auto;
     transition: all 0.2s ease;
@@ -696,20 +696,20 @@
 
     .quick-text strong {
         color: #263142;
-        font-size: 9px;
+        font-size: 12px;
         font-weight: 700;
     }
 
     .quick-text span {
         color: #687386;
-        font-size: 7px;
+        font-size: 12px;
         white-space: nowrap;
     }
 
 .quick-arrow {
     margin-left: auto;
     color: #bdc9db;
-    font-size: 8px;
+    font-size: 12px;
 }
 
 /* =========================
@@ -770,7 +770,7 @@
         }
 
     .hero-description {
-        font-size: 10px;
+        font-size: 12px;
     }
 
     .hero-illustration {

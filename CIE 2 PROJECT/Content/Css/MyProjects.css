@@ -1,4 +1,4 @@
-﻿.my-projects-page {
+.my-projects-page {
     width: 100%;
     max-width: 1120px;
     margin: 0 auto;
@@ -26,7 +26,7 @@
     .page-header p {
         margin: 0;
         color: #66738a;
-        font-size: 11px;
+        font-size: 12px;
     }
 
 .post-project-btn {
@@ -41,7 +41,7 @@
     color: #ffffff;
     border-radius: 6px;
     text-decoration: none;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 600;
 }
 
@@ -52,7 +52,7 @@
     }
 
     .post-project-btn i {
-        font-size: 11px;
+        font-size: 12px;
     }
 
 /* =========================
@@ -87,7 +87,7 @@
     align-items: center;
     color: #5d6d86;
     text-decoration: none;
-    font-size: 11px;
+    font-size: 12px;
     white-space: nowrap;
 }
 
@@ -127,7 +127,7 @@
 
     .table-header div {
         color: #53627a;
-        font-size: 8px;
+        font-size: 12px;
         font-weight: 600;
         letter-spacing: 0.4px;
     }
@@ -168,7 +168,7 @@
         max-width: 275px;
         margin: 0;
         color: #66738a;
-        font-size: 10px;
+        font-size: 12px;
         line-height: 1.45;
     }
 
@@ -178,7 +178,7 @@
 
 .budget {
     color: #172238;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 600;
 }
 
@@ -200,7 +200,7 @@
 
     .proposals span {
         color: #718098;
-        font-size: 9px;
+        font-size: 12px;
     }
 
 /* =========================
@@ -209,7 +209,7 @@
 
 .deadline {
     color: #172238;
-    font-size: 11px;
+    font-size: 12px;
 }
 
 /* =========================
@@ -223,7 +223,7 @@
     width: fit-content;
     padding: 5px 8px;
     border-radius: 14px;
-    font-size: 8px;
+    font-size: 12px;
     line-height: 1.1;
 }
 
@@ -285,7 +285,7 @@
     color: #075cff;
     background: #ffffff;
     text-decoration: none;
-    font-size: 9px;
+    font-size: 12px;
     font-weight: 500;
 }
 
@@ -319,7 +319,7 @@
     .empty-projects p {
         margin: 0;
         color: #758197;
-        font-size: 11px;
+        font-size: 12px;
     }
 
 /* =========================

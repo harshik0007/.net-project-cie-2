@@ -1,0 +1,15 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; }
+body { background: #ffffff; color: #263142; }
+.public-header { position: sticky; top: 0; z-index: 1000; height: 62px; background: #ffffff; border-bottom: 1px solid #dce2ec; }
+.public-navbar { width: min(1360px, calc(100% - 64px)); height: 100%; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+.public-actions { display: flex; align-items: center; gap: 12px; }
+.public-actions a { min-width: 112px; padding: 10px 20px; border-radius: 7px; text-align: center; text-decoration: none; font-size: 14px; font-weight: 600; }
+.public-login { color: #075cff; border: 1px solid #075cff; background: #ffffff; }
+.public-signup { color: #ffffff; border: 1px solid #075cff; background: #075cff; }
+.public-actions a:hover { filter: brightness(.97); }
+@media (max-width: 700px) {
+  .public-navbar { width: calc(100% - 32px); }
+  .public-actions { gap: 8px; }
+  .public-actions a { min-width: 0; padding: 9px 13px; }
+}

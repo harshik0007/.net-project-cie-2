@@ -1,4 +1,4 @@
-﻿.policy-page {
+.policy-page {
     width: 100%;
     max-width: 1100px;
     margin: 0 auto;
@@ -19,7 +19,7 @@
     .policy-header p {
         margin: 0;
         color: #687386;
-        font-size: 10px;
+        font-size: 12px;
     }
 
 .policy-card {
@@ -47,7 +47,7 @@
     .policy-section p {
         margin: 0;
         color: #596273;
-        font-size: 11px;
+        font-size: 12px;
         line-height: 1.7;
     }
 
@@ -76,6 +76,6 @@
     }
 
     .policy-section p {
-        font-size: 10px;
+        font-size: 12px;
     }
 }

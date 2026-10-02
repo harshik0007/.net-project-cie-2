@@ -1,0 +1,167 @@
+/* Shared SkillLink typography, brand and temporary demo navigation. */
+body,
+body *:not([class*="fa-"]) {
+    font-family: "Segoe UI", Arial, sans-serif !important;
+}
+
+.site-brand,
+.site-brand:hover,
+.site-brand:focus,
+.brand,
+.brand:hover,
+.brand:focus {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 220px;
+    color: #14213d;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+}
+
+.site-brand-mark {
+    width: 30px;
+    height: 30px;
+    flex: 0 0 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #075cff;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.site-brand-wordmark { color: #14213d; }
+.site-brand-wordmark span { color: #075cff; }
+
+.cie2-demo-nav {
+    min-height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 18px;
+    padding: 0 30px;
+    border-bottom: 1px solid #dce2ec;
+    background: #ffffff;
+    font-size: 12px;
+}
+
+.cie2-demo-nav strong { margin-right: auto; color: #596273; font-weight: 600; }
+.cie2-demo-nav a { color: #075cff; text-decoration: none; }
+.cie2-demo-nav a:hover { color: #004fe0; text-decoration: underline; }
+
+/* Shared public authentication page styling. */
+.page {
+    min-height: calc(100vh - 96px);
+    background: #f7f9fc;
+}
+
+.page .main {
+    width: 100%;
+    padding: 32px 16px;
+}
+
+.page .login-card,
+.page .signup-card,
+.page .forgot-card,
+.page .verify-card,
+.page .reset-card {
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 10px 28px rgba(20, 33, 61, .08);
+}
+
+.page .login-card { width: 400px; max-width: 100%; min-height: 0; padding: 32px; }
+.page .signup-card { width: 460px; max-width: 100%; padding: 30px; }
+.page .forgot-card { min-height: 0; padding: 32px; }
+.page .verify-card { width: 380px; max-width: 100%; min-height: 0; padding: 32px; }
+.page .reset-card { width: 430px; max-width: 100%; padding: 34px; }
+
+.page .login-title,
+.page .signup-title,
+.page .forgot-title,
+.page .verify-title,
+.page .reset-title {
+    color: #14213d;
+    font-size: 24px;
+    line-height: 1.25;
+}
+
+.page .login-subtitle,
+.page .signup-subtitle,
+.page .forgot-subtitle,
+.page .verify-subtitle,
+.page .reset-subtitle {
+    color: #596273;
+    font-size: 14px;
+    line-height: 1.55;
+}
+
+.page .form-label { margin-bottom: 7px; font-size: 14px; }
+.page .input-box { height: 42px; padding: 0 12px; border: 1px solid #d4dce8; border-radius: 6px; font-size: 14px; }
+.page .input-box:focus { border-color: #075cff; box-shadow: 0 0 0 3px rgba(7, 92, 255, .1); }
+
+.page .login-button,
+.page .create-button,
+.page .reset-button,
+.page .verify-button {
+    min-height: 44px;
+    height: auto;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.page .forgot-password,
+.page .signup-link,
+.page .login-link,
+.page .change-link,
+.page .resend-link,
+.page .back-link {
+    color: #075cff;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.page .forgot-password { text-align: right; }
+.page .signup-text,
+.page .login-text { color: #596273; font-size: 13px; line-height: 1.5; }
+.page .role-box { min-height: 68px; border-color: #d4dce8; border-radius: 8px; }
+.page .terms-row { color: #596273; font-size: 13px; line-height: 1.5; }
+.page .terms-checkbox { accent-color: #075cff; }
+.page > .footer { height: auto; padding: 16px 12px 18px; border-top: 1px solid #e2e8f0; background: #ffffff; }
+
+.profile-page .logout-button {
+    width: 200px;
+    max-width: 100%;
+    height: 44px;
+    margin: 24px auto;
+    border-radius: 8px;
+    background: #dc3545;
+    box-shadow: 0 4px 10px rgba(220, 53, 69, .16);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.profile-page .logout-button:hover { background: #c82333; }
+
+@media (max-width: 600px) {
+    .page { min-height: calc(100vh - 96px); }
+    .page .login-card,
+    .page .signup-card,
+    .page .forgot-card,
+    .page .verify-card,
+    .page .reset-card { padding: 24px 20px; }
+    .page .role-row { gap: 10px; }
+}
+
+@media (max-width: 700px) {
+    .site-brand { min-width: auto; font-size: 21px; }
+    .site-brand-mark { width: 28px; height: 28px; flex-basis: 28px; }
+    .cie2-demo-nav { gap: 12px; padding: 0 12px; }
+    .cie2-demo-nav strong { display: none; }
+}
