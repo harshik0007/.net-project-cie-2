@@ -36,7 +36,7 @@
                                 <div class="proposal-meta">
                                     <span class="meta-item">
                                         <i class="fa-regular fa-user"></i>
-                                        Client: <a href="#" class="client-link"><%# Eval("Client") %></a>
+                                        Client: <a href="ProjectDetails.aspx" class="client-link"><%# Eval("Client") %></a>
                                     </span>
                                     <span class="meta-item">
                                         <i class="fa-regular fa-calendar"></i>

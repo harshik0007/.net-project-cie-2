@@ -54,18 +54,17 @@
                     <div class="project-content">
 
                         <h2 class="project-title">
-                            Build a .NET Core E-commerce Website
+                            Unity 2D Game Development
                         </h2>
 
                         <p class="project-description">
-                            Need a complete e-commerce solution with ASP.NET Core,
-                            SQL Server and payment integration.
+                            Create a 2D shooting game with multiple levels, enemies, and an in-game store.
                         </p>
 
                         <div class="project-tags">
 
                             <span class="project-tag blue">
-                                .NET Core
+                                Unity
                             </span>
 
                             <span class="project-tag blue">
@@ -73,7 +72,7 @@
                             </span>
 
                             <span class="project-tag blue">
-                                SQL Server
+                                2D Game Development
                             </span>
 
                         </div>
@@ -96,7 +95,7 @@
                 <div class="project-action">
 
                     <div class="project-price">
-                        &#8377;8,000 - &#8377;15,000
+                        &#8377;15,000 - &#8377;25,000
                     </div>
 
                     <div class="price-type">
@@ -112,7 +111,7 @@
                         <i class="fa-regular fa-calendar"></i>
 
                         <span>
-                            Deadline: 20 May 2026
+                            Deadline: 30 May 2026
                         </span>
 
                     </div>
@@ -137,7 +136,7 @@
                     <div class="project-content">
 
                         <h2 class="project-title">
-                            Unity Game Development for 2D Adventure Game
+                            Unity 2D Game Development
                         </h2>
 
                         <p class="project-description">
@@ -179,7 +178,7 @@
                 <div class="project-action">
 
                     <div class="project-price">
-                        &#8377;5,000 - &#8377;10,000
+                        &#8377;15,000 - &#8377;25,000
                     </div>
 
                     <div class="price-type">
@@ -195,7 +194,7 @@
                         <i class="fa-regular fa-calendar"></i>
 
                         <span>
-                            Deadline: 18 May 2026
+                            Deadline: 30 May 2026
                         </span>
 
                     </div>
@@ -220,7 +219,7 @@
                     <div class="project-content">
 
                         <h2 class="project-title">
-                            Content Writing for College Blog
+                            Unity 2D Game Development
                         </h2>
 
                         <p class="project-description">
@@ -258,7 +257,7 @@
                 <div class="project-action">
 
                     <div class="project-price">
-                        &#8377;2,000 - &#8377;4,000
+                        &#8377;15,000 - &#8377;25,000
                     </div>
 
                     <div class="price-type">
@@ -274,7 +273,7 @@
                         <i class="fa-regular fa-calendar"></i>
 
                         <span>
-                            Deadline: 12 May 2026
+                            Deadline: 30 May 2026
                         </span>
 
                     </div>
@@ -299,7 +298,7 @@
                     <div class="project-content">
 
                         <h2 class="project-title">
-                            Social Media Post Design
+                            Unity 2D Game Development
                         </h2>
 
                         <p class="project-description">
@@ -337,7 +336,7 @@
                 <div class="project-action">
 
                     <div class="project-price">
-                        &#8377;1,500 - &#8377;3,000
+                        &#8377;15,000 - &#8377;25,000
                     </div>
 
                     <div class="price-type">
@@ -353,7 +352,7 @@
                         <i class="fa-regular fa-calendar"></i>
 
                         <span>
-                            Deadline: 15 May 2026
+                            Deadline: 30 May 2026
                         </span>
 
                     </div>

@@ -15,7 +15,7 @@
             <div class="hero-content">
 
                 <div class="welcome">
-                    Welcome back, xyz abc! 👋
+                    Welcome back, xyz abc!
                 </div>
 
                 <h1 class="hero-title">
@@ -93,7 +93,7 @@
                     <div class="project-card">
 
                         <h3 class="project-title">
-                            <a href="ProjectDetails.aspx" style="color: inherit; text-decoration: none;">Build a .NET Core E-commerce Website</a>
+                            <a href="ProjectDetails.aspx" style="color: inherit; text-decoration: none;">Unity 2D Game Development</a>
                         </h3>
 
                         <p class="project-description">
@@ -112,7 +112,7 @@
                         <div class="project-bottom">
 
                             <span class="project-price">
-                                &#8377;25,000 - &#8377;40,000
+                                &#8377;15,000 - &#8377;25,000
                             </span>
 
                             <span class="project-days">
@@ -127,7 +127,7 @@
                     <div class="project-card">
 
                         <h3 class="project-title">
-                            <a href="ProjectDetails.aspx" style="color: inherit; text-decoration: none;">Unity Game Development for 2D Adventure Game</a>
+                            <a href="ProjectDetails.aspx" style="color: inherit; text-decoration: none;">Unity 2D Game Development</a>
                         </h3>
 
                         <p class="project-description">
@@ -146,7 +146,7 @@
                         <div class="project-bottom">
 
                             <span class="project-price">
-                                &#8377;18,000 - &#8377;30,000
+                                &#8377;15,000 - &#8377;25,000
                             </span>
 
                             <span class="project-days">

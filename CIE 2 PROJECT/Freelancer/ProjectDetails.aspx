@@ -24,14 +24,14 @@
                 <div class="project-details-card">
 
                     <h1 class="project-title">
-                        Build a .NET Core E-commerce Website
+                        Unity 2D Game Development
                     </h1>
 
                     <div class="project-meta">
 
                         <span>
                             <i class="fa-regular fa-calendar"></i>
-                            Posted on 20 May 2026
+                            Posted on 18 May 2026
                         </span>
 
                         <span class="meta-dot">
@@ -63,11 +63,8 @@
                         </h2>
 
                         <p class="detail-text">
-                            We need a complete e-commerce solution using ASP.NET Core.
-                            The website should include user authentication, product
-                            management, shopping cart, order management, and payment
-                            integration. The admin panel should allow managing
-                            products, orders, users, and reports.
+                            Create a 2D shooting game with multiple levels, enemies, and an in-game store using Unity and C#.
+                            Build a polished 2D shooting game with multiple levels, enemies, and an in-game store.
                         </p>
 
                     </section>
@@ -86,23 +83,23 @@
                         <ul class="detail-list">
 
                             <li>
-                                Develop a responsive e-commerce website using ASP.NET Core
+                                Build the game in Unity using C#
                             </li>
 
                             <li>
-                                Implement user authentication and authorization
+                                Create multiple playable levels and enemy types
                             </li>
 
                             <li>
-                                Build product catalog, cart, and checkout system
+                                Implement an in-game store
                             </li>
 
                             <li>
-                                Integrate secure payment gateway
+                                Design responsive controls and smooth gameplay
                             </li>
 
                             <li>
-                                Create admin panel for managing products, orders, and users
+                                Deliver source files and project documentation
                             </li>
 
                         </ul>
@@ -123,7 +120,7 @@
                         <div class="skill-list">
 
                             <span class="skill-tag">
-                                .NET Core
+                                Unity
                             </span>
 
                             <span class="skill-tag">
@@ -131,15 +128,15 @@
                             </span>
 
                             <span class="skill-tag">
-                                SQL Server
+                                2D Game Development
                             </span>
 
                             <span class="skill-tag">
-                                JavaScript
+                                Game Design
                             </span>
 
                             <span class="skill-tag">
-                                Bootstrap
+                                Git
                             </span>
 
                         </div>
@@ -160,19 +157,19 @@
                         <ul class="detail-list">
 
                             <li>
-                                Strong knowledge of ASP.NET Core MVC
+                                Intermediate Unity experience
                             </li>
 
                             <li>
-                                Experience with SQL Server and Entity Framework
+                                Proficiency in C#
                             </li>
 
                             <li>
-                                Implement secure payment integration
+                                Experience building 2D games
                             </li>
 
                             <li>
-                                Clean code and responsive UI
+                                Knowledge of game design principles
                             </li>
 
                             <li>
@@ -230,7 +227,7 @@
                         </div>
 
                         <div class="summary-value budget">
-                            ₹8,000 - ₹15,000
+                            &#8377;15,000 - &#8377;25,000
                         </div>
 
                     </div>
@@ -272,7 +269,7 @@
                         </div>
 
                         <div class="summary-value">
-                            20 May 2026
+                            30 May, 2026
                         </div>
 
                     </div>

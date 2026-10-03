@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="SubmitWork.aspx.cs" Inherits="CIE_2_PROJECT.SubmitWork" %>
+<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="SubmitWork.aspx.cs" Inherits="CIE_2_PROJECT.SubmitWork" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="../Content/Css/SubmitWork.css" />
@@ -381,7 +381,7 @@
                         </span>
 
                         <strong class="summary-price">
-                            ₹9,000
+                            &#8377;9,000
                         </strong>
 
                     </div>

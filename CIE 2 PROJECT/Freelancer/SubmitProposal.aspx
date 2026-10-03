@@ -53,7 +53,7 @@
 
                 <div class="budget-box">
                     <span class="budget-label">Budget</span>
-                    <span class="budget-value">₹8,000 - ₹15,000</span>
+                    <span class="budget-value">&#8377;8,000 - &#8377;15,000</span>
                 </div>
 
             </div>
@@ -119,7 +119,7 @@
                 <div class="form-group">
 
                     <label class="form-label">
-                        Your Proposed Price (₹)
+                        Your Proposed Price (&#8377;)
                         <span class="required">*</span>
                     </label>
 
@@ -145,7 +145,7 @@
                         ID="cvProposedPrice"
                         runat="server"
                         ControlToValidate="txtProposedPrice"
-                        ErrorMessage="Enter a valid price between ₹8,000 and ₹15,000."
+                        ErrorMessage="Enter a valid price between &#8377;8,000 and &#8377;15,000."
                         CssClass="validation-error"
                         Display="Dynamic"
                         EnableClientScript="false"
@@ -153,7 +153,7 @@
                     </asp:CustomValidator>
 
                     <div class="helper-text">
-                        Enter amount between ₹8,000 - ₹15,000
+                        Enter amount between &#8377;8,000 - &#8377;15,000
                     </div>
 
                 </div>

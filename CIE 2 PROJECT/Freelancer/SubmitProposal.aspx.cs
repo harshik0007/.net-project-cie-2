@@ -93,6 +93,8 @@ namespace CIE_2_PROJECT
                 return;
             }
 
+            Response.Redirect("MyProposals.aspx");
+
             string coverLetter =
                 txtCoverLetter.Text.Trim();
 

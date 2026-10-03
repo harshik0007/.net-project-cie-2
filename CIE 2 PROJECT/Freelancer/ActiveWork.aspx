@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ActiveWork.aspx.cs" Inherits="CIE_2_PROJECT.ActiveWork" %>
+<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ActiveWork.aspx.cs" Inherits="CIE_2_PROJECT.ActiveWork" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="../Content/Css/ActiveWork.css" />
@@ -57,7 +57,7 @@
 
                 <div class="summary-content">
                     <span class="summary-label">Total Earnings</span>
-                    <span class="summary-value">₹24,500</span>
+                    <span class="summary-value">&#8377;24,500</span>
                 </div>
             </div>
 
@@ -113,7 +113,7 @@
 
                         <div class="side-info">
                             <span class="side-label">Agreed Price</span>
-                            <span class="side-price">₹9,000</span>
+                            <span class="side-price">&#8377;9,000</span>
                         </div>
 
                         <span class="status-badge status-progress">
@@ -193,7 +193,7 @@
 
                         <div class="side-info">
                             <span class="side-label">Agreed Price</span>
-                            <span class="side-price">₹12,000</span>
+                            <span class="side-price">&#8377;12,000</span>
                         </div>
 
                         <span class="status-badge status-progress blue-status">
@@ -216,7 +216,7 @@
                         <span class="progress-value">40%</span>
                     </div>
 
-                    <a href="ProjectDetails.aspx" class="open-project-button">
+                    <a href="SubmitWork.aspx" class="open-project-button">
                         Open Project
                     </a>
 
@@ -272,7 +272,7 @@
 
                         <div class="side-info">
                             <span class="side-label">Agreed Price</span>
-                            <span class="side-price">₹2,500</span>
+                            <span class="side-price">&#8377;2,500</span>
                         </div>
 
                         <span class="status-badge status-review">
@@ -295,7 +295,7 @@
                         <span class="progress-value">100%</span>
                     </div>
 
-                    <a href="ProjectDetails.aspx" class="open-project-button">
+                    <a href="SubmitWork.aspx" class="open-project-button">
                         Open Project
                     </a>
 
