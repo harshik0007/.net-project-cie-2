@@ -525,6 +525,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Uploads\ProjectAttachments\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

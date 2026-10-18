@@ -102,10 +102,6 @@
                         Fixed Price
                     </div>
 
-                    <button type="button" class="bookmark-button">
-                        <i class="fa-regular fa-bookmark"></i>
-                    </button>
-
                     <div class="deadline">
 
                         <i class="fa-regular fa-calendar"></i>
@@ -185,10 +181,6 @@
                         Fixed Price
                     </div>
 
-                    <button type="button" class="bookmark-button">
-                        <i class="fa-regular fa-bookmark"></i>
-                    </button>
-
                     <div class="deadline">
 
                         <i class="fa-regular fa-calendar"></i>
@@ -264,10 +256,6 @@
                         Fixed Price
                     </div>
 
-                    <button type="button" class="bookmark-button">
-                        <i class="fa-regular fa-bookmark"></i>
-                    </button>
-
                     <div class="deadline">
 
                         <i class="fa-regular fa-calendar"></i>
@@ -342,10 +330,6 @@
                     <div class="price-type">
                         Fixed Price
                     </div>
-
-                    <button type="button" class="bookmark-button">
-                        <i class="fa-regular fa-bookmark"></i>
-                    </button>
 
                     <div class="deadline">
 

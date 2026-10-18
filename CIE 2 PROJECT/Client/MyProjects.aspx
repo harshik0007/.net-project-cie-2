@@ -1,4 +1,5 @@
-﻿<%@ Page Title="My Projects" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MyProjects.aspx.cs" Inherits="CIE_2_PROJECT.MyProjects" %>
+﻿
+<%@ Page Title="My Projects" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MyProjects.aspx.cs" Inherits="CIE_2_PROJECT.MyProjects" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link rel="stylesheet" href="../Content/Css/MyProjects.css" />
@@ -23,6 +24,15 @@
         </div>
 
         <div class="projects-container">
+
+            <!-- Displays a database loading error when necessary -->
+            <asp:Label
+                ID="lblLoadError"
+                runat="server"
+                CssClass="form-message"
+                Visible="false"
+                EnableViewState="false">
+            </asp:Label>
 
             <div class="project-tabs">
 
@@ -93,23 +103,23 @@
                         <div class="project-info">
 
                             <h2>
-                                <%# Eval("Title") %>
+                                <%#: Eval("Title") %>
                             </h2>
 
                             <p>
-                                <%# Eval("Description") %>
+                                <%#: Eval("Description") %>
                             </p>
 
                         </div>
 
                         <div class="budget">
-                            <%# Eval("Budget") %>
+                            <%#: Eval("Budget") %>
                         </div>
 
                         <div class="proposals">
 
                             <strong>
-                                <%# Eval("Proposals") %>
+                                <%#: Eval("Proposals") %>
                             </strong>
 
                             <span>proposals</span>
@@ -117,7 +127,7 @@
                         </div>
 
                         <div class="deadline">
-                            <%# Eval("Deadline") %>
+                            <%#: Eval("Deadline") %>
                         </div>
 
                         <div class="status">
@@ -126,20 +136,18 @@
 
                                 <span class="status-dot"></span>
 
-                                <%# Eval("Status") %>
+                                <%#: Eval("Status") %>
 
                             </span>
 
                         </div>
 
                         <div class="action">
-
                             <a
-                                href='<%# Eval("Status").ToString() == "In Progress" ? "ReviewSubmittedWork.aspx?projectId=1" : "ProjectDetails.aspx?id=1" %>'
+                                href='<%# "ProjectDetails.aspx?id=" + Eval("Id") %>'
                                 class="view-btn">
-                                <%# Eval("Status").ToString() == "In Progress" ? "See Progress" : "View Project" %>
+                                View Project
                             </a>
-
                         </div>
 
                     </div>

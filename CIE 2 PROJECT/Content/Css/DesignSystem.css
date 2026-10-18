@@ -35,8 +35,7 @@ body *:not([class*="fa-"]) {
     font-weight: 700;
 }
 
-.site-brand-wordmark { color: #14213d; }
-.site-brand-wordmark span { color: #075cff; }
+.site-brand-wordmark { color: #075cff; }
 
 .cie2-demo-nav {
     min-height: 34px;

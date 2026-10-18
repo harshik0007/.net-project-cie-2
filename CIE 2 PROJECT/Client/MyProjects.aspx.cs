@@ -1,5 +1,10 @@
+
 using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
+using System.Globalization;
 using System.Linq;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -8,6 +13,11 @@ namespace CIE_2_PROJECT
 {
     public partial class MyProjects : Page
     {
+        // Temporary client ID until authentication is implemented.
+        private const int TestClientId = 1;
+
+        private List<Project> projects = new List<Project>();
+
         private class Project
         {
             public int Id { get; set; }
@@ -19,11 +29,23 @@ namespace CIE_2_PROJECT
             public string Status { get; set; }
         }
 
-        private List<Project> projects;
-
         protected void Page_Load(object sender, EventArgs e)
         {
-            CreateProjectData();
+            try
+            {
+                projects = GetProjectsFromDatabase();
+
+                lblLoadError.Visible = false;
+            }
+            catch (Exception)
+            {
+                projects = new List<Project>();
+
+                lblLoadError.Text =
+                    "Unable to load projects. Please check the database connection.";
+
+                lblLoadError.Visible = true;
+            }
 
             if (!IsPostBack)
             {
@@ -31,32 +53,99 @@ namespace CIE_2_PROJECT
             }
         }
 
-        private void CreateProjectData()
+        private List<Project> GetProjectsFromDatabase()
         {
-            projects = new List<Project>
-            {
-                new Project
-                {
-                    Id = 1,
-                    Title = "Unity 2D Game Development",
-                    Description = "Create a 2D shooting game with multiple levels, enemies, and in-game store.",
-                    Budget = "&#8377;15,000 - &#8377;25,000",
-                    Proposals = 12,
-                    Deadline = "30 May, 2026",
-                    Status = "Open for Proposals"
-                }
-            };
+            List<Project> result = new List<Project>();
 
-            projects.Add(new Project
+            ConnectionStringSettings settings =
+                ConfigurationManager.ConnectionStrings[
+                    "SkillLinkDBConnection"];
+
+            if (settings == null ||
+                string.IsNullOrWhiteSpace(settings.ConnectionString))
             {
-                Id = 2,
-                Title = "Unity 2D Game Development",
-                Description = "Create a 2D shooting game with multiple levels, enemies, and in-game store.",
-                Budget = "&#8377;15,000 - &#8377;25,000",
-                Proposals = 12,
-                Deadline = "30 May, 2026",
-                Status = "In Progress"
-            });
+                throw new InvalidOperationException(
+                    "SkillLinkDBConnection is missing from Web.config.");
+            }
+
+            string sql = @"
+                SELECT
+                    p.ProjectID AS Id,
+                    p.Title,
+                    p.Description,
+                    p.MinBudget,
+                    p.MaxBudget,
+                    (
+                        SELECT COUNT(*)
+                        FROM dbo.Proposals AS pr
+                        WHERE pr.ProjectID = p.ProjectID
+                    ) AS ProposalCount,
+                    p.Deadline,
+                    p.Status
+                FROM dbo.Projects AS p
+                WHERE p.ClientID = @ClientID
+                ORDER BY p.CreatedAt DESC, p.ProjectID DESC;
+            ";
+
+            using (SqlConnection con =
+                new SqlConnection(settings.ConnectionString))
+            using (SqlCommand cmd = new SqlCommand(sql, con))
+            {
+                cmd.Parameters.Add("@ClientID", SqlDbType.Int).Value =
+                    TestClientId;
+
+                con.Open();
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        decimal minBudget =
+                            reader.GetDecimal(
+                                reader.GetOrdinal("MinBudget"));
+
+                        decimal maxBudget =
+                            reader.GetDecimal(
+                                reader.GetOrdinal("MaxBudget"));
+
+                        DateTime deadline =
+                            reader.GetDateTime(
+                                reader.GetOrdinal("Deadline"));
+
+                        Project project = new Project
+                        {
+                            Id = reader.GetInt32(
+                                reader.GetOrdinal("Id")),
+
+                            Title = reader.GetString(
+                                reader.GetOrdinal("Title")),
+
+                            Description = reader.GetString(
+                                reader.GetOrdinal("Description")),
+
+                            Budget = string.Format(
+                                CultureInfo.InvariantCulture,
+                                "₹{0:N0} - ₹{1:N0}",
+                                minBudget,
+                                maxBudget),
+
+                            Proposals = reader.GetInt32(
+                                reader.GetOrdinal("ProposalCount")),
+
+                            Deadline = deadline.ToString(
+                                "dd MMM, yyyy",
+                                CultureInfo.InvariantCulture),
+
+                            Status = reader.GetString(
+                                reader.GetOrdinal("Status"))
+                        };
+
+                        result.Add(project);
+                    }
+                }
+            }
+
+            return result;
         }
 
         private void BindProjects(List<Project> data)
@@ -70,7 +159,6 @@ namespace CIE_2_PROJECT
         protected void Filter_Click(object sender, EventArgs e)
         {
             LinkButton button = (LinkButton)sender;
-
             string filter = button.CommandArgument;
 
             SetActiveTab(button);
@@ -82,7 +170,8 @@ namespace CIE_2_PROJECT
             }
 
             List<Project> filteredProjects = projects
-                .Where(p => p.Status.Equals(
+                .Where(p => string.Equals(
+                    p.Status,
                     filter,
                     StringComparison.OrdinalIgnoreCase))
                 .ToList();

@@ -15,6 +15,15 @@ namespace CIE_2_PROJECT
     {
 
         /// <summary>
+        /// lblLoadError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblLoadError;
+
+        /// <summary>
         /// lnkAll control.
         /// </summary>
         /// <remarks>
