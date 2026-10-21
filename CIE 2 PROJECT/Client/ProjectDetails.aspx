@@ -1,3 +1,4 @@
+
 <%@ Page Title="Project Details" Language="C#" MasterPageFile="~/Site.Master"
     AutoEventWireup="true"
     CodeBehind="ProjectDetails.aspx.cs"
@@ -9,328 +10,320 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div class="project-details-page">
+    <asp:Label
+        ID="lblPageMessage"
+        runat="server"
+        CssClass="action-message"
+        Visible="false">
+    </asp:Label>
 
-        <div class="page-top">
-            <div>
-                <a href="MyProjects.aspx" class="back-link">
-                    <i class="fa-solid fa-arrow-left"></i>
-                    Back to My Projects
-                </a>
+    <asp:Panel ID="pnlProjectDetails" runat="server">
 
-                <h1>Unity 2D Game Development</h1>
+        <div class="project-details-page">
 
-                <div class="project-meta">
-                    <span>
-                        <i class="fa-solid fa-layer-group"></i>
-                        Game Development
-                    </span>
+            <div class="page-top">
 
-                    <span>
-                        <i class="fa-regular fa-calendar"></i>
-                        Posted 12 May, 2026
-                    </span>
+                <div>
+                    <a href="MyProjects.aspx" class="back-link">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Back to My Projects
+                    </a>
 
-                    <span>
-                        <i class="fa-solid fa-users"></i>
-                        12 Proposals
-                    </span>
-                </div>
-            </div>
+                    <h1>
+                        <asp:Label ID="lblProjectTitle" runat="server" />
+                    </h1>
 
-            <div class="status-badge">
-                Open for Proposals
-            </div>
-        </div>
+                    <div class="project-meta">
 
+                        <span>
+                            <i class="fa-solid fa-layer-group"></i>
+                            <asp:Label ID="lblCategory" runat="server" />
+                        </span>
 
-        <div class="details-layout">
+                        <span>
+                            <i class="fa-regular fa-calendar"></i>
+                            <asp:Label ID="lblCreatedAt" runat="server" />
+                        </span>
 
-            <div class="main-column">
-
-                <section class="detail-card">
-
-                    <div class="card-title">
-                        <h2>Project Description</h2>
-                    </div>
-
-                    <p class="description">
-                        We are looking for an experienced Unity developer to create
-                        a 2D game with engaging gameplay mechanics, multiple levels,
-                        player controls, scoring system and polished UI.
-                    </p>
-
-                    <p class="description">
-                        The project should be well structured and optimized for
-                        performance. The selected freelancer should be able to
-                        communicate regularly and provide progress updates during
-                        development.
-                    </p>
-
-                </section>
-
-
-                <section class="detail-card">
-
-                    <div class="card-title">
-                        <h2>Required Skills</h2>
-                    </div>
-
-                    <div class="skills-list">
-                        <span class="skill-tag">Unity</span>
-                        <span class="skill-tag">C#</span>
-                        <span class="skill-tag">2D Game Development</span>
-                        <span class="skill-tag">Game Design</span>
-                        <span class="skill-tag">Git</span>
-                    </div>
-
-                </section>
-
-
-                <section class="detail-card">
-
-                    <div class="card-title">
-                        <h2>Project Requirements</h2>
-                    </div>
-
-                    <div class="requirements">
-
-                        <div class="requirement-row">
-                            <div class="requirement-label">
-                                <i class="fa-solid fa-briefcase"></i>
-                                Experience Required
-                            </div>
-
-                            <div class="requirement-value">
-                                Intermediate
-                            </div>
-                        </div>
-
-                        <div class="requirement-row">
-                            <div class="requirement-label">
-                                <i class="fa-solid fa-location-dot"></i>
-                                Preferred Location
-                            </div>
-
-                            <div class="requirement-value">
-                                Remote
-                            </div>
-                        </div>
-
-                        <div class="requirement-row">
-                            <div class="requirement-label">
-                                <i class="fa-regular fa-clock"></i>
-                                Project Deadline
-                            </div>
-
-                            <div class="requirement-value">
-                                30 May, 2026
-                            </div>
-                        </div>
-
-                        <div class="requirement-row">
-                            <div class="requirement-label">
-                                <i class="fa-solid fa-file-lines"></i>
-                                Project Type
-                            </div>
-
-                            <div class="requirement-value">
-                                Fixed Price
-                            </div>
-                        </div>
-
-                    </div>
-
-                </section>
-
-
-                <section class="detail-card">
-
-                    <div class="card-title">
-                        <h2>Project Files</h2>
-                    </div>
-
-                    <div class="file-item">
-
-                        <div class="file-icon">
-                            <i class="fa-regular fa-file-pdf"></i>
-                        </div>
-
-                        <div class="file-info">
-                            <div class="file-name">
-                                Game_Project_Requirements.pdf
-                            </div>
-
-                            <div class="file-size">
-                                2.4 MB
-                            </div>
-                        </div>
-
-                        <asp:LinkButton
-                            ID="btnDownloadFile"
-                            runat="server"
-                            CssClass="download-button"
-                            OnClick="btnDownloadFile_Click">
-                            <i class="fa-solid fa-download"></i>
-                            Download
-                        </asp:LinkButton>
-
-                    </div>
-
-                </section>
-
-
-                <section class="detail-card">
-
-                    <div class="card-title proposal-title">
-
-                        <div>
-                            <h2>Proposals</h2>
-                            <p>Freelancers who have submitted proposals for this project.</p>
-                        </div>
-
-                        <span class="proposal-count">
-                            12 Proposals
+                        <span>
+                            <i class="fa-solid fa-users"></i>
+                            <asp:Label ID="lblProposalCountTop" runat="server" />
                         </span>
 
                     </div>
+                </div>
 
-                    <div class="proposal-preview">
-
-                        <div class="proposal-person">
-
-                            <div class="person-avatar">
-                                RS
-                            </div>
-
-                            <div>
-                                <div class="person-name">
-                                    Rahul Sharma
-                                </div>
-
-                                <div class="person-role">
-                                    Unity Developer
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="proposal-info">
-                            <span>
-                                <i class="fa-solid fa-star"></i>
-                                4.8
-                            </span>
-
-                            <span>
-                                &#8377;20,000
-                            </span>
-                        </div>
-
-                    </div>
-
-                    <asp:Button
-                        ID="btnViewProposals"
-                        runat="server"
-                        Text="View All Proposals"
-                        CssClass="secondary-button"
-                        OnClick="btnViewProposals_Click" />
-
-                </section>
+                <span class="status-badge">
+                    <asp:Label ID="lblStatusTop" runat="server" />
+                </span>
 
             </div>
 
+            <div class="details-layout">
 
-            <aside class="side-column">
+                <div class="main-column">
 
-                <section class="summary-card">
+                    <section class="detail-card">
 
-                    <div class="summary-title">
-                        Project Summary
-                    </div>
+                        <div class="card-title">
+                            <h2>Project Description</h2>
+                        </div>
 
-                    <div class="summary-row">
-                        <span>Budget</span>
-                        <strong>&#8377;15,000 - &#8377;25,000</strong>
-                    </div>
+                        <p class="description">
+                            <asp:Label ID="lblDescription" runat="server" />
+                        </p>
 
-                    <div class="summary-row">
-                        <span>Proposals</span>
-                        <strong>12</strong>
-                    </div>
+                    </section>
 
-                    <div class="summary-row">
-                        <span>Deadline</span>
-                        <strong>30 May, 2026</strong>
-                    </div>
+                    <section class="detail-card">
 
-                    <div class="summary-row">
-                        <span>Experience</span>
-                        <strong>Intermediate</strong>
-                    </div>
+                        <div class="card-title">
+                            <h2>Required Skills</h2>
+                        </div>
 
-                    <div class="summary-row">
-                        <span>Status</span>
-                        <strong class="summary-status">
-                            <%: Session["UnityProjectCompleted"] != null ? "Completed" : Session["UnityProjectInProgress"] != null ? "In Progress" : "Open for Proposals" %>
-                        </strong>
-                    </div>
+                        <div class="skills-list">
+                            <asp:Label ID="lblSkills" runat="server" />
+                        </div>
 
-                </section>
+                    </section>
 
+                    <section class="detail-card">
 
-                <section class="action-card">
+                        <div class="card-title">
+                            <h2>Project Requirements</h2>
+                        </div>
 
-                    <h3>Manage Project</h3>
+                        <div class="requirements">
 
-                    <p>
-                        <%: Session["UnityProjectInProgress"] != null ? "Review the freelancer's submitted work." : "Review proposals or update your project information." %>
-                    </p>
+                            <div class="requirement-row">
+                                <div class="requirement-label">
+                                    <i class="fa-solid fa-briefcase"></i>
+                                    Experience Required
+                                </div>
+                                <div class="requirement-value">
+                                    <asp:Label ID="lblExperience" runat="server" />
+                                </div>
+                            </div>
 
-                    <asp:Button
-                        ID="btnProposals"
-                        runat="server"
-                        Text="View Proposals"
-                        CssClass="primary-button"
-                        OnClick="btnViewProposals_Click" />
+                            <div class="requirement-row">
+                                <div class="requirement-label">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    Preferred Location
+                                </div>
+                                <div class="requirement-value">
+                                    <asp:Label ID="lblLocation" runat="server" />
+                                </div>
+                            </div>
 
-                    <asp:Button
-                        ID="btnEditProject"
-                        runat="server"
-                        Text="Edit Project"
-                        CssClass="outline-button"
-                        OnClick="btnEditProject_Click" />
+                            <div class="requirement-row">
+                                <div class="requirement-label">
+                                    <i class="fa-regular fa-clock"></i>
+                                    Project Deadline
+                                </div>
+                                <div class="requirement-value">
+                                    <asp:Label ID="lblDeadline" runat="server" />
+                                </div>
+                            </div>
 
-                </section>
+                            <div class="requirement-row">
+                                <div class="requirement-label">
+                                    <i class="fa-solid fa-indian-rupee-sign"></i>
+                                    Project Budget
+                                </div>
+                                <div class="requirement-value">
+                                    <asp:Label ID="lblBudget" runat="server" />
+                                </div>
+                            </div>
 
+                        </div>
 
-                <section class="info-card">
+                    </section>
 
-                    <div class="info-icon">
-                        <i class="fa-solid fa-shield-halved"></i>
-                    </div>
+                    <section class="detail-card">
 
-                    <div>
-                        <h3>SkillLink Protection</h3>
+                        <div class="card-title">
+                            <h2>Project Files</h2>
+                        </div>
+
+                        <asp:Panel
+                            ID="pnlAttachment"
+                            runat="server"
+                            CssClass="file-item"
+                            Visible="false">
+
+                            <div class="file-icon">
+                                <i class="fa-solid fa-file-lines"></i>
+                            </div>
+
+                            <div class="file-info">
+                                <div class="file-name">
+                                    <asp:Label
+                                        ID="lblAttachmentName"
+                                        runat="server" />
+                                </div>
+
+                                <div class="file-size">
+                                    Project attachment
+                                </div>
+                            </div>
+
+                            <asp:LinkButton
+                                ID="btnDownloadFile"
+                                runat="server"
+                                CssClass="download-button"
+                                OnClick="btnDownloadFile_Click">
+                                <i class="fa-solid fa-download"></i>
+                                Download
+                            </asp:LinkButton>
+
+                        </asp:Panel>
+
+                        <asp:Panel
+                            ID="pnlNoAttachment"
+                            runat="server"
+                            Visible="false">
+
+                            <p class="description">
+                                No attachment was uploaded for this project.
+                            </p>
+
+                        </asp:Panel>
+
+                    </section>
+
+                    <section class="detail-card">
+
+                        <div class="card-title proposal-title">
+                            <div>
+                                <h2>Proposals</h2>
+                                <p>
+                                    Freelancers who have submitted proposals
+                                    for this project.
+                                </p>
+                            </div>
+
+                            <span class="proposal-count">
+                                <asp:Label
+                                    ID="lblProposalCountCard"
+                                    runat="server" />
+                            </span>
+                        </div>
+
+                        <p class="description">
+                            <asp:Label
+                                ID="lblProposalMessage"
+                                runat="server" />
+                        </p>
+
+                        <asp:Button
+                            ID="btnViewProposals"
+                            runat="server"
+                            Text="View All Proposals"
+                            CssClass="secondary-button"
+                            OnClick="btnViewProposals_Click" />
+
+                    </section>
+
+                </div>
+
+                <aside class="side-column">
+
+                    <section class="summary-card">
+
+                        <div class="summary-title">
+                            Project Summary
+                        </div>
+
+                        <div class="summary-row">
+                            <span>Budget</span>
+                            <strong>
+                                <asp:Label ID="lblBudgetSummary" runat="server" />
+                            </strong>
+                        </div>
+
+                        <div class="summary-row">
+                            <span>Proposals</span>
+                            <strong>
+                                <asp:Label ID="lblProposalCountSummary" runat="server" />
+                            </strong>
+                        </div>
+
+                        <div class="summary-row">
+                            <span>Deadline</span>
+                            <strong>
+                                <asp:Label ID="lblDeadlineSummary" runat="server" />
+                            </strong>
+                        </div>
+
+                        <div class="summary-row">
+                            <span>Experience</span>
+                            <strong>
+                                <asp:Label ID="lblExperienceSummary" runat="server" />
+                            </strong>
+                        </div>
+
+                        <div class="summary-row">
+                            <span>Status</span>
+                            <strong class="summary-status">
+                                <asp:Label ID="lblStatusSummary" runat="server" />
+                            </strong>
+                        </div>
+
+                    </section>
+
+                    <section class="action-card">
+
+                        <h3>Manage Project</h3>
 
                         <p>
-                            Your project payment is held securely until
-                            the submitted work is reviewed and approved.
+                            <asp:Label ID="lblManageMessage" runat="server" />
                         </p>
-                    </div>
 
-                </section>
+                        <asp:Button
+                            ID="btnProposals"
+                            runat="server"
+                            Text="View Proposals"
+                            CssClass="primary-button"
+                            OnClick="btnViewProposals_Click" />
 
-            </aside>
+                        <asp:Button
+                            ID="btnEditProject"
+                            runat="server"
+                            Text="Edit Project"
+                            CssClass="outline-button"
+                            OnClick="btnEditProject_Click" />
+
+                    </section>
+
+                    <section class="info-card">
+
+                        <div class="info-icon">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+
+                        <div>
+                            <h3>SkillLink Protection</h3>
+
+                            <p>
+                                Your project payment is held securely until
+                                the submitted work is reviewed and approved.
+                            </p>
+                        </div>
+
+                    </section>
+
+                </aside>
+
+            </div>
+
+            <asp:Label
+                ID="lblActionMessage"
+                runat="server"
+                CssClass="action-message">
+            </asp:Label>
 
         </div>
 
-
-        <asp:Label
-            ID="lblActionMessage"
-            runat="server"
-            CssClass="action-message">
-        </asp:Label>
-
-    </div>
+    </asp:Panel>
 
 </asp:Content>

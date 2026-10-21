@@ -261,6 +261,52 @@
         color: #ffffff;
     }
 
+.attachment-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #075cff;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+    .attachment-link:hover {
+        text-decoration: underline;
+    }
+
+.no-projects {
+    padding: 40px 20px;
+    text-align: center;
+    color: #687386;
+    background: #ffffff;
+    border: 1px solid #e1e6ee;
+    border-radius: 9px;
+    margin-top: 12px;
+}
+
+    .no-projects i {
+        font-size: 28px;
+        color: #075cff;
+    }
+
+    .no-projects h2 {
+        color: #18233a;
+        font-size: 18px;
+        margin: 12px 0 6px;
+    }
+
+    .no-projects p {
+        font-size: 13px;
+        margin: 0;
+    }
+
+.page-message {
+    display: block;
+    margin: 12px 0;
+    color: #b42318;
+    font-size: 13px;
+}
+
 @media (max-width: 850px) {
 
     .projects-page {

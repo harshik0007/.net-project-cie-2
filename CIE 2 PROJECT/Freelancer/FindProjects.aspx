@@ -1,11 +1,11 @@
-<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="FindProjects.aspx.cs" Inherits="CIE_2_PROJECT.FindProjects" %>
+<%@ Page Title="Find Projects" Language="C#" MasterPageFile="~/Site.Master"
+    AutoEventWireup="true"
+    CodeBehind="FindProjects.aspx.cs"
+    Inherits="CIE_2_PROJECT.FindProjects" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-
     <link rel="stylesheet" href="../Content/Css/FindProjects.css" />
-
 </asp:Content>
-
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -15,342 +15,162 @@
 
             <i class="fa-solid fa-magnifying-glass search-icon"></i>
 
-            <input
-                type="text"
-                class="search-input"
+            <asp:TextBox
+                ID="txtSearch"
+                runat="server"
+                CssClass="search-input"
+                MaxLength="150"
                 placeholder="Search projects by title, skill or keyword..." />
 
-            <select class="category-select">
+            <asp:DropDownList
+                ID="ddlCategory"
+                runat="server"
+                CssClass="category-select"
+                AutoPostBack="true"
+                OnSelectedIndexChanged="ddlCategory_SelectedIndexChanged">
 
-                <option>All Categories</option>
-                <option>Web Development</option>
-                <option>UI/UX Design</option>
-                <option>Game Development</option>
-                <option>Mobile Development</option>
-                <option>Data Analysis</option>
-                <option>Content Writing</option>
-                <option>Digital Marketing</option>
+                <asp:ListItem Text="All Categories" Value="" />
 
-            </select>
+            </asp:DropDownList>
 
-            <button type="button" class="search-button">
-                Search
-            </button>
+            <asp:Button
+                ID="btnSearch"
+                runat="server"
+                Text="Search"
+                CssClass="search-button"
+                OnClick="btnSearch_Click" />
 
         </div>
 
+        <asp:Label
+            ID="lblPageMessage"
+            runat="server"
+            CssClass="page-message"
+            Visible="false">
+        </asp:Label>
 
         <div class="projects-list">
 
+            <asp:Repeater ID="rptProjects" runat="server">
 
-            <div class="project-card">
+                <ItemTemplate>
 
-                <div class="project-main">
+                    <div class="project-card">
 
-                    <div class="project-icon web-icon">
-                        <i class="fa-solid fa-code"></i>
-                    </div>
+                        <div class="project-main">
 
-                    <div class="project-content">
+                            <div class='<%# GetIconContainerClass(Eval("Category")) %>'>
+                                <i class='<%# GetCategoryIcon(Eval("Category")) %>'></i>
+                            </div>
 
-                        <h2 class="project-title">
-                            Unity 2D Game Development
-                        </h2>
+                            <div class="project-content">
 
-                        <p class="project-description">
-                            Create a 2D shooting game with multiple levels, enemies, and an in-game store.
-                        </p>
+                                <h2 class="project-title">
+                                    <%#: Eval("Title") %>
+                                </h2>
 
-                        <div class="project-tags">
+                                <p class="project-description">
+                                    <%#: Eval("Description") %>
+                                </p>
 
-                            <span class="project-tag blue">
-                                Unity
-                            </span>
+                                <div class="project-tags">
 
-                            <span class="project-tag blue">
-                                C#
-                            </span>
+                                    <span class='project-tag <%# GetTagClass(Eval("Category")) %>'>
+                                        <%#: Eval("Category") %>
+                                    </span>
 
-                            <span class="project-tag blue">
-                                2D Game Development
-                            </span>
+                                    <span class="project-tag blue">
+                                        <%#: Eval("ExperienceLevel") %>
+                                    </span>
 
-                        </div>
+                                    <asp:PlaceHolder
+                                        runat="server"
+                                        Visible='<%# HasText(Eval("RequiredSkills")) %>'>
 
-                        <div class="posted-info">
+                                        <span class="project-tag green">
+                                            Skills: <%#: Eval("RequiredSkills") %>
+                                        </span>
 
-                            <i class="fa-regular fa-clock"></i>
+                                    </asp:PlaceHolder>
 
-                            <span>
-                                Posted 1 day ago
-                            </span>
+                                </div>
 
-                        </div>
+                                <div class="posted-info">
+                                    <i class="fa-regular fa-clock"></i>
+                                    <span>
+                                        <%#: GetPostedText(Eval("CreatedAt")) %>
+                                    </span>
+                                </div>
 
-                    </div>
+                                <asp:HyperLink
+                                    ID="lnkAttachment"
+                                    runat="server"
+                                    CssClass="attachment-link"
+                                    Text="View project attachment"
+                                    Target="_blank"
+                                    NavigateUrl='<%# ResolveAttachmentUrl(Eval("AttachmentPath")) %>'
+                                    Visible='<%# HasAttachment(Eval("AttachmentPath")) %>' />
 
-                </div>
-
-
-                <div class="project-action">
-
-                    <div class="project-price">
-                        &#8377;15,000 - &#8377;25,000
-                    </div>
-
-                    <div class="price-type">
-                        Fixed Price
-                    </div>
-
-                    <div class="deadline">
-
-                        <i class="fa-regular fa-calendar"></i>
-
-                        <span>
-                            Deadline: 30 May 2026
-                        </span>
-
-                    </div>
-
-                    <a href="ProjectDetails.aspx" class="view-project">
-                        View Project
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <div class="project-card">
-
-                <div class="project-main">
-
-                    <div class="project-icon game-icon">
-                        <i class="fa-solid fa-gamepad"></i>
-                    </div>
-
-                    <div class="project-content">
-
-                        <h2 class="project-title">
-                            Unity 2D Game Development
-                        </h2>
-
-                        <p class="project-description">
-                            Looking for a Unity developer to create a 2D adventure
-                            game with multiple levels and characters.
-                        </p>
-
-                        <div class="project-tags">
-
-                            <span class="project-tag green">
-                                Unity
-                            </span>
-
-                            <span class="project-tag green">
-                                C#
-                            </span>
-
-                            <span class="project-tag green">
-                                2D Animation
-                            </span>
+                            </div>
 
                         </div>
 
-                        <div class="posted-info">
+                        <div class="project-action">
 
-                            <i class="fa-regular fa-clock"></i>
+                            <div class="project-price">
+                                <%#: FormatBudget(Eval("MinBudget"), Eval("MaxBudget")) %>
+                            </div>
 
-                            <span>
-                                Posted 2 days ago
-                            </span>
+                            <div class="price-type">
+                                Budget Range
+                            </div>
+
+                            <div class="deadline">
+                                <i class="fa-regular fa-calendar"></i>
+                                <span>
+                                    <%#: FormatDeadline(Eval("Deadline")) %>
+                                </span>
+                            </div>
+
+                            <div class="posted-info">
+                                <i class="fa-solid fa-users"></i>
+                                <span>
+                                    <%#: GetProposalText(Eval("ProposalCount")) %>
+                                </span>
+                            </div>
+
+                            <a
+                                href='<%# "ProjectDetails.aspx?id=" + Eval("Id") %>'
+                                class="view-project">
+                                View Project
+                            </a>
 
                         </div>
 
                     </div>
 
-                </div>
+                </ItemTemplate>
 
-
-                <div class="project-action">
-
-                    <div class="project-price">
-                        &#8377;15,000 - &#8377;25,000
-                    </div>
-
-                    <div class="price-type">
-                        Fixed Price
-                    </div>
-
-                    <div class="deadline">
-
-                        <i class="fa-regular fa-calendar"></i>
-
-                        <span>
-                            Deadline: 30 May 2026
-                        </span>
-
-                    </div>
-
-                    <a href="ProjectDetails.aspx" class="view-project">
-                        View Project
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <div class="project-card">
-
-                <div class="project-main">
-
-                    <div class="project-icon writing-icon">
-                        <i class="fa-solid fa-file-lines"></i>
-                    </div>
-
-                    <div class="project-content">
-
-                        <h2 class="project-title">
-                            Unity 2D Game Development
-                        </h2>
-
-                        <p class="project-description">
-                            Write informative and engaging blog posts related to
-                            college life, education and career tips.
-                        </p>
-
-                        <div class="project-tags">
-
-                            <span class="project-tag yellow">
-                                Content Writing
-                            </span>
-
-                            <span class="project-tag yellow">
-                                Blog Writing
-                            </span>
-
-                        </div>
-
-                        <div class="posted-info">
-
-                            <i class="fa-regular fa-clock"></i>
-
-                            <span>
-                                Posted 3 days ago
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="project-action">
-
-                    <div class="project-price">
-                        &#8377;15,000 - &#8377;25,000
-                    </div>
-
-                    <div class="price-type">
-                        Fixed Price
-                    </div>
-
-                    <div class="deadline">
-
-                        <i class="fa-regular fa-calendar"></i>
-
-                        <span>
-                            Deadline: 30 May 2026
-                        </span>
-
-                    </div>
-
-                    <a href="ProjectDetails.aspx" class="view-project">
-                        View Project
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <div class="project-card">
-
-                <div class="project-main">
-
-                    <div class="project-icon design-icon">
-                        <i class="fa-solid fa-bullhorn"></i>
-                    </div>
-
-                    <div class="project-content">
-
-                        <h2 class="project-title">
-                            Unity 2D Game Development
-                        </h2>
-
-                        <p class="project-description">
-                            Create attractive social media posts and stories for
-                            college events and announcements.
-                        </p>
-
-                        <div class="project-tags">
-
-                            <span class="project-tag purple">
-                                Canva
-                            </span>
-
-                            <span class="project-tag purple">
-                                Graphic Design
-                            </span>
-
-                        </div>
-
-                        <div class="posted-info">
-
-                            <i class="fa-regular fa-clock"></i>
-
-                            <span>
-                                Posted 4 days ago
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="project-action">
-
-                    <div class="project-price">
-                        &#8377;15,000 - &#8377;25,000
-                    </div>
-
-                    <div class="price-type">
-                        Fixed Price
-                    </div>
-
-                    <div class="deadline">
-
-                        <i class="fa-regular fa-calendar"></i>
-
-                        <span>
-                            Deadline: 30 May 2026
-                        </span>
-
-                    </div>
-
-                    <a href="ProjectDetails.aspx" class="view-project">
-                        View Project
-                    </a>
-
-                </div>
-
-            </div>
-
+            </asp:Repeater>
 
         </div>
+
+        <asp:Panel
+            ID="pnlEmpty"
+            runat="server"
+            CssClass="no-projects"
+            Visible="false">
+
+            <i class="fa-regular fa-folder-open"></i>
+
+            <h2>No projects found</h2>
+
+            <p>
+                No open projects match your search or category.
+                Try a different keyword or select All Categories.
+            </p>
+
+        </asp:Panel>
 
     </div>
 
