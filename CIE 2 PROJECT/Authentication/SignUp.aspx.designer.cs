@@ -185,6 +185,10 @@ namespace CIE_2_PROJECT
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPhone;
 
+        protected global::System.Web.UI.WebControls.FileUpload fuProfilePhoto;
+
+        protected global::System.Web.UI.WebControls.Label lblSignupMessage;
+
         /// <summary>
         /// rfvPhone control.
         /// </summary>

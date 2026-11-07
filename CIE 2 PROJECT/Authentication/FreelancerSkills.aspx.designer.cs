@@ -212,6 +212,8 @@ namespace CIE_2_PROJECT
         /// </remarks>
         protected global::System.Web.UI.WebControls.CustomValidator cvSkills;
 
+        protected global::System.Web.UI.WebControls.Label lblSkillsMessage;
+
         /// <summary>
         /// btnContinue control.
         /// </summary>
@@ -221,13 +223,5 @@ namespace CIE_2_PROJECT
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnContinue;
 
-        /// <summary>
-        /// btnSkip control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSkip;
     }
 }

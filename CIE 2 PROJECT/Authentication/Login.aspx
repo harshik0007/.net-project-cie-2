@@ -22,6 +22,8 @@
                         Login to continue your learning journey
                     </p>
 
+                    <asp:Label ID="lblLoginMessage" runat="server" CssClass="validation-error" EnableViewState="false" />
+
 
                     <div class="form-group">
 

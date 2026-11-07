@@ -32,6 +32,8 @@ namespace CIE_2_PROJECT
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtUsername;
 
+        protected global::System.Web.UI.WebControls.Label lblLoginMessage;
+
         /// <summary>
         /// rfvUsername control.
         /// </summary>

@@ -1,7 +1,7 @@
 <%@ Page Title="Sign Up" Language="C#" MasterPageFile="~/Site2.master" AutoEventWireup="true" CodeBehind="SignUp.aspx.cs" Inherits="CIE_2_PROJECT.SignUp" %>
 
 <asp:Content ID="AuthHead" ContentPlaceHolderID="head" runat="server">
-    <link rel="stylesheet" href="../Content/Css/Signup.css?v=2" />
+    <link rel="stylesheet" href="../Content/Css/Signup.css?v=3" />
 </asp:Content>
 
 <asp:Content ID="AuthContent" ContentPlaceHolderID="MainContent" runat="server">
@@ -22,6 +22,8 @@
                         Join SkillLink and start your freelancing journey
                     </p>
 
+                    <asp:Label ID="lblSignupMessage" runat="server" CssClass="validation-error" EnableViewState="false" />
+
 
                     <div class="row">
 
@@ -36,6 +38,7 @@
                                 <asp:TextBox
                                     ID="txtFullName"
                                     runat="server"
+                                    MaxLength="100"
                                     CssClass="input-box"
                                     placeholder="Enter your full name">
                                 </asp:TextBox>
@@ -77,6 +80,7 @@
                                 <asp:TextBox
                                     ID="txtUsername"
                                     runat="server"
+                                    MaxLength="50"
                                     CssClass="input-box"
                                     placeholder="Choose a username">
                                 </asp:TextBox>
@@ -118,6 +122,7 @@
                         <asp:TextBox
                             ID="txtEmail"
                             runat="server"
+                            MaxLength="100"
                             CssClass="input-box"
                             placeholder="Enter your email address">
                         </asp:TextBox>
@@ -143,6 +148,12 @@
                             OnServerValidate="cvEmail_ServerValidate">
                         </asp:CustomValidator>
 
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="fuProfilePhoto">Profile Photo (optional)</label>
+                        <asp:FileUpload ID="fuProfilePhoto" runat="server" CssClass="input-box" />
+                        <small class="password-hint">JPG or PNG, up to 3 MB. You can add or change this later in your profile.</small>
                     </div>
 
 
@@ -303,6 +314,7 @@
                         <asp:TextBox
                             ID="txtPhone"
                             runat="server"
+                            MaxLength="10"
                             CssClass="input-box"
                             placeholder="Enter your phone number">
                         </asp:TextBox>

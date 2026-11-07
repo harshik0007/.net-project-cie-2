@@ -30,6 +30,8 @@
                     match you with relevant projects.
                 </div>
 
+                <asp:Label ID="lblSkillsMessage" runat="server" CssClass="validation-error" EnableViewState="false" />
+
                 <div class="section-title">
                     Important Freelancer Skills
                 </div>
@@ -119,7 +121,7 @@
                 </div>
 
                 <div class="selected">
-                    Select Your Skills (Maximum 10)
+                    Select 10 Skills (Required)
                 </div>
 
                 <div class="info-box">
@@ -129,7 +131,7 @@
                 <asp:CustomValidator
                     ID="cvSkills"
                     runat="server"
-                    ErrorMessage="Please select at least one skill and no more than 10 skills."
+                    ErrorMessage="Freelancers must select exactly 10 skills to continue."
                     CssClass="validation-error"
                     Display="Dynamic"
                     EnableClientScript="false"
@@ -141,16 +143,9 @@
                     <asp:Button
                         ID="btnContinue"
                         runat="server"
-                        Text="Continue →"
+                        Text="Continue &#8594;"
                         CssClass="continue-button"
                         OnClick="btnContinue_Click" />
-
-                    <asp:Button
-                        ID="btnSkip"
-                        runat="server"
-                        Text="Skip for now"
-                        CssClass="skip-button"
-                        OnClick="btnSkip_Click" />
 
                 </div>
 

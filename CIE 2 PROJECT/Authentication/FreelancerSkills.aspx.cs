@@ -1,13 +1,22 @@
 using System;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using CIE_2_PROJECT.Factories;
+using CIE_2_PROJECT.Helpers;
+using CIE_2_PROJECT.Interfaces;
+using CIE_2_PROJECT.Models;
 
 namespace CIE_2_PROJECT
 {
     public partial class FreelancerSkills : System.Web.UI.Page
     {
+        private const string PendingRegistrationKey = "PendingFreelancerRegistration";
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session[PendingRegistrationKey] == null)
+                Response.Redirect("~/Authentication/SignUp.aspx", true);
         }
 
         protected void cvSkills_ServerValidate(
@@ -16,7 +25,7 @@ namespace CIE_2_PROJECT
         {
             int count = GetSelectedSkillCount();
 
-            args.IsValid = count >= 1 && count <= 10;
+            args.IsValid = count == 10;
         }
 
         protected void btnContinue_Click(object sender, EventArgs e)
@@ -28,16 +37,39 @@ namespace CIE_2_PROJECT
                 return;
             }
 
-            string selectedSkills = GetSelectedSkills();
+            PendingFreelancerRegistration pending = Session[PendingRegistrationKey] as PendingFreelancerRegistration;
+            if (pending == null)
+            {
+                Response.Redirect("~/Authentication/SignUp.aspx", true);
+                return;
+            }
 
-            // Skill saving logic will be added later.
-            Response.Redirect("~/Freelancer/FreelancerHome.aspx");
-        }
-
-        protected void btnSkip_Click(object sender, EventArgs e)
-        {
-            // Skip logic will be added later.
-            Response.Redirect("~/Freelancer/FreelancerHome.aspx");
+            try
+            {
+                IUserService users = ServiceFactory.CreateUserService();
+                int userId = users.CreateAccount(pending.FullName, pending.Username,
+                    pending.Email, pending.PasswordHash, "Freelancer", pending.PhoneNumber,
+                    pending.ProfileImage, GetSelectedSkills());
+                Session.Remove(PendingRegistrationKey);
+                AuthenticatedUser.SignIn(userId, "Freelancer");
+                FlashMessageStore.Success("Your freelancer account was created successfully. Welcome to SkillLink.");
+                Response.Redirect("~/Freelancer/FreelancerHome.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
+            }
+            catch (SqlException ex)
+            {
+                System.Diagnostics.Trace.TraceError("Freelancer registration SQL error: " + ex);
+                lblSkillsMessage.Text = ex.Number == 2601 || ex.Number == 2627
+                    ? "This username or email was registered while you were completing the form. Please start sign-up again."
+                    : "We could not create your account. Check the database connection and try again.";
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Trace.TraceError("Freelancer registration failed: " + ex);
+                lblSkillsMessage.Text = ex is InvalidOperationException || ex is ArgumentException
+                    ? ex.Message
+                    : "We could not create your account. Please try again.";
+            }
         }
 
         private int GetSelectedSkillCount()

@@ -29,7 +29,7 @@
 
                     <div class="email-box">
 
-                        <span>✉</span>
+                        <span>&#9993;</span>
 
                         <asp:Label
                             ID="lblEmail"
@@ -199,7 +199,7 @@
                         runat="server"
                         NavigateUrl="ForgotPassword.aspx"
                         CssClass="back-link">
-                        ← Go Back
+                        &#8592; Go Back
                     </asp:HyperLink>
 
                 </div>
