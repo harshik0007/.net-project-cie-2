@@ -8,6 +8,26 @@ namespace CIE_2_PROJECT
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Keep ticket submission unavailable on both the initial render and postbacks.
+            txtName.Enabled = false;
+            txtEmail.Enabled = false;
+            ddlCategory.Enabled = false;
+            ddlPriority.Enabled = false;
+            txtSubject.Enabled = false;
+            txtMessage.Enabled = false;
+            btnClear.Enabled = false;
+            btnSubmit.Enabled = false;
+
+            rfvName.Enabled = false;
+            cvName.Enabled = false;
+            rfvEmail.Enabled = false;
+            cvEmail.Enabled = false;
+            cvCategory.Enabled = false;
+            cvPriority.Enabled = false;
+            rfvSubject.Enabled = false;
+            cvSubject.Enabled = false;
+            rfvMessage.Enabled = false;
+            cvMessage.Enabled = false;
         }
 
         protected void cvName_ServerValidate(object source, ServerValidateEventArgs args)
@@ -57,37 +77,5 @@ namespace CIE_2_PROJECT
                 message.Length <= 1000;
         }
 
-        protected void btnSubmit_Click(object sender, EventArgs e)
-        {
-            Page.Validate();
-
-            if (!Page.IsValid)
-            {
-                return;
-            }
-
-            string name = txtName.Text.Trim();
-            string email = txtEmail.Text.Trim();
-            string category = ddlCategory.SelectedValue;
-            string priority = ddlPriority.SelectedValue;
-            string subject = txtSubject.Text.Trim();
-            string message = txtMessage.Text.Trim();
-
-            // ADO.NET database submission will be added later.
-
-            lblSuccess.Text = "Your support request has been submitted successfully.";
-            lblSuccess.Visible = true;
-        }
-
-        protected void btnClear_Click(object sender, EventArgs e)
-        {
-            txtName.Text = "";
-            txtEmail.Text = "";
-            ddlCategory.SelectedIndex = 0;
-            ddlPriority.SelectedIndex = 0;
-            txtSubject.Text = "";
-            txtMessage.Text = "";
-            lblSuccess.Visible = false;
-        }
     }
 }

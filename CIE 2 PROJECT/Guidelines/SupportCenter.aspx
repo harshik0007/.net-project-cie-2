@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="SupportCenter.aspx.cs" Inherits="CIE_2_PROJECT.SupportCenter" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link rel="stylesheet" href="../Content/Css/SupportCenter.css" />
+    <link rel="stylesheet" href="../Content/Css/SupportCenter.css?v=2" />
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -27,8 +27,8 @@
                 <h2>2. Account Support</h2>
                 <p>
                     If you are having trouble signing in, updating your profile,
-                    verifying your email, or resetting your password, use the
-                    available account support options.
+                    or accessing your account, contact the SkillLink development
+                    team by email. Email-based password reset is not available yet.
                 </p>
             </section>
 
@@ -69,17 +69,16 @@
             <section class="support-section">
                 <h2>7. Reporting an Issue</h2>
                 <p>
-                    If you experience a problem while using SkillLink, provide
-                    clear information about the issue so that the support team
-                    can understand and assist with the problem.
+                    If you experience a problem, describe what happened and
+                    include the page or project involved when contacting us.
                 </p>
             </section>
 
             <section class="support-section last-section">
                 <h2>8. Contact Support</h2>
                 <p>
-                    For additional assistance, contact the SkillLink support team
-                    with your account information and a description of the issue.
+                    For assistance, email the SkillLink development team at
+                    <a href="mailto:htanti774@rku.ac.in">htanti774@rku.ac.in</a>.
                 </p>
             </section>
 
@@ -90,7 +89,15 @@
 
             <div class="form-header">
                 <h2>Submit a Support Request</h2>
-                <p>Tell us about your issue and our support team will review your request.</p>
+                <p>The support ticket form is temporarily unavailable.</p>
+            </div>
+
+            <div class="support-unavailable-notice" role="note">
+                <span class="support-unavailable-icon" aria-hidden="true"><i class="fa-solid fa-circle-info"></i></span>
+                <div>
+                    <strong>Support requests are not being collected yet</strong>
+                    <p>This form is disabled for now. For help, email <a href="mailto:htanti774@rku.ac.in">htanti774@rku.ac.in</a>.</p>
+                </div>
             </div>
 
 
@@ -103,12 +110,14 @@
                     <asp:TextBox
                         ID="txtName"
                         runat="server"
-                        CssClass="form-input">
+                        CssClass="form-input"
+                        Enabled="false">
                     </asp:TextBox>
 
                     <asp:RequiredFieldValidator
                         ID="rfvName"
                         runat="server"
+                        Enabled="false"
                         ControlToValidate="txtName"
                         ErrorMessage="Full name is required."
                         CssClass="validation-message"
@@ -118,6 +127,7 @@
                     <asp:CustomValidator
                         ID="cvName"
                         runat="server"
+                        Enabled="false"
                         ControlToValidate="txtName"
                         ErrorMessage="Enter a valid name."
                         CssClass="validation-message"
@@ -137,12 +147,14 @@
                         ID="txtEmail"
                         runat="server"
                         CssClass="form-input"
-                        TextMode="Email">
+                        TextMode="Email"
+                        Enabled="false">
                     </asp:TextBox>
 
                     <asp:RequiredFieldValidator
                         ID="rfvEmail"
                         runat="server"
+                        Enabled="false"
                         ControlToValidate="txtEmail"
                         ErrorMessage="Email address is required."
                         CssClass="validation-message"
@@ -152,6 +164,7 @@
                     <asp:CustomValidator
                         ID="cvEmail"
                         runat="server"
+                        Enabled="false"
                         ControlToValidate="txtEmail"
                         ErrorMessage="Enter a valid email address."
                         CssClass="validation-message"
@@ -170,7 +183,8 @@
                     <asp:DropDownList
                         ID="ddlCategory"
                         runat="server"
-                        CssClass="form-input">
+                        CssClass="form-input"
+                        Enabled="false">
 
                         <asp:ListItem Value="">Select an issue category</asp:ListItem>
                         <asp:ListItem Value="Account">Account &amp; Login</asp:ListItem>
@@ -187,6 +201,7 @@
                     <asp:CustomValidator
                         ID="cvCategory"
                         runat="server"
+                        Enabled="false"
                         ControlToValidate="ddlCategory"
                         ErrorMessage="Please select an issue category."
                         CssClass="validation-message"
@@ -205,7 +220,8 @@
                     <asp:DropDownList
                         ID="ddlPriority"
                         runat="server"
-                        CssClass="form-input">
+                        CssClass="form-input"
+                        Enabled="false">
 
                         <asp:ListItem Value="">Select priority</asp:ListItem>
                         <asp:ListItem Value="Low">Low</asp:ListItem>
@@ -217,6 +233,7 @@
                     <asp:CustomValidator
                         ID="cvPriority"
                         runat="server"
+                        Enabled="false"
                         ControlToValidate="ddlPriority"
                         ErrorMessage="Please select a priority."
                         CssClass="validation-message"
@@ -235,12 +252,14 @@
                     <asp:TextBox
                         ID="txtSubject"
                         runat="server"
-                        CssClass="form-input">
+                        CssClass="form-input"
+                        Enabled="false">
                     </asp:TextBox>
 
                     <asp:RequiredFieldValidator
                         ID="rfvSubject"
                         runat="server"
+                        Enabled="false"
                         ControlToValidate="txtSubject"
                         ErrorMessage="Subject is required."
                         CssClass="validation-message"
@@ -250,6 +269,7 @@
                     <asp:CustomValidator
                         ID="cvSubject"
                         runat="server"
+                        Enabled="false"
                         ControlToValidate="txtSubject"
                         ErrorMessage="Subject must be between 5 and 100 characters."
                         CssClass="validation-message"
@@ -270,12 +290,14 @@
                         runat="server"
                         CssClass="form-input form-textarea"
                         TextMode="MultiLine"
-                        Rows="6">
+                        Rows="6"
+                        Enabled="false">
                     </asp:TextBox>
 
                     <asp:RequiredFieldValidator
                         ID="rfvMessage"
                         runat="server"
+                        Enabled="false"
                         ControlToValidate="txtMessage"
                         ErrorMessage="Please describe your issue."
                         CssClass="validation-message"
@@ -285,6 +307,7 @@
                     <asp:CustomValidator
                         ID="cvMessage"
                         runat="server"
+                        Enabled="false"
                         ControlToValidate="txtMessage"
                         ErrorMessage="Message must be between 20 and 1000 characters."
                         CssClass="validation-message"
@@ -299,7 +322,8 @@
 
 
             <div class="form-note">
-                Please provide as much detail as possible so our support team can assist you effectively.
+                Please contact us by email while ticket submissions are unavailable:
+                <a href="mailto:htanti774@rku.ac.in">htanti774@rku.ac.in</a>.
             </div>
 
 
@@ -311,7 +335,7 @@
                     Text="Clear"
                     CssClass="clear-button"
                     CausesValidation="false"
-                    OnClick="btnClear_Click">
+                    Enabled="false">
                 </asp:Button>
 
                 <asp:Button
@@ -319,18 +343,11 @@
                     runat="server"
                     Text="Submit Request"
                     CssClass="submit-button"
-                    OnClick="btnSubmit_Click">
+                    Enabled="false">
                 </asp:Button>
 
             </div>
 
-
-            <asp:Label
-                ID="lblSuccess"
-                runat="server"
-                CssClass="success-message"
-                Visible="false">
-            </asp:Label>
 
         </div>
 

@@ -44,7 +44,20 @@
             </section>
 
             <section class="policy-section">
-                <h2>4. Information Protection</h2>
+                <h2>4. Simulated escrow and cancellation records</h2>
+                <p>
+                    SkillLink stores simulated contract amounts, payment statuses, the demo GST rate and amount, both platform fee
+                    rates and amounts, the client total, freelancer net payout, and cancellation allocations so clients and
+                    freelancers can review transaction history. For a pre-submission cancellation, the full demo GST and client
+                    platform fee are returned, while the pre-GST contract amount is split 75% to the client, 10% to the freelancer,
+                    and 15% as the platform fee. These are academic
+                    simulation records only: SkillLink does not collect GST registration details, issue tax invoices, collect real
+                    tax or payment credentials, or move real funds.
+                </p>
+            </section>
+
+            <section class="policy-section">
+                <h2>5. Information Protection</h2>
                 <p>
                     SkillLink takes reasonable measures to protect user information
                     from unauthorized access, alteration, disclosure, or misuse.
@@ -52,7 +65,7 @@
             </section>
 
             <section class="policy-section">
-                <h2>5. Sharing of Information</h2>
+                <h2>6. Sharing of Information</h2>
                 <p>
                     Personal information is not shared with other users unless it
                     is required for providing a SkillLink service or is permitted
@@ -61,7 +74,7 @@
             </section>
 
             <section class="policy-section">
-                <h2>6. User Responsibilities</h2>
+                <h2>7. User Responsibilities</h2>
                 <p>
                     Users are responsible for keeping their account credentials
                     secure and for providing accurate information while using
@@ -70,7 +83,7 @@
             </section>
 
             <section class="policy-section">
-                <h2>7. Changes to This Policy</h2>
+                <h2>8. Changes to This Policy</h2>
                 <p>
                     SkillLink may update this Privacy Policy when necessary.
                     Any changes will be reflected on this page.
@@ -78,7 +91,7 @@
             </section>
 
             <section class="policy-section last-section">
-                <h2>8. Contact Us</h2>
+                <h2>9. Contact Us</h2>
                 <p>
                     If you have questions about this Privacy Policy, please
                     contact the SkillLink support team.

@@ -13,11 +13,11 @@
                 <p class="hero-description">SkillLink connects clients and freelancers to work on real projects, build skills and create opportunities together.</p>
                 <div class="hero-actions">
                     <div class="hero-action-item">
-                        <a runat="server" href="~/Client/ClientHome.aspx" class="hero-button button-primary">I am a Client</a>
+                        <a runat="server" href="~/Authentication/SignUp.aspx?role=Client" class="hero-button button-primary">I am a Client</a>
                         <span>Find talented freelancers</span>
                     </div>
                     <div class="hero-action-item">
-                        <a runat="server" href="~/Freelancer/FreelancerHome.aspx" class="hero-button button-secondary">I am a Freelancer</a>
+                        <a runat="server" href="~/Authentication/SignUp.aspx?role=Freelancer" class="hero-button button-secondary">I am a Freelancer</a>
                         <span>Find projects and earn</span>
                     </div>
                 </div>
@@ -76,8 +76,8 @@
             <h2>Ready to get started?</h2>
             <p>Join SkillLink and connect with the right people for your next project.</p>
             <div class="hero-actions cta-actions">
-                <a runat="server" href="~/Client/ClientHome.aspx" class="hero-button button-primary">I am a Client</a>
-                <a runat="server" href="~/Freelancer/FreelancerHome.aspx" class="hero-button button-secondary">I am a Freelancer</a>
+                <a runat="server" href="~/Authentication/SignUp.aspx?role=Client" class="hero-button button-primary">I am a Client</a>
+                <a runat="server" href="~/Authentication/SignUp.aspx?role=Freelancer" class="hero-button button-secondary">I am a Freelancer</a>
             </div>
         </section>
 

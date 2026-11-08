@@ -62,14 +62,30 @@
             <section class="terms-section">
                 <h2>6. Payments</h2>
                 <p>
-                    Payment information provided on SkillLink must be accurate.
-                    Users are responsible for following the agreed payment terms
-                    associated with their projects.
+                    SkillLink currently records payments through an academic simulation. For new funding records, the client is
+                    charged the agreed contract amount, a separate 5% demo client platform fee, and 18% demo GST calculated on the
+                    contract amount. On normal approval, a separate 5% freelancer platform fee is deducted from the contract amount;
+                    the freelancer receives the remaining 95%. These fee and tax values are fixed demo assumptions and are not tax
+                    advice, a determination of actual GST, or a real charge or transfer. No real payment, tax, invoice, or transfer
+                    is created.
                 </p>
             </section>
 
             <section class="terms-section">
-                <h2>7. Prohibited Activities</h2>
+                <h2>7. Escrow cancellation and allocation</h2>
+                <p>
+                    A client may cancel a funded contract under this policy only before the freelancer submits any work. The full
+                    demo GST line and the separate 5% client platform fee are returned to the client. The pre-GST contract amount
+                    is allocated as follows: 75% is refunded to the client, 10% is credited to the freelancer, and 15% is recorded
+                    as the SkillLink platform fee. These allocations are rounded to the nearest paise and sum to the contract amount;
+                    the normal 5% freelancer fee does not replace or stack on top of this cancellation allocation. After work is submitted, this
+                    cancellation path is unavailable; the submission follows the review and revision process. No real funds or tax
+                    are collected or transferred.
+                </p>
+            </section>
+
+            <section class="terms-section">
+                <h2>8. Prohibited Activities</h2>
                 <p>
                     Users must not use SkillLink for fraudulent activities,
                     unauthorized access, harmful content, impersonation, or any
@@ -78,7 +94,7 @@
             </section>
 
             <section class="terms-section">
-                <h2>8. Account Termination</h2>
+                <h2>9. Account Termination</h2>
                 <p>
                     SkillLink may restrict or terminate accounts that violate
                     these Terms of Service or misuse the platform.
@@ -86,7 +102,7 @@
             </section>
 
             <section class="terms-section last-section">
-                <h2>9. Changes to These Terms</h2>
+                <h2>10. Changes to These Terms</h2>
                 <p>
                     SkillLink may update these Terms of Service when necessary.
                     Continued use of the platform after changes indicates acceptance

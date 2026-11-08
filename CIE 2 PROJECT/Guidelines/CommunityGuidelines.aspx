@@ -52,7 +52,19 @@
             </section>
 
             <section class="community-section">
-                <h2>5. Protect Personal Information</h2>
+                <h2>5. Escrow and cancellation</h2>
+                <p>
+                    Clients should review the escrow terms before funding a contract. For normal completion, clients see a separate
+                    5% demo platform fee and 18% demo GST on the agreed contract amount; the freelancer receives the agreed amount
+                    after a separate 5% platform fee deduction. Before work is submitted, cancellation returns the GST and client
+                    platform fee, then allocates the pre-GST contract amount 75% to the client, 10% to the freelancer, and 15% to
+                    the platform. After submission, use the review and revision process.
+                    These amounts are academic simulations, not real tax or payments.
+                </p>
+            </section>
+
+            <section class="community-section">
+                <h2>6. Protect Personal Information</h2>
                 <p>
                     Do not share another user's private or confidential information
                     without permission. Users should also take reasonable steps
@@ -61,7 +73,7 @@
             </section>
 
             <section class="community-section">
-                <h2>6. No Fraud or Misuse</h2>
+                <h2>7. No Fraud or Misuse</h2>
                 <p>
                     SkillLink must not be used for fraudulent activities,
                     impersonation, unauthorized access, misleading proposals,
@@ -70,7 +82,7 @@
             </section>
 
             <section class="community-section">
-                <h2>7. Keep Content Appropriate</h2>
+                <h2>8. Keep Content Appropriate</h2>
                 <p>
                     Content shared through SkillLink should be relevant to the
                     platform and appropriate for a professional community.
@@ -79,7 +91,7 @@
             </section>
 
             <section class="community-section last-section">
-                <h2>8. Report Violations</h2>
+                <h2>9. Report Violations</h2>
                 <p>
                     If you encounter behavior that violates these guidelines,
                     report the issue through the SkillLink support system so it

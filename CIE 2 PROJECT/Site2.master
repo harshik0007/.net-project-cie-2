@@ -13,18 +13,9 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <!-- CIE 2 TEMPORARY DEMO NAVIGATION
-             REMOVE BEFORE FINAL/PSE PRODUCTION VERSION -->
-        <div class="cie2-demo-nav">
-            <strong>CIE 2 Demo Navigation</strong>
-            <a runat="server" href="~/Default.aspx">Landing Page</a>
-            <a runat="server" href="~/Authentication/Login.aspx">Login</a>
-            <a runat="server" href="~/Freelancer/FreelancerHome.aspx">Freelancer Home</a>
-            <a runat="server" href="~/Client/ClientHome.aspx">Client Home</a>
-        </div>
         <header class="public-header">
             <div class="public-navbar">
-                <a runat="server" href="~/Default.aspx" class="site-brand" aria-label="SkillLink landing page">
+                <a runat="server" href="~/Landing/Landing.aspx" class="site-brand" aria-label="SkillLink landing page">
                     <span class="site-brand-mark">S</span>
                     <span class="site-brand-wordmark">Skill<span>Link</span></span>
                 </a>
