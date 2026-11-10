@@ -13,6 +13,7 @@ namespace CIE_2_PROJECT
 
     public partial class CreateProject
     {
+        protected global::System.Web.UI.WebControls.Label lblPageHeading;
 
         /// <summary>
         /// lblProjectTitle control.

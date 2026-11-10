@@ -17,7 +17,7 @@
           referrerpolicy="no-referrer" />
 
     <link rel="stylesheet"
-          href="~/Content/Css/Site.css"
+          href="~/Content/Css/Site.css?v=4"
           runat="server" />
 
     <asp:ContentPlaceHolder
@@ -25,26 +25,16 @@
         runat="server">
     </asp:ContentPlaceHolder>
     <link rel="stylesheet"
-          href="~/Content/Css/DesignSystem.css?v=3"
+          href="~/Content/Css/DesignSystem.css?v=4"
           runat="server" />
 
 </head>
 
 <body>
 
-<form id="form1" runat="server">
+<form id="form1" runat="server" enctype="multipart/form-data">
 
 <header class="site-header">
-
-    <!-- CIE 2 TEMPORARY DEMO NAVIGATION
-         REMOVE BEFORE FINAL/PSE PRODUCTION VERSION -->
-    <div class="cie2-demo-nav">
-        <strong>CIE 2 Demo Navigation</strong>
-        <a runat="server" href="~/Default.aspx">Landing Page</a>
-        <a runat="server" href="~/Authentication/Login.aspx">Login</a>
-        <a runat="server" href="~/Freelancer/FreelancerHome.aspx">Freelancer Home</a>
-        <a runat="server" href="~/Client/ClientHome.aspx">Client Home</a>
-    </div>
 
     <div class="navbar">
 
@@ -196,8 +186,8 @@
 
                 <i class="fa-regular fa-bell"></i>
 
-                <span class="notification-badge">
-                    3
+                <span id="notificationBadge" runat="server" class="notification-badge" visible="false">
+                    <asp:Literal ID="litNotificationCount" runat="server" Mode="Encode" />
                 </span>
 
             </a>
@@ -208,6 +198,9 @@
             <a runat="server" href="~/Messages/Messages.aspx" class="message-icon" aria-label="Messages">
 
                 <i class="fa-regular fa-envelope"></i>
+                <span id="messageBadge" runat="server" class="message-badge" visible="false">
+                    <asp:Literal ID="litMessageCount" runat="server" Mode="Encode" />
+                </span>
 
             </a>
 
@@ -237,7 +230,7 @@
                 <div class="profile-info">
 
                     <div class="profile-name">
-                        xyz abc
+                        <asp:Literal ID="litFreelancerNavName" runat="server" Mode="Encode" />
                     </div>
 
                     <div class="profile-role">
@@ -246,12 +239,6 @@
 
                 </div>
 
-
-                <div class="profile-arrow">
-
-                    <i class="fa-solid fa-chevron-down"></i>
-
-                </div>
 
             </a>
 
@@ -276,7 +263,7 @@
                 <div class="profile-info">
 
                     <div class="profile-name">
-                        xyz abc
+                        <asp:Literal ID="litClientNavName" runat="server" Mode="Encode" />
                     </div>
 
                     <div class="profile-role">
@@ -286,13 +273,12 @@
                 </div>
 
 
-                <div class="profile-arrow">
-
-                    <i class="fa-solid fa-chevron-down"></i>
-
-                </div>
-
             </a>
+
+            <asp:LinkButton ID="logoutLink" runat="server" CssClass="nav-logout" CausesValidation="false" OnClick="logoutLink_Click">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Log out</span>
+            </asp:LinkButton>
 
         </div>
 
@@ -306,6 +292,15 @@
      ========================= -->
 
 <main class="main-content">
+
+    <asp:Panel ID="pnlFlashMessage" runat="server" CssClass="site-flash-message" Visible="false" role="status" aria-live="polite">
+        <span class="site-flash-icon" aria-hidden="true">
+            <i id="flashMessageIcon" runat="server" class="fa-solid fa-circle-check"></i>
+        </span>
+        <asp:Literal ID="litFlashMessage" runat="server" Mode="Encode" />
+        <a id="lnkDismissFlash" runat="server" class="site-flash-dismiss"
+           aria-label="Dismiss message" title="Dismiss message">&times;</a>
+    </asp:Panel>
 
     <asp:ContentPlaceHolder
         ID="MainContent"

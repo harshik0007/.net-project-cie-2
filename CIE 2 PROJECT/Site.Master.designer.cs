@@ -77,6 +77,19 @@ namespace CIE_2_PROJECT
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlAnchor clientProfile;
 
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl notificationBadge;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl messageBadge;
+        protected global::System.Web.UI.WebControls.Literal litNotificationCount;
+        protected global::System.Web.UI.WebControls.Literal litMessageCount;
+
+        protected global::System.Web.UI.WebControls.Literal litFreelancerNavName;
+        protected global::System.Web.UI.WebControls.Literal litClientNavName;
+        protected global::System.Web.UI.WebControls.LinkButton logoutLink;
+        protected global::System.Web.UI.WebControls.Panel pnlFlashMessage;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl flashMessageIcon;
+        protected global::System.Web.UI.WebControls.Literal litFlashMessage;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor lnkDismissFlash;
+
         /// <summary>
         /// MainContent control.
         /// </summary>

@@ -15,7 +15,7 @@
                     Back to My Projects
                 </a>
 
-                <h1>Create a Project</h1>
+                <h1><asp:Label ID="lblPageHeading" runat="server" Text="Create a Project" /></h1>
 
                 <p>
                     Tell us what you need and find the right freelancer for your project.

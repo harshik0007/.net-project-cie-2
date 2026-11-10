@@ -13,5 +13,16 @@ namespace CIE_2_PROJECT
 
     public partial class ClientHome
     {
+        protected global::System.Web.UI.WebControls.Panel pnlDashboardError;
+        protected global::System.Web.UI.WebControls.Literal litDashboardError;
+        protected global::System.Web.UI.WebControls.Literal litWelcomeName;
+        protected global::System.Web.UI.WebControls.Literal litProjectsPosted;
+        protected global::System.Web.UI.WebControls.Literal litOpenProjects;
+        protected global::System.Web.UI.WebControls.Literal litActiveProjects;
+        protected global::System.Web.UI.WebControls.Literal litReleasedPayments;
+        protected global::System.Web.UI.WebControls.Repeater rptRecentProjects;
+        protected global::System.Web.UI.WebControls.Panel pnlNoProjects;
+        protected global::System.Web.UI.WebControls.Repeater rptFreelancers;
+        protected global::System.Web.UI.WebControls.Panel pnlNoFreelancers;
     }
 }
