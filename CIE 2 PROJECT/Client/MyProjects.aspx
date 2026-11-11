@@ -2,7 +2,7 @@
 <%@ Page Title="My Projects" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MyProjects.aspx.cs" Inherits="CIE_2_PROJECT.MyProjects" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link rel="stylesheet" href="../Content/Css/MyProjects.css" />
+    <link rel="stylesheet" href="../Content/Css/MyProjects.css?v=7" />
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -102,13 +102,20 @@
 
                         <div class="project-info">
 
-                            <h2>
+                            <h2 title='<%#: Eval("Title") %>'>
                                 <%#: Eval("Title") %>
                             </h2>
 
-                            <p>
+                            <p title='<%#: Eval("Description") %>'>
                                 <%#: Eval("Description") %>
                             </p>
+
+                            <asp:HyperLink ID="lnkMessageFreelancer" runat="server"
+                                CssClass="project-message-link"
+                                NavigateUrl='<%# Eval("MessageUrl") %>'
+                                Visible='<%# Convert.ToBoolean(Eval("ShowMessageLink")) %>'>
+                                <i class="fa-regular fa-comments"></i> Message freelancer
+                            </asp:HyperLink>
 
                         </div>
 
@@ -132,11 +139,11 @@
 
                         <div class="status">
 
-                            <span class='<%# GetStatusClass(Eval("Status").ToString()) %>'>
+                            <span class='<%# GetStatusClass(Eval("Status").ToString()) %>' title='<%#: Eval("Status") %>'>
 
                                 <span class="status-dot"></span>
 
-                                <%#: Eval("Status") %>
+                                <%#: Eval("StatusLabel") %>
 
                             </span>
 
@@ -144,10 +151,25 @@
 
                         <div class="action">
                             <a
-                                href='<%# "ProjectDetails.aspx?id=" + Eval("Id") %>'
+                                href='<%# Eval("ActionUrl") %>'
                                 class="view-btn">
-                                View Project
+                                <%#: Eval("ActionText") %>
                             </a>
+                            <asp:Panel ID="pnlReviewStatus" runat="server"
+                                CssClass="review-status-wrap"
+                                Visible='<%# Convert.ToBoolean(Eval("ShowReviewStatus")) %>'>
+                                <span class='<%# Eval("ReviewStatusClass") %>'>
+                                    <i class='<%# Eval("ReviewStatusIcon") %>'></i>
+                                    <%#: Eval("ReviewStatus") %>
+                                </span>
+                            </asp:Panel>
+                            <asp:HyperLink ID="lnkEditProject" runat="server" CssClass="project-action-link project-edit-link"
+                                NavigateUrl='<%# "CreateProject.aspx?id=" + Eval("Id") %>'
+                                Text="Edit" Visible='<%# Convert.ToBoolean(Eval("CanEdit")) %>' />
+                            <asp:LinkButton ID="btnCancelProject" runat="server"
+                                Text="Cancel project" CssClass="project-action-link project-cancel-link" CommandArgument='<%# Eval("Id") %>'
+                                Visible='<%# Convert.ToBoolean(Eval("CanEdit")) %>'
+                                OnClick="CancelProject_Click" CausesValidation="false" />
                         </div>
 
                     </div>

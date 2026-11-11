@@ -1,24 +1,21 @@
-
 using System;
 using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Data.SqlClient;
 using System.Globalization;
 using System.Linq;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using CIE_2_PROJECT.Factories;
+using CIE_2_PROJECT.Helpers;
+using CIE_2_PROJECT.Interfaces;
+using CIE_2_PROJECT.Models;
 
 namespace CIE_2_PROJECT
 {
     public partial class MyProjects : Page
     {
-        // Temporary client ID until authentication is implemented.
-        private const int TestClientId = 1;
+        private List<ProjectRow> projects = new List<ProjectRow>();
 
-        private List<Project> projects = new List<Project>();
-
-        private class Project
+        private sealed class ProjectRow
         {
             public int Id { get; set; }
             public string Title { get; set; }
@@ -27,132 +24,151 @@ namespace CIE_2_PROJECT
             public int Proposals { get; set; }
             public string Deadline { get; set; }
             public string Status { get; set; }
+            public string StatusLabel { get; set; }
+            public string ActionText { get; set; }
+            public string ActionUrl { get; set; }
+            public bool CanEdit { get; set; }
+            public bool ShowMessageLink { get; set; }
+            public string MessageUrl { get; set; }
+            public bool ShowReviewStatus { get; set; }
+            public string ReviewStatus { get; set; }
+            public string ReviewStatusClass { get; set; }
+            public string ReviewStatusIcon { get; set; }
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
             try
             {
-                projects = GetProjectsFromDatabase();
-
+                projects = GetProjectsFromServices();
                 lblLoadError.Visible = false;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                projects = new List<Project>();
-
-                lblLoadError.Text =
-                    "Unable to load projects. Please check the database connection.";
-
+                System.Diagnostics.Trace.TraceError("Client project list failed: " + ex);
+                projects = new List<ProjectRow>();
+                lblLoadError.Text = "Unable to load projects. Please check the database connection.";
                 lblLoadError.Visible = true;
             }
 
             if (!IsPostBack)
-            {
                 BindProjects(projects);
-            }
         }
 
-        private List<Project> GetProjectsFromDatabase()
+        private List<ProjectRow> GetProjectsFromServices()
         {
-            List<Project> result = new List<Project>();
+            IList<Project> clientProjects =
+                ServiceFactory.CreateProjectService().GetClientProjects(TestUserContext.ClientID);
+            IProposalService proposalService = ServiceFactory.CreateProposalService();
+            IList<Contract> contracts = ServiceFactory.CreateContractService()
+                .GetForClient(TestUserContext.ClientID);
+            IReviewService reviewService = ServiceFactory.CreateReviewService();
+            List<ProjectRow> result = new List<ProjectRow>();
 
-            ConnectionStringSettings settings =
-                ConfigurationManager.ConnectionStrings[
-                    "SkillLinkDBConnection"];
-
-            if (settings == null ||
-                string.IsNullOrWhiteSpace(settings.ConnectionString))
+            foreach (Project project in clientProjects)
             {
-                throw new InvalidOperationException(
-                    "SkillLinkDBConnection is missing from Web.config.");
-            }
+                int proposalCount = proposalService.GetProjectProposals(
+                    TestUserContext.ClientID, project.ProjectID, "date").Count;
 
-            string sql = @"
-                SELECT
-                    p.ProjectID AS Id,
-                    p.Title,
-                    p.Description,
-                    p.MinBudget,
-                    p.MaxBudget,
-                    (
-                        SELECT COUNT(*)
-                        FROM dbo.Proposals AS pr
-                        WHERE pr.ProjectID = p.ProjectID
-                    ) AS ProposalCount,
-                    p.Deadline,
-                    p.Status
-                FROM dbo.Projects AS p
-                WHERE p.ClientID = @ClientID
-                ORDER BY p.CreatedAt DESC, p.ProjectID DESC;
-            ";
+                string actionText;
+                string actionUrl;
+                GetProjectAction(project, out actionText, out actionUrl);
 
-            using (SqlConnection con =
-                new SqlConnection(settings.ConnectionString))
-            using (SqlCommand cmd = new SqlCommand(sql, con))
-            {
-                cmd.Parameters.Add("@ClientID", SqlDbType.Int).Value =
-                    TestClientId;
+                Contract projectContract = contracts.FirstOrDefault(item => item.ProjectID == project.ProjectID);
 
-                con.Open();
-
-                using (SqlDataReader reader = cmd.ExecuteReader())
+                bool showReviewStatus = project.Status == WorkflowStatuses.ProjectCompleted;
+                string reviewStatus = null;
+                string reviewStatusClass = null;
+                string reviewStatusIcon = null;
+                if (showReviewStatus)
                 {
-                    while (reader.Read())
+                    Contract contract = projectContract;
+                    if (contract == null)
                     {
-                        decimal minBudget =
-                            reader.GetDecimal(
-                                reader.GetOrdinal("MinBudget"));
-
-                        decimal maxBudget =
-                            reader.GetDecimal(
-                                reader.GetOrdinal("MaxBudget"));
-
-                        DateTime deadline =
-                            reader.GetDateTime(
-                                reader.GetOrdinal("Deadline"));
-
-                        Project project = new Project
-                        {
-                            Id = reader.GetInt32(
-                                reader.GetOrdinal("Id")),
-
-                            Title = reader.GetString(
-                                reader.GetOrdinal("Title")),
-
-                            Description = reader.GetString(
-                                reader.GetOrdinal("Description")),
-
-                            Budget = string.Format(
-                                CultureInfo.InvariantCulture,
-                                "₹{0:N0} - ₹{1:N0}",
-                                minBudget,
-                                maxBudget),
-
-                            Proposals = reader.GetInt32(
-                                reader.GetOrdinal("ProposalCount")),
-
-                            Deadline = deadline.ToString(
-                                "dd MMM, yyyy",
-                                CultureInfo.InvariantCulture),
-
-                            Status = reader.GetString(
-                                reader.GetOrdinal("Status"))
-                        };
-
-                        result.Add(project);
+                        reviewStatus = "Rating unavailable";
+                        reviewStatusClass = "review-status review-status-unavailable";
+                        reviewStatusIcon = "fa-regular fa-circle-question";
+                    }
+                    else if (reviewService.HasReviewedContract(contract.ContractID, TestUserContext.ClientID))
+                    {
+                        reviewStatus = "Rating completed";
+                        reviewStatusClass = "review-status review-status-complete";
+                        reviewStatusIcon = "fa-solid fa-circle-check";
+                    }
+                    else
+                    {
+                        reviewStatus = "Rating pending";
+                        reviewStatusClass = "review-status review-status-pending";
+                        reviewStatusIcon = "fa-regular fa-clock";
                     }
                 }
+
+                result.Add(new ProjectRow
+                {
+                    Id = project.ProjectID,
+                    Title = project.Title,
+                    Description = project.Description,
+                    Budget = string.Format(CultureInfo.GetCultureInfo("en-IN"),
+                        "₹{0:N0} - ₹{1:N0}", project.MinBudget, project.MaxBudget),
+                    Proposals = proposalCount,
+                    Deadline = project.Deadline.HasValue
+                        ? project.Deadline.Value.ToString("dd MMM, yyyy", CultureInfo.InvariantCulture)
+                        : "Not specified",
+                    Status = project.Status,
+                    StatusLabel = GetCompactStatus(project.Status),
+                    ActionText = actionText,
+                    ActionUrl = actionUrl,
+                    CanEdit = project.Status == WorkflowStatuses.ProjectOpen,
+                    ShowMessageLink = projectContract != null,
+                    MessageUrl = projectContract == null ? string.Empty : ResolveUrl(
+                        "~/Messages/Messages.aspx?with=" +
+                        projectContract.FreelancerID.ToString(CultureInfo.InvariantCulture) + "&projectId=" +
+                        project.ProjectID.ToString(CultureInfo.InvariantCulture)),
+                    ShowReviewStatus = showReviewStatus,
+                    ReviewStatus = reviewStatus,
+                    ReviewStatusClass = reviewStatusClass,
+                    ReviewStatusIcon = reviewStatusIcon
+                });
             }
 
             return result;
         }
 
-        private void BindProjects(List<Project> data)
+        private static void GetProjectAction(Project project, out string text, out string url)
+        {
+            string projectId = project.ProjectID.ToString(CultureInfo.InvariantCulture);
+            if (string.Equals(project.Status, WorkflowStatuses.ProjectOpen,
+                StringComparison.OrdinalIgnoreCase))
+            {
+                text = "View Proposals";
+                url = "ProjectProposal.aspx?projectId=" + projectId;
+                return;
+            }
+
+            if (string.Equals(project.Status, WorkflowStatuses.ProjectInProgress,
+                StringComparison.OrdinalIgnoreCase))
+            {
+                text = "Review Work";
+                url = "ReviewSubmittedWork.aspx?projectId=" + projectId;
+                return;
+            }
+
+            if (string.Equals(project.Status, WorkflowStatuses.ProjectCompleted,
+                StringComparison.OrdinalIgnoreCase))
+            {
+                text = "View Results";
+                url = "ReviewSubmittedWork.aspx?projectId=" + projectId;
+                return;
+            }
+
+            text = "View Project";
+            url = "ProjectDetails.aspx?id=" + projectId;
+        }
+
+        private void BindProjects(IList<ProjectRow> data)
         {
             rptProjects.DataSource = data;
             rptProjects.DataBind();
-
             pnlEmpty.Visible = data.Count == 0;
         }
 
@@ -160,23 +176,47 @@ namespace CIE_2_PROJECT
         {
             LinkButton button = (LinkButton)sender;
             string filter = button.CommandArgument;
-
             SetActiveTab(button);
 
-            if (filter == "All")
+            if (string.Equals(filter, "All", StringComparison.OrdinalIgnoreCase))
             {
                 BindProjects(projects);
                 return;
             }
 
-            List<Project> filteredProjects = projects
-                .Where(p => string.Equals(
-                    p.Status,
-                    filter,
-                    StringComparison.OrdinalIgnoreCase))
+            List<ProjectRow> filteredProjects = projects
+                .Where(p => string.Equals(p.Status, filter, StringComparison.OrdinalIgnoreCase))
                 .ToList();
-
             BindProjects(filteredProjects);
+        }
+
+        protected void CancelProject_Click(object sender, EventArgs e)
+        {
+            LinkButton button = sender as LinkButton;
+            int projectId;
+            if (button == null || !int.TryParse(button.CommandArgument, out projectId) || projectId <= 0)
+            {
+                FlashMessageStore.Error("A valid project is required to cancel.");
+                Response.Redirect("MyProjects.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
+                return;
+            }
+
+            try
+            {
+                ServiceFactory.CreateProjectService().CancelProject(
+                    TestUserContext.ClientID, projectId);
+                FlashMessageStore.Success("Project cancelled successfully. Its status is now visible in My Projects.");
+                Response.Redirect("MyProjects.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Trace.TraceError("Client project cancellation failed: " + ex);
+                FlashMessageStore.Error("This project could not be cancelled. Check its status and try again.");
+                Response.Redirect("MyProjects.aspx", false);
+                Context.ApplicationInstance.CompleteRequest();
+            }
         }
 
         private void SetActiveTab(LinkButton activeButton)
@@ -186,33 +226,33 @@ namespace CIE_2_PROJECT
             lnkProgress.CssClass = "project-tab";
             lnkCompleted.CssClass = "project-tab";
             lnkCancelled.CssClass = "project-tab";
-
             activeButton.CssClass = "project-tab active";
         }
 
         protected string GetStatusClass(string status)
         {
-            if (status == "Open for Proposals")
-            {
+            if (status == WorkflowStatuses.ProjectOpen)
                 return "status-badge status-open";
-            }
-
-            if (status == "In Progress")
-            {
+            if (status == WorkflowStatuses.ProjectInProgress)
                 return "status-badge status-progress";
-            }
-
-            if (status == "Completed")
-            {
+            if (status == WorkflowStatuses.ProjectCompleted)
                 return "status-badge status-completed";
-            }
-
-            if (status == "Cancelled")
-            {
+            if (status == WorkflowStatuses.ProjectCancelled)
                 return "status-badge status-cancelled";
-            }
-
             return "status-badge";
+        }
+
+        private static string GetCompactStatus(string status)
+        {
+            if (string.Equals(status, WorkflowStatuses.ProjectOpen, StringComparison.OrdinalIgnoreCase))
+                return "Open";
+            if (string.Equals(status, WorkflowStatuses.ProjectInProgress, StringComparison.OrdinalIgnoreCase))
+                return "In progress";
+            if (string.Equals(status, WorkflowStatuses.ProjectCompleted, StringComparison.OrdinalIgnoreCase))
+                return "Completed";
+            if (string.Equals(status, WorkflowStatuses.ProjectCancelled, StringComparison.OrdinalIgnoreCase))
+                return "Cancelled";
+            return status ?? "Unknown";
         }
     }
 }
