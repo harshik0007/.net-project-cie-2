@@ -416,17 +416,6 @@
    SECURITY
    ========================= */
 
-.security-card {
-    margin-bottom: 10px;
-}
-
-.security-actions {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.security-btn,
 .logout-btn {
     height: 31px;
     display: inline-flex;
@@ -438,16 +427,55 @@
     font-size: 12px;
 }
 
-.security-btn {
-    border: 1px solid #d5dce7;
-    color: #263142;
+.profile-security-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 10px;
+    padding: 18px 24px;
 }
 
-    .security-btn:hover {
-        border-color: #075cff;
-        color: #075cff;
-        text-decoration: none;
-    }
+.profile-security-copy h2 {
+    margin: 0;
+    color: #172238;
+    font-size: 15px;
+}
+
+.profile-security-copy h2 i {
+    margin-right: 7px;
+    color: #075cff;
+}
+
+.profile-security-copy p {
+    margin: 5px 0 0;
+    color: #687386;
+    font-size: 12px;
+}
+
+.profile-password-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 40px;
+    padding: 0 15px;
+    border: 1px solid #cdd9ec;
+    border-radius: 8px;
+    background: #fff;
+    color: #075cff;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color .15s ease, border-color .15s ease, color .15s ease;
+}
+
+.profile-password-link:hover {
+    border-color: #075cff;
+    background: #f4f8ff;
+    color: #0046cf;
+    text-decoration: none;
+}
 
 .logout-btn {
     border: 1px solid #e14a4a;
@@ -496,4 +524,277 @@
     .project-view {
         justify-self: start;
     }
+}
+
+.profile-avatar-image {
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.profile-error {
+    margin: 18px 0;
+    padding: 14px 16px;
+    border: 1px solid #f0b6b6;
+    border-radius: 8px;
+    background: #fff5f5;
+    color: #a12b2b;
+    font-size: 13px;
+}
+
+.profile-edit-form {
+    margin-bottom: 16px;
+}
+
+.profile-edit-form h2 {
+    margin: 0 0 14px;
+    color: #172238;
+    font-size: 15px;
+}
+
+.profile-edit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.profile-edit-grid label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    color: #526078;
+    font-size: 12px;
+}
+
+.profile-edit-grid input,
+.profile-edit-grid textarea,
+.profile-edit-grid select {
+    width: 100%;
+    padding: 9px 10px;
+    border: 1px solid #d6deea;
+    border-radius: 6px;
+    color: #263142;
+    font: inherit;
+    box-sizing: border-box;
+}
+
+.profile-edit-wide {
+    grid-column: 1 / -1;
+}
+
+.profile-edit-actions {
+    display: flex;
+    gap: 9px;
+    margin-top: 13px;
+}
+
+.profile-save-btn,
+.profile-cancel-btn {
+    min-height: 34px;
+    padding: 0 13px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.profile-save-btn {
+    border: 1px solid #075cff;
+    background: #075cff;
+    color: #fff;
+}
+
+.profile-cancel-btn {
+    border: 1px solid #d5dce7;
+    background: #fff;
+    color: #263142;
+}
+
+.profile-empty-state {
+    padding: 15px 0;
+    color: #718098;
+    font-size: 12px;
+}
+
+.client-reviews-card {
+    margin-bottom: 16px;
+}
+
+.client-review-item {
+    padding: 14px 0;
+    border-top: 1px solid #edf0f5;
+}
+
+.client-review-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.client-review-heading > div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.client-review-heading strong a {
+    color: #075cff;
+    text-decoration: none;
+}
+
+.client-review-heading strong a:hover {
+    color: #004bd6;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.client-review-heading > div > span {
+    color: #718098;
+    font-size: 11px;
+}
+
+.client-review-rating {
+    flex: 0 0 auto;
+    color: #916515;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.client-review-rating i {
+    color: #e5a521;
+}
+
+.client-review-item p {
+    margin: 10px 0 0;
+    color: #526078;
+    font-size: 12px;
+    line-height: 1.55;
+    overflow-wrap: anywhere;
+}
+
+.profile-edit-form {
+    padding: 22px;
+    margin-bottom: 16px;
+    box-shadow: 0 8px 24px rgba(20, 33, 61, .06);
+}
+
+.profile-edit-form h2 {
+    margin: 0 0 16px;
+    color: #172238;
+    font-size: 18px;
+}
+
+.profile-edit-select {
+    min-height: 40px;
+    padding: 8px 10px;
+    border: 1px solid #d6deea;
+    border-radius: 7px;
+    background: #fff;
+    color: #263142;
+    font: inherit;
+    box-sizing: border-box;
+}
+
+.profile-file-input {
+    width: 100%;
+    padding: 9px;
+    border: 1px dashed #c8d4e5;
+    border-radius: 7px;
+    background: #f8faff;
+    color: #526078;
+    box-sizing: border-box;
+}
+
+.profile-edit-note {
+    margin: 12px 0 0;
+    padding: 10px 12px;
+    border: 1px solid #d8e5f7;
+    border-radius: 7px;
+    background: #f5f9ff;
+    color: #586b85;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.profile-extra-card {
+    padding: 20px;
+}
+
+.profile-extra-single {
+    grid-template-columns: minmax(0, 1fr);
+}
+
+.profile-portfolio-link,
+.profile-inline-edit {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 14px;
+    color: #075cff;
+    font-size: 12px;
+    font-weight: 650;
+    text-decoration: none;
+}
+
+.profile-portfolio-link:hover,
+.profile-inline-edit:hover {
+    color: #004bd6;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.profile-extra-card .info-value {
+    max-width: 65%;
+    overflow-wrap: anywhere;
+    text-align: right;
+}
+
+.status-open {
+    color: #8a6211;
+    background: #fff4d8;
+}
+
+.status-cancelled {
+    color: #a14343;
+    background: #fff0f0;
+}
+
+@media (max-width: 750px) {
+    .profile-security-card {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .profile-edit-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-edit-wide {
+        grid-column: auto;
+    }
+}
+
+.profile-file-input {
+    min-height: 46px;
+    padding: 8px 10px;
+    border: 1px solid #d7e1ef;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.profile-file-input::file-selector-button {
+    min-height: 29px;
+    margin-right: 10px;
+    padding: 0 11px;
+    border: 1px solid #cbd9ef;
+    border-radius: 7px;
+    background: #f5f8ff;
+    color: #075cff;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.profile-file-input::file-selector-button:hover {
+    border-color: #075cff;
+    background: #edf4ff;
 }
