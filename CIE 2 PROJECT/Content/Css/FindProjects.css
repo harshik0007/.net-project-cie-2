@@ -1,8 +1,35 @@
 .projects-page {
     width: 100%;
-    max-width: 950px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 12px 0 70px;
+    padding: 24px 22px 70px;
+}
+
+.projects-heading {
+    margin-bottom: 22px;
+}
+
+.projects-eyebrow {
+    display: block;
+    margin-bottom: 5px;
+    color: #075cff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+}
+
+.projects-heading h1 {
+    margin: 0;
+    color: #18233a;
+    font-size: 26px;
+    line-height: 1.25;
+}
+
+.projects-heading p {
+    margin: 7px 0 0;
+    color: #687386;
+    font-size: 13px;
 }
 
 .search-box {
@@ -15,6 +42,7 @@
     background: #ffffff;
     overflow: hidden;
     margin-bottom: 8px;
+    box-shadow: 0 3px 12px rgba(24, 35, 58, .04);
 }
 
 .search-icon {
@@ -46,6 +74,7 @@
     color: #263142;
     font-size: 12px;
     outline: none;
+    cursor: pointer;
 }
 
 .search-button {
@@ -135,6 +164,7 @@
     font-size: 14px;
     line-height: 1.4;
     font-weight: 700;
+    overflow-wrap: anywhere;
 }
 
 .project-description {
@@ -142,6 +172,7 @@
     color: #687386;
     font-size: 12px;
     line-height: 1.5;
+    overflow-wrap: anywhere;
 }
 
 .project-tags {
@@ -261,11 +292,83 @@
         color: #ffffff;
     }
 
+.attachment-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #075cff;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+    .attachment-link:hover {
+        text-decoration: underline;
+    }
+
+.no-projects {
+    padding: 40px 20px;
+    text-align: center;
+    color: #687386;
+    background: #ffffff;
+    border: 1px solid #e1e6ee;
+    border-radius: 9px;
+    margin-top: 12px;
+}
+
+.no-projects .empty-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    padding: 9px 14px;
+    border: 1px solid #cbd9ef;
+    border-radius: 8px;
+    background: #fff;
+    color: #075cff;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.no-projects .empty-link:hover {
+    border-color: #075cff;
+    background: #f3f7ff;
+    color: #0046cf;
+}
+
+.no-projects .empty-link i {
+    margin: 0;
+    color: currentColor;
+    font-size: 12px;
+}
+
+    .no-projects i {
+        font-size: 28px;
+        color: #075cff;
+    }
+
+    .no-projects h2 {
+        color: #18233a;
+        font-size: 18px;
+        margin: 12px 0 6px;
+    }
+
+    .no-projects p {
+        font-size: 13px;
+        margin: 0;
+    }
+
+.page-message {
+    display: block;
+    margin: 12px 0;
+    color: #b42318;
+    font-size: 13px;
+}
+
 @media (max-width: 850px) {
 
     .projects-page {
-        padding-left: 20px;
-        padding-right: 20px;
+        padding: 20px 18px 60px;
     }
 
     .project-card {
