@@ -1,174 +1,378 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Web.UI;
 using System.Web.UI.WebControls;
+using CIE_2_PROJECT.Factories;
+using CIE_2_PROJECT.Helpers;
+using CIE_2_PROJECT.Interfaces;
+using CIE_2_PROJECT.Models;
 
 namespace CIE_2_PROJECT
 {
-    public partial class MyProposals : System.Web.UI.Page
+    public partial class MyProposals : Page
     {
-        // ── Data Model ───────────────────────────────────────────────────────────
-        private class ProposalItem
+        private sealed class ProposalItem
         {
-            public string Title       { get; set; }
-            public string Client      { get; set; }
-            public string PostedOn    { get; set; }
+            public int ProjectID { get; set; }
+            public string Title { get; set; }
+            public string Client { get; set; }
+            public string ClientProfileUrl { get; set; }
+            public string MessageUrl { get; set; }
+            public string PostedOn { get; set; }
             public string Description { get; set; }
-            public string Price       { get; set; }
-            public string Delivery    { get; set; }
+            public string Price { get; set; }
+            public string EstimatedPayout { get; set; }
+            public string PayoutLabel { get; set; }
+            public string Delivery { get; set; }
             public string SubmittedOn { get; set; }
-            public string Status      { get; set; }   // pending / accepted / rejected
-
-            // Derived display helpers
-            public string IconClass   { get; set; }
-            public string IconFa      { get; set; }
-            public string BadgeClass  { get; set; }
-            public string BadgeIcon   { get; set; }
             public string StatusLabel { get; set; }
+            public string IconClass { get; set; }
+            public string IconFa { get; set; }
+            public string BadgeClass { get; set; }
+            public string BadgeIcon { get; set; }
+            public string ActionText { get; set; }
+            public string ActionUrl { get; set; }
+            public bool ShowActionLink { get; set; }
+            public bool ShowContractUnavailable { get; set; }
+            public bool ShowReviewStatus { get; set; }
+            public bool CanReviewClient { get; set; }
+            public string ReviewStatus { get; set; }
+            public string ReviewStateClass { get; set; }
+            public string ReviewUrl { get; set; }
         }
 
-        // ── Static proposal data (replaces a database for now) ───────────────────
-        private static readonly List<ProposalItem> AllProposals = new List<ProposalItem>
+        private sealed class PreviousReviewItem
         {
-            new ProposalItem
-            {
-                Title       = "Unity 2D Game Development",
-                Client      = "John Doe",
-                PostedOn    = "20 May 2026",
-                Description = "Create a 2D shooting game with multiple levels, enemies, and an in-game store using Unity and C#.",
-                Price       = "&#8377;12,000",
-                Delivery    = "15 Days",
-                SubmittedOn = "21 May 2026",
-                Status      = "pending",
-                IconClass   = "proposal-icon icon-code",
-                IconFa      = "fa-solid fa-code",
-                BadgeClass  = "status-badge badge-pending",
-                BadgeIcon   = "fa-regular fa-clock",
-                StatusLabel = "Pending"
-            },
-            new ProposalItem
-            {
-                Title       = "Unity Game Development for 2D Adventure Game",
-                Client      = "Game Studio",
-                PostedOn    = "18 May 2026",
-                Description = "Looking for a Unity developer to create a 2D adventure game with multiple levels and characters.",
-                Price       = "&#8377;9,000",
-                Delivery    = "12 Days",
-                SubmittedOn = "19 May 2026",
-                Status      = "accepted",
-                IconClass   = "proposal-icon icon-game",
-                IconFa      = "fa-solid fa-gamepad",
-                BadgeClass  = "status-badge badge-accepted",
-                BadgeIcon   = "fa-regular fa-circle-check",
-                StatusLabel = "Accepted"
-            },
-            new ProposalItem
-            {
-                Title       = "Content Writing for College Blog",
-                Client      = "College Blog",
-                PostedOn    = "12 May 2026",
-                Description = "Write informative and engaging blog posts related to college life, education and career tips.",
-                Price       = "&#8377;2,500",
-                Delivery    = "5 Days",
-                SubmittedOn = "13 May 2026",
-                Status      = "rejected",
-                IconClass   = "proposal-icon icon-writing",
-                IconFa      = "fa-solid fa-file-lines",
-                BadgeClass  = "status-badge badge-rejected",
-                BadgeIcon   = "fa-regular fa-circle-xmark",
-                StatusLabel = "Rejected"
-            },
-            new ProposalItem
-            {
-                Title       = "Social Media Post Design",
-                Client      = "Campus Media",
-                PostedOn    = "15 May 2026",
-                Description = "Create attractive social media posts and stories for college events, festivals, and student club announcements.",
-                Price       = "&#8377;2,200",
-                Delivery    = "3 Days",
-                SubmittedOn = "16 May 2026",
-                Status      = "pending",
-                IconClass   = "proposal-icon icon-design",
-                IconFa      = "fa-solid fa-bullhorn",
-                BadgeClass  = "status-badge badge-pending",
-                BadgeIcon   = "fa-regular fa-clock",
-                StatusLabel = "Pending"
-            },
-            new ProposalItem
-            {
-                Title       = "Student Portal Mobile App UI Design",
-                Client      = "EduTech Solutions",
-                PostedOn    = "17 May 2026",
-                Description = "Design a clean, modern user interface in Figma for a student management and attendance mobile application.",
-                Price       = "&#8377;15,000",
-                Delivery    = "20 Days",
-                SubmittedOn = "18 May 2026",
-                Status      = "pending",
-                IconClass   = "proposal-icon icon-mobile",
-                IconFa      = "fa-solid fa-mobile-screen",
-                BadgeClass  = "status-badge badge-pending",
-                BadgeIcon   = "fa-regular fa-clock",
-                StatusLabel = "Pending"
-            },
-            new ProposalItem
-            {
-                Title       = "Database Optimization &amp; SQL Query Tuning",
-                Client      = "Apex Data Corp",
-                PostedOn    = "14 May 2026",
-                Description = "Analyze and optimize SQL Server database stored procedures, index maintenance, and query execution times for high traffic.",
-                Price       = "&#8377;10,500",
-                Delivery    = "7 Days",
-                SubmittedOn = "15 May 2026",
-                Status      = "pending",
-                IconClass   = "proposal-icon icon-database",
-                IconFa      = "fa-solid fa-database",
-                BadgeClass  = "status-badge badge-pending",
-                BadgeIcon   = "fa-regular fa-clock",
-                StatusLabel = "Pending"
-            }
-        };
+            public string ProjectTitle { get; set; }
+            public string ClientName { get; set; }
+            public string ClientProfileUrl { get; set; }
+            public string Rating { get; set; }
+            public string CreatedAt { get; set; }
+            public string ReviewText { get; set; }
+        }
 
-        // ── Page Load ─────────────────────────────────────────────────────────────
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                // Default: show all proposals, highlight "All" tab
-                BindProposals("all");
-                SetActiveTab("all");
+                string requestedFilter = (Request.QueryString["filter"] ?? "").Trim().ToLowerInvariant();
+                LoadPage(IsSupportedFilter(requestedFilter) ? requestedFilter : "all");
             }
         }
 
-        // ── Tab button click handler ───────────────────────────────────────────────
         protected void FilterTab_Click(object sender, EventArgs e)
         {
-            LinkButton btn    = (LinkButton)sender;
-            string     filter = btn.CommandArgument;
+            LinkButton button = sender as LinkButton;
+            if (button == null)
+                return;
 
-            BindProposals(filter);
-            SetActiveTab(filter);
+            string filter = button.CommandArgument;
+            if (!IsSupportedFilter(filter))
+                filter = "all";
+
+            LoadPage(filter);
         }
 
-        // ── Bind the Repeater ─────────────────────────────────────────────────────
-        private void BindProposals(string filter)
+        private void LoadPage(string filter)
         {
-            List<ProposalItem> filtered = filter == "all"
-                ? AllProposals
-                : AllProposals.Where(p => p.Status == filter).ToList();
+            lblPageMessage.Visible = false;
+            try
+            {
+                IList<Proposal> records = ServiceFactory.CreateProposalService()
+                    .GetFreelancerProposals(TestUserContext.FreelancerID);
+                IList<Contract> contracts = ServiceFactory.CreateContractService()
+                    .GetForFreelancerHistory(TestUserContext.FreelancerID);
+                HashSet<int> proposalIds = new HashSet<int>(records.Select(proposal => proposal.ProposalID));
+                HashSet<int> completedProposalIds = new HashSet<int>(contracts
+                    .Where(contract => string.Equals(contract.ApprovalStatus,
+                        WorkflowStatuses.ContractCompleted, StringComparison.OrdinalIgnoreCase) &&
+                        proposalIds.Contains(contract.ProposalID))
+                    .Select(contract => contract.ProposalID));
+                btnAll.Text = "All (" + records.Count + ")";
+                btnPending.Text = "Pending (" + CountStatus(records, WorkflowStatuses.ProposalPending) + ")";
+                btnAccepted.Text = "Accepted (" + records.Count(proposal =>
+                    string.Equals(proposal.Status, WorkflowStatuses.ProposalAccepted,
+                        StringComparison.OrdinalIgnoreCase) && !completedProposalIds.Contains(proposal.ProposalID)) + ")";
+                btnRejected.Text = "Rejected (" + CountStatus(records, WorkflowStatuses.ProposalRejected) + ")";
 
-            rptProposals.DataSource = filtered;
-            rptProposals.DataBind();
+                IProjectService projectService = ServiceFactory.CreateProjectService();
+                IUserService userService = ServiceFactory.CreateUserService();
+                IReviewService reviewService = ServiceFactory.CreateReviewService();
+                IList<Payment> paymentHistory = ServiceFactory.CreatePaymentService()
+                    .GetFreelancerPaymentHistory(TestUserContext.FreelancerID);
+                IList<Review> previousReviews = reviewService.GetReviewsGivenByUser(
+                    TestUserContext.FreelancerID, "Freelancer");
+                btnPreviousReviews.Text = "Previous Reviews (" + previousReviews.Count + ")";
 
-            // Show empty panel when nothing matches
-            pnlEmpty.Visible = (filtered.Count == 0);
+                if (filter == "reviews")
+                {
+                    pnlProposalSection.Visible = false;
+                    pnlPreviousReviews.Visible = true;
+                    pnlEmpty.Visible = false;
+                    List<PreviousReviewItem> reviewItems = new List<PreviousReviewItem>();
+                    foreach (Review review in previousReviews)
+                    {
+                        Contract contract = contracts.FirstOrDefault(
+                            record => record.ContractID == review.ContractID);
+                        if (contract == null || contract.FreelancerID != TestUserContext.FreelancerID ||
+                            review.ReviewerRole != "Freelancer")
+                            continue;
+
+                        Project project = projectService.GetProject(contract.ProjectID);
+                        if (project == null)
+                            continue;
+                        User client = userService.GetUser(review.RevieweeID);
+                        reviewItems.Add(new PreviousReviewItem
+                        {
+                            ProjectTitle = project.Title,
+                            ClientName = client == null ? "Client #" + review.RevieweeID : client.FullName,
+                            ClientProfileUrl = "ViewClientProfile.aspx?id=" +
+                                review.RevieweeID.ToString(CultureInfo.InvariantCulture) + "&viewer=freelancer",
+                            Rating = review.Rating.ToString(CultureInfo.InvariantCulture),
+                            CreatedAt = review.CreatedAt.ToString("dd MMM yyyy", CultureInfo.InvariantCulture),
+                            ReviewText = string.IsNullOrWhiteSpace(review.ReviewText)
+                                ? "No written feedback was included."
+                                : review.ReviewText
+                        });
+                    }
+
+                    rptPreviousReviews.DataSource = reviewItems;
+                    rptPreviousReviews.DataBind();
+                    pnlNoPreviousReviews.Visible = reviewItems.Count == 0;
+                    rptProposals.DataSource = null;
+                    rptProposals.DataBind();
+                    SetActiveTab(filter);
+                    return;
+                }
+
+                pnlProposalSection.Visible = true;
+                pnlPreviousReviews.Visible = false;
+                pnlNoPreviousReviews.Visible = false;
+                List<ProposalItem> items = new List<ProposalItem>();
+                foreach (Proposal proposal in records)
+                {
+                    Contract contract = contracts.FirstOrDefault(
+                        record => record.ProposalID == proposal.ProposalID);
+                    bool isCompleted = contract != null && string.Equals(
+                        contract.ApprovalStatus, WorkflowStatuses.ContractCompleted,
+                        StringComparison.OrdinalIgnoreCase);
+
+                    if (filter == "completed" && !isCompleted)
+                        continue;
+                    if (filter == "accepted" &&
+                        (!string.Equals(proposal.Status, WorkflowStatuses.ProposalAccepted,
+                            StringComparison.OrdinalIgnoreCase) || isCompleted))
+                        continue;
+                    if (filter != "all" && filter != "completed" && filter != "accepted" &&
+                        !string.Equals(proposal.Status, filter, StringComparison.OrdinalIgnoreCase))
+                        continue;
+
+                    Project project = projectService.GetProject(proposal.ProjectID);
+                    if (project == null)
+                        continue;
+                    User client = userService.GetUser(project.ClientID);
+                    Payment payment = contract == null ? null : paymentHistory.FirstOrDefault(
+                        record => record.ContractID == contract.ContractID);
+                    decimal expectedPayout = payment == null
+                        ? proposal.BidAmount - SimulatedPlatformFeeCalculator.CalculateFee(proposal.BidAmount)
+                        : payment.FreelancerNetAmount;
+                    ProposalItem item = new ProposalItem
+                    {
+                        ProjectID = proposal.ProjectID,
+                        Title = project.Title,
+                        Client = client == null ? "Client #" + project.ClientID : client.FullName,
+                        ClientProfileUrl = "ViewClientProfile.aspx?id=" +
+                            project.ClientID.ToString(CultureInfo.InvariantCulture) + "&viewer=freelancer",
+                        MessageUrl = ResolveUrl("~/Messages/Messages.aspx?with=" +
+                            project.ClientID.ToString(CultureInfo.InvariantCulture) + "&projectId=" +
+                            project.ProjectID.ToString(CultureInfo.InvariantCulture)),
+                        PostedOn = project.CreatedAt.ToString("dd MMM yyyy", CultureInfo.InvariantCulture),
+                        Description = project.Description,
+                        Price = proposal.BidAmount.ToString("C0", CultureInfo.GetCultureInfo("en-IN")),
+                        EstimatedPayout = expectedPayout.ToString("C2", CultureInfo.GetCultureInfo("en-IN")),
+                        PayoutLabel = payment == null || payment.FreelancerPlatformFeeRate > 0m
+                            ? "Estimated payout after " + SimulatedPlatformFeeCalculator.DemoRate.ToString("0.##", CultureInfo.InvariantCulture) + "% fee"
+                            : "Payout on release",
+                        Delivery = proposal.EstimatedDays + " Days",
+                        SubmittedOn = proposal.SubmittedAt.ToString("dd MMM yyyy", CultureInfo.InvariantCulture),
+                        ActionText = "View Project",
+                        ActionUrl = "ProjectDetails.aspx?id=" + proposal.ProjectID,
+                        ShowActionLink = true
+                    };
+
+                    if (isCompleted)
+                    {
+                        bool hasReviewedClient = reviewService.HasReviewedContract(
+                            contract.ContractID, TestUserContext.FreelancerID);
+                        item.StatusLabel = "Completed";
+                        item.BadgeClass = "badge-completed";
+                        item.BadgeIcon = "fa-regular fa-circle-check";
+                        item.ShowReviewStatus = true;
+                        item.CanReviewClient = !hasReviewedClient;
+                        item.ReviewStatus = hasReviewedClient ? "Review submitted" : "Review pending";
+                        item.ReviewStateClass = hasReviewedClient ? "review-complete" : "review-pending";
+                        item.ReviewUrl = "ReviewClient.aspx?contractId=" + contract.ContractID;
+                        item.ActionText = "View Project";
+                        item.ActionUrl = "ProjectDetails.aspx?id=" + proposal.ProjectID;
+                    }
+                    else if (string.Equals(proposal.Status, WorkflowStatuses.ProposalAccepted,
+                        StringComparison.OrdinalIgnoreCase))
+                    {
+                        if (contract == null)
+                        {
+                            item.ShowActionLink = false;
+                            item.ShowContractUnavailable = true;
+                        }
+                        else
+                        {
+                            item.ActionText = "Continue Work";
+                            item.ActionUrl = "SubmitWork.aspx?contractId=" + contract.ContractID;
+                        }
+                    }
+
+                    if (!isCompleted)
+                        SetStatusAppearance(item, proposal.Status);
+                    SetCategoryAppearance(item, project.Category);
+                    items.Add(item);
+                }
+
+                btnCompleted.Text = "Completed (" + completedProposalIds.Count + ")";
+
+                rptProposals.DataSource = items;
+                rptProposals.DataBind();
+                pnlEmpty.Visible = items.Count == 0;
+                rptPreviousReviews.DataSource = null;
+                rptPreviousReviews.DataBind();
+                SetEmptyState(filter);
+                SetActiveTab(filter);
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Trace.TraceError("Freelancer proposals failed to load: " + ex);
+                rptProposals.DataSource = null;
+                rptProposals.DataBind();
+                rptPreviousReviews.DataSource = null;
+                rptPreviousReviews.DataBind();
+                pnlProposalSection.Visible = filter != "reviews";
+                pnlPreviousReviews.Visible = filter == "reviews";
+                pnlNoPreviousReviews.Visible = false;
+                pnlEmpty.Visible = false;
+                lblPageMessage.Text = "Unable to load your proposals. Please try again.";
+                lblPageMessage.Visible = true;
+                SetActiveTab(filter);
+            }
         }
 
-        // ── Set active CSS class on the correct tab button ────────────────────────
+        private static int CountStatus(IList<Proposal> proposals, string status)
+        {
+            return proposals.Count(proposal => string.Equals(
+                proposal.Status, status, StringComparison.OrdinalIgnoreCase));
+        }
+
+        private static bool IsSupportedFilter(string filter)
+        {
+            return filter == "all" || filter == "pending" || filter == "accepted" ||
+                filter == "rejected" || filter == "completed" || filter == "reviews";
+        }
+
+        private void SetEmptyState(string filter)
+        {
+            switch (filter)
+            {
+                case "completed":
+                    lblEmptyTitle.Text = "No completed projects yet";
+                    lblEmptyDescription.Text = "Completed contracts will appear here after your client approves the work.";
+                    break;
+                case "pending":
+                    lblEmptyTitle.Text = "No pending proposals";
+                    lblEmptyDescription.Text = "Proposals awaiting a client decision will appear here.";
+                    break;
+                case "accepted":
+                    lblEmptyTitle.Text = "No active accepted projects";
+                    lblEmptyDescription.Text = "Accepted projects that are still in progress will appear here.";
+                    break;
+                case "rejected":
+                    lblEmptyTitle.Text = "No rejected proposals";
+                    lblEmptyDescription.Text = "Proposals declined by clients will appear here.";
+                    break;
+                default:
+                    lblEmptyTitle.Text = "No proposals yet";
+                    lblEmptyDescription.Text = "Explore available projects and submit your first proposal.";
+                    break;
+            }
+        }
+
+        private void SetStatusAppearance(ProposalItem item, string status)
+        {
+            switch ((status ?? "").Trim().ToLowerInvariant())
+            {
+                case "accepted":
+                    item.StatusLabel = "Accepted";
+                    item.BadgeClass = "badge-accepted";
+                    item.BadgeIcon = "fa-regular fa-circle-check";
+                    break;
+                case "rejected":
+                    item.StatusLabel = "Rejected";
+                    item.BadgeClass = "badge-rejected";
+                    item.BadgeIcon = "fa-regular fa-circle-xmark";
+                    break;
+                case "pending":
+                    item.StatusLabel = "Pending";
+                    item.BadgeClass = "badge-pending";
+                    item.BadgeIcon = "fa-regular fa-clock";
+                    break;
+                default:
+                    item.StatusLabel = string.IsNullOrWhiteSpace(status) ? "Unknown" : status;
+                    item.BadgeClass = "badge-pending";
+                    item.BadgeIcon = "fa-regular fa-clock";
+                    break;
+            }
+        }
+
+        private void SetCategoryAppearance(ProposalItem item, string category)
+        {
+            switch ((category ?? "").Trim().ToLowerInvariant())
+            {
+                case "game development":
+                    item.IconClass = "icon-game";
+                    item.IconFa = "fa-solid fa-gamepad";
+                    break;
+                case "content writing":
+                case "writing":
+                    item.IconClass = "icon-writing";
+                    item.IconFa = "fa-solid fa-file-lines";
+                    break;
+                case "graphic design":
+                case "ui/ux design":
+                case "design":
+                    item.IconClass = "icon-design";
+                    item.IconFa = "fa-solid fa-palette";
+                    break;
+                case "mobile development":
+                    item.IconClass = "icon-mobile";
+                    item.IconFa = "fa-solid fa-mobile-screen";
+                    break;
+                case "database":
+                case "data science":
+                    item.IconClass = "icon-database";
+                    item.IconFa = "fa-solid fa-database";
+                    break;
+                default:
+                    item.IconClass = "icon-code";
+                    item.IconFa = "fa-solid fa-code";
+                    break;
+            }
+        }
+
         private void SetActiveTab(string filter)
         {
-            btnAll.CssClass      = "tab-btn" + (filter == "all"      ? " active" : "");
-            btnPending.CssClass  = "tab-btn" + (filter == "pending"  ? " active" : "");
+            btnAll.CssClass = "tab-btn" + (filter == "all" ? " active" : "");
+            btnPending.CssClass = "tab-btn" + (filter == "pending" ? " active" : "");
             btnAccepted.CssClass = "tab-btn" + (filter == "accepted" ? " active" : "");
+            btnCompleted.CssClass = "tab-btn" + (filter == "completed" ? " active" : "");
+            btnPreviousReviews.CssClass = "tab-btn" + (filter == "reviews" ? " active" : "");
             btnRejected.CssClass = "tab-btn" + (filter == "rejected" ? " active" : "");
         }
     }

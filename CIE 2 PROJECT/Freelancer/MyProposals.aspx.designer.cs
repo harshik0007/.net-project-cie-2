@@ -9,36 +9,97 @@
 
 namespace CIE_2_PROJECT
 {
+
+
     public partial class MyProposals
     {
+
         /// <summary>
         /// btnAll control.
         /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btnAll;
 
         /// <summary>
         /// btnPending control.
         /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btnPending;
 
         /// <summary>
         /// btnAccepted control.
         /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btnAccepted;
+
+        /// <summary>
+        /// btnCompleted control.
+        /// </summary>
+        protected global::System.Web.UI.WebControls.LinkButton btnCompleted;
+
+        /// <summary>
+        /// btnPreviousReviews control.
+        /// </summary>
+        protected global::System.Web.UI.WebControls.LinkButton btnPreviousReviews;
 
         /// <summary>
         /// btnRejected control.
         /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btnRejected;
+
+        /// <summary>
+        /// lblPageMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPageMessage;
 
         /// <summary>
         /// rptProposals control.
         /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rptProposals;
 
         /// <summary>
         /// pnlEmpty control.
         /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlEmpty;
+
+        /// <summary>
+        /// lblEmptyTitle control.
+        /// </summary>
+        protected global::System.Web.UI.WebControls.Label lblEmptyTitle;
+
+        /// <summary>
+        /// lblEmptyDescription control.
+        /// </summary>
+        protected global::System.Web.UI.WebControls.Label lblEmptyDescription;
+
+        protected global::System.Web.UI.WebControls.Panel pnlProposalSection;
+        protected global::System.Web.UI.WebControls.Panel pnlPreviousReviews;
+        protected global::System.Web.UI.WebControls.Repeater rptPreviousReviews;
+        protected global::System.Web.UI.WebControls.Panel pnlNoPreviousReviews;
     }
 }

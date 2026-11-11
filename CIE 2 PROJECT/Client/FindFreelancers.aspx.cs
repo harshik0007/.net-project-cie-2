@@ -1,128 +1,126 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using CIE_2_PROJECT.Factories;
+using CIE_2_PROJECT.Interfaces;
+using CIE_2_PROJECT.Models;
 
 namespace CIE_2_PROJECT
 {
     public partial class FindFreelancers : Page
     {
-        private class Freelancer
+        private static readonly string[] Categories =
         {
+            "Web Development", "Mobile Development", "UI/UX Design",
+            "Graphic Design", "WordPress", "Software Development", "Other"
+        };
+
+        private sealed class FreelancerCard
+        {
+            public int UserID { get; set; }
             public string Name { get; set; }
             public string Initials { get; set; }
             public string Title { get; set; }
             public string Rating { get; set; }
             public string Reviews { get; set; }
             public string Skills { get; set; }
-            public string Category { get; set; }
-            public int Experience { get; set; }
+            public string SkillsMarkup { get; set; }
+            public string Categories { get; set; }
             public string Bio { get; set; }
+            public string Location { get; set; }
+            public string ProfileUrl { get; set; }
         }
 
-        private List<Freelancer> freelancers;
+        private IList<FreelancerCard> freelancers;
+
+        protected void Page_Init(object sender, EventArgs e)
+        {
+            try
+            {
+                LoadFreelancers();
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Trace.TraceError("Freelancer search data could not be loaded: " + ex);
+                freelancers = new List<FreelancerCard>();
+            }
+
+            BindFilters();
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            CreateFreelancerData();
-
             if (!IsPostBack)
             {
                 BindFreelancers(freelancers);
             }
         }
 
-        private void CreateFreelancerData()
+        private void LoadFreelancers()
         {
-            freelancers = new List<Freelancer>
-            {
-                new Freelancer
+            IUserService users = ServiceFactory.CreateUserService();
+            IReviewService reviews = ServiceFactory.CreateReviewService();
+            freelancers = users.GetUsersByRole("Freelancer")
+                .Select(user =>
                 {
-                    Name = "Rahul Sharma",
-                    Initials = "RS",
-                    Title = "Full Stack Developer",
-                    Rating = "4.8",
-                    Reviews = "26",
-                    Skills = "React.js,Node.js,MongoDB",
-                    Category = "Web Development",
-                    Experience = 4,
-                    Bio = "Experienced developer specializing in modern web applications and scalable backend systems."
-                },
-
-                new Freelancer
-                {
-                    Name = "Priya Mehta",
-                    Initials = "PM",
-                    Title = "UI/UX Designer",
-                    Rating = "4.9",
-                    Reviews = "18",
-                    Skills = "Figma,UI/UX Design,Adobe XD",
-                    Category = "UI/UX Design",
-                    Experience = 3,
-                    Bio = "Creative designer focused on clean interfaces, user experience and modern digital products."
-                },
-
-                new Freelancer
-                {
-                    Name = "Amit Verma",
-                    Initials = "AV",
-                    Title = "WordPress Developer",
-                    Rating = "4.7",
-                    Reviews = "32",
-                    Skills = "WordPress,PHP,Elementor",
-                    Category = "WordPress",
-                    Experience = 5,
-                    Bio = "WordPress developer experienced in business websites, custom themes and website optimization."
-                },
-
-                new Freelancer
-                {
-                    Name = "Neha Patel",
-                    Initials = "NP",
-                    Title = "Graphic Designer",
-                    Rating = "4.9",
-                    Reviews = "21",
-                    Skills = "Graphic Design,Photoshop,Illustrator",
-                    Category = "Graphic Design",
-                    Experience = 4,
-                    Bio = "Graphic designer creating brand identities, marketing materials and professional visual designs."
-                },
-
-                new Freelancer
-                {
-                    Name = "Karan Shah",
-                    Initials = "KS",
-                    Title = "Backend Developer",
-                    Rating = "4.8",
-                    Reviews = "17",
-                    Skills = "Node.js,MongoDB,PHP",
-                    Category = "Web Development",
-                    Experience = 6,
-                    Bio = "Backend developer focused on database design, server-side applications and reliable systems."
-                },
-
-                new Freelancer
-                {
-                    Name = "Ananya Singh",
-                    Initials = "AS",
-                    Title = "Mobile App Developer",
-                    Rating = "4.7",
-                    Reviews = "15",
-                    Skills = "Flutter,UI/UX Design,Figma",
-                    Category = "Mobile Development",
-                    Experience = 3,
-                    Bio = "Mobile application developer building clean and user-friendly cross-platform applications."
-                }
-            };
+                    string skills = user.Skills ?? string.Empty;
+                    List<string> skillList = SplitSkills(skills);
+                    List<string> categories = GetCategories(skillList);
+                    string name = user.FullName ?? string.Empty;
+                    string categoryTitle = categories.FirstOrDefault() ?? "Freelancer";
+                    decimal rating = reviews.GetAverageRating(user.UserID);
+                    int reviewCount = reviews.GetReviewCount(user.UserID);
+                    return new FreelancerCard
+                    {
+                        UserID = user.UserID,
+                        Name = name,
+                        Initials = GetInitials(name),
+                        Title = skillList.Count > 0 ? string.Join(" · ", skillList.Take(3)) : categoryTitle,
+                        Rating = rating.ToString("0.0", CultureInfo.InvariantCulture),
+                        Reviews = reviewCount.ToString(CultureInfo.InvariantCulture),
+                        Skills = skills,
+                        SkillsMarkup = string.Join(string.Empty, skillList.Select(skill =>
+                            "<span>" + Server.HtmlEncode(skill) + "</span>")),
+                        Categories = string.Join("|", categories),
+                        Bio = string.IsNullOrWhiteSpace(user.Bio)
+                            ? "This freelancer has not added an introduction yet."
+                            : user.Bio,
+                        Location = string.IsNullOrWhiteSpace(user.Location) ? string.Empty : user.Location,
+                        ProfileUrl = "ViewFreelancerProfile.aspx?id=" + user.UserID.ToString(CultureInfo.InvariantCulture)
+                    };
+                })
+                .OrderByDescending(card => decimal.Parse(card.Rating, CultureInfo.InvariantCulture))
+                .ThenBy(card => card.Name)
+                .ToList();
         }
 
-        private void BindFreelancers(List<Freelancer> data)
+        private void BindFilters()
         {
-            rptFreelancers.DataSource = data;
-            rptFreelancers.DataBind();
+            ddlSkill.Items.Clear();
+            ddlSkill.Items.Add(new ListItem("All Skills", string.Empty));
+            foreach (string skill in freelancers.SelectMany(card => SplitSkills(card.Skills))
+                .Distinct(StringComparer.OrdinalIgnoreCase).OrderBy(skill => skill))
+            {
+                ddlSkill.Items.Add(new ListItem(skill, skill));
+            }
 
-            lblResultCount.Text = data.Count + " freelancers found";
+            ddlCategory.Items.Clear();
+            ddlCategory.Items.Add(new ListItem("All Categories", string.Empty));
+            foreach (string category in Categories)
+                ddlCategory.Items.Add(new ListItem(category, category));
+        }
+
+        private void BindFreelancers(IEnumerable<FreelancerCard> data)
+        {
+            List<FreelancerCard> rows = data.ToList();
+            rptFreelancers.DataSource = rows;
+            rptFreelancers.DataBind();
+            lblResultCount.Text = rows.Count == 1 ? "1 freelancer found" :
+                rows.Count.ToString(CultureInfo.InvariantCulture) + " freelancers found";
+            pnlNoFreelancers.Visible = rows.Count == 0;
         }
 
         protected void btnSearch_Click(object sender, EventArgs e)
@@ -132,73 +130,96 @@ namespace CIE_2_PROJECT
 
         protected void btnClear_Click(object sender, EventArgs e)
         {
-            txtSearch.Text = "";
+            txtSearch.Text = string.Empty;
             ddlSkill.SelectedIndex = 0;
             ddlCategory.SelectedIndex = 0;
-            ddlExperience.SelectedIndex = 0;
-
             BindFreelancers(freelancers);
         }
 
         private void ApplyFilters()
         {
-            string search = txtSearch.Text.Trim().ToLower();
+            string search = txtSearch.Text.Trim();
             string skill = ddlSkill.SelectedValue;
             string category = ddlCategory.SelectedValue;
-            string experience = ddlExperience.SelectedValue;
-
-            IEnumerable<Freelancer> result = freelancers;
+            IEnumerable<FreelancerCard> result = freelancers;
 
             if (!string.IsNullOrWhiteSpace(search))
             {
-                result = result.Where(f =>
-                    f.Name.ToLower().Contains(search) ||
-                    f.Title.ToLower().Contains(search) ||
-                    f.Skills.ToLower().Contains(search) ||
-                    f.Bio.ToLower().Contains(search));
+                result = result.Where(card => Contains(card.Name, search) ||
+                    Contains(card.Title, search) || Contains(card.Skills, search) ||
+                    Contains(card.Bio, search) || Contains(card.Location, search) ||
+                    Contains(card.Categories, search));
             }
-
             if (!string.IsNullOrWhiteSpace(skill))
             {
-                result = result.Where(f =>
-                    f.Skills.Split(',').Any(s =>
-                        s.Equals(skill, StringComparison.OrdinalIgnoreCase)));
+                result = result.Where(card => SplitSkills(card.Skills).Any(item =>
+                    string.Equals(item, skill, StringComparison.OrdinalIgnoreCase)));
             }
-
             if (!string.IsNullOrWhiteSpace(category))
             {
-                result = result.Where(f =>
-                    f.Category.Equals(category, StringComparison.OrdinalIgnoreCase));
+                result = result.Where(card => card.Categories.Split('|').Any(item =>
+                    string.Equals(item, category, StringComparison.OrdinalIgnoreCase)));
             }
 
-            if (experience == "0-2")
-            {
-                result = result.Where(f => f.Experience <= 2);
-            }
-            else if (experience == "2-5")
-            {
-                result = result.Where(f => f.Experience > 2 && f.Experience <= 5);
-            }
-            else if (experience == "5+")
-            {
-                result = result.Where(f => f.Experience > 5);
-            }
-
-            BindFreelancers(result.ToList());
+            BindFreelancers(result);
         }
 
-        protected string GetSkills(string skills)
+        protected static List<string> SplitSkills(string skills)
         {
-            string[] skillList = skills.Split(',');
+            return (skills ?? string.Empty)
+                .Split(new[] { ',', ';', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries)
+                .Select(skill => skill.Trim())
+                .Where(skill => skill.Length > 0)
+                .Distinct(StringComparer.OrdinalIgnoreCase)
+                .ToList();
+        }
 
-            string result = "";
-
-            foreach (string skill in skillList)
+        private static List<string> GetCategories(IList<string> skills)
+        {
+            List<string> categories = new List<string>();
+            foreach (string skill in skills)
             {
-                result += "<span>" + Server.HtmlEncode(skill.Trim()) + "</span>";
+                string value = skill.ToLowerInvariant();
+                if (HasAny(value, "flutter", "android", "ios", "react native", "mobile", "kotlin", "swift"))
+                    AddCategory(categories, "Mobile Development");
+                if (HasAny(value, "figma", "ui/ux", "ux", "ui design", "adobe xd", "user experience"))
+                    AddCategory(categories, "UI/UX Design");
+                if (HasAny(value, "graphic", "photoshop", "illustrator", "branding", "logo design"))
+                    AddCategory(categories, "Graphic Design");
+                if (HasAny(value, "wordpress", "woocommerce"))
+                    AddCategory(categories, "WordPress");
+                if (HasAny(value, "web", "react", "javascript", "node", "html", "css", "php", "mongodb", "asp.net"))
+                    AddCategory(categories, "Web Development");
+                if (HasAny(value, "software", "c#", ".net", "java", "python", "sql", "c++", "database"))
+                    AddCategory(categories, "Software Development");
             }
+            if (categories.Count == 0)
+                categories.Add("Other");
+            return categories;
+        }
 
-            return result;
+        private static bool HasAny(string value, params string[] terms)
+        {
+            return terms.Any(term => value.IndexOf(term, StringComparison.OrdinalIgnoreCase) >= 0);
+        }
+
+        private static void AddCategory(ICollection<string> categories, string category)
+        {
+            if (!categories.Contains(category))
+                categories.Add(category);
+        }
+
+        private static bool Contains(string value, string search)
+        {
+            return (value ?? string.Empty).IndexOf(search, StringComparison.OrdinalIgnoreCase) >= 0;
+        }
+
+        private static string GetInitials(string fullName)
+        {
+            string[] parts = (fullName ?? string.Empty).Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            if (parts.Length == 0) return "?";
+            if (parts.Length == 1) return parts[0].Substring(0, 1).ToUpperInvariant();
+            return (parts[0].Substring(0, 1) + parts[parts.Length - 1].Substring(0, 1)).ToUpperInvariant();
         }
     }
 }

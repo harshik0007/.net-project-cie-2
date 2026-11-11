@@ -13,5 +13,16 @@ namespace CIE_2_PROJECT
 
     public partial class FreelancerHome
     {
+        protected global::System.Web.UI.WebControls.Panel pnlDashboardError;
+        protected global::System.Web.UI.WebControls.Literal litDashboardError;
+        protected global::System.Web.UI.WebControls.Literal litWelcomeName;
+        protected global::System.Web.UI.WebControls.Literal litActiveContracts;
+        protected global::System.Web.UI.WebControls.Literal litPendingProposals;
+        protected global::System.Web.UI.WebControls.Literal litCompletedProjects;
+        protected global::System.Web.UI.WebControls.Literal litReleasedPayments;
+        protected global::System.Web.UI.WebControls.Repeater rptRecommendedProjects;
+        protected global::System.Web.UI.WebControls.Panel pnlNoRecommendedProjects;
+        protected global::System.Web.UI.WebControls.Literal litProfileCompletion;
+        protected global::System.Web.UI.WebControls.Panel pnlProfileCompletionBar;
     }
 }

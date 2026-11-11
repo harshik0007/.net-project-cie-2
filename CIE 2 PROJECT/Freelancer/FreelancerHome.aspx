@@ -1,427 +1,65 @@
-<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="FreelancerHome.aspx.cs" Inherits="CIE_2_PROJECT.FreelancerHome" %>
+<%@ Page Title="Freelancer Home" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="FreelancerHome.aspx.cs" Inherits="CIE_2_PROJECT.FreelancerHome" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-
-    <link rel="stylesheet" href="../Content/Css/FreelancerHome.css" />
-
+    <link rel="stylesheet" href="../Content/Css/DashboardHome.css?v=2" />
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="dashboard-home freelancer-dashboard">
+        <asp:Panel ID="pnlDashboardError" runat="server" CssClass="dashboard-alert" Visible="false">
+            <asp:Literal ID="litDashboardError" runat="server" Mode="Encode" />
+        </asp:Panel>
 
-    <div class="home-page">
-
-        <section class="hero">
-
-            <div class="hero-content">
-
-                <div class="welcome">
-                    Welcome back, xyz abc!
+        <section class="dashboard-hero freelancer-hero">
+            <div class="dashboard-hero-copy">
+                <span class="dashboard-eyebrow">Freelancer workspace</span>
+                <p class="dashboard-welcome">Welcome back, <strong><asp:Literal ID="litWelcomeName" runat="server" Mode="Encode" /></strong></p>
+                <h1>Find your next great project.</h1>
+                <p>Explore live opportunities, keep work moving, and track your marketplace progress from one place.</p>
+                <div class="dashboard-actions">
+                    <a href="FindProjects.aspx" class="dashboard-primary-action"><i class="fa-solid fa-magnifying-glass"></i> Find Projects</a>
+                    <a href="MyProposals.aspx" class="dashboard-secondary-action">My Proposals</a>
                 </div>
-
-                <h1 class="hero-title">
-                    Find your next
-                    <br />
-                    <span>great project</span>
-                </h1>
-
-                <p class="hero-description">
-                    Explore thousands of projects posted by clients
-                    and build your career on your terms.
-                </p>
-
-                <a href="FindProjects.aspx" class="primary-button">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    Find Projects
-                </a>
-
             </div>
-
-            <img
-                src="../Content/Images/freelancer-home-banner.png"
-                class="hero-image"
-                alt="Freelancer working on a project" />
-
+            <div class="dashboard-hero-art" aria-hidden="true">
+                <div class="dashboard-art-window"><i class="fa-solid fa-code"></i><span></span><span></span><span></span></div>
+                <div class="dashboard-art-check"><i class="fa-solid fa-check"></i></div>
+            </div>
         </section>
 
-
-        <div class="search-box">
-
-            <i class="fa-solid fa-magnifying-glass search-icon"></i>
-
-            <input
-                type="text"
-                class="search-input"
-                placeholder="Search projects by title, skill or keyword..." />
-
-            <select class="category-select">
-
-                <option>All Categories</option>
-                <option>Web Development</option>
-                <option>UI/UX Design</option>
-                <option>Game Development</option>
-                <option>Mobile Development</option>
-                <option>Data Analysis</option>
-
-            </select>
-
-            <a href="FindProjects.aspx" class="search-button" style="display: inline-flex; align-items: center; justify-content: center; text-decoration: none;">
-                Search
-            </a>
-
-        </div>
-
-
-        <section class="section">
-
-            <div class="section-header">
-
-                <h2 class="section-title">
-                    Recommended Projects
-                </h2>
-
-                <a href="FindProjects.aspx" class="view-all">
-                    View all
-                </a>
-
-            </div>
-
-
-            <div class="dashboard-grid">
-
-                <div class="project-grid">
-
-                    <div class="project-card">
-
-                        <h3 class="project-title">
-                            <a href="ProjectDetails.aspx" style="color: inherit; text-decoration: none;">Unity 2D Game Development</a>
-                        </h3>
-
-                        <p class="project-description">
-                            Need a complete e-commerce solution with ASP.NET
-                            Core, SQL Server and payment...
-                        </p>
-
-                        <div class="tags">
-
-                            <span class="tag">.NET Core</span>
-                            <span class="tag">C#</span>
-                            <span class="tag">SQL Server</span>
-
-                        </div>
-
-                        <div class="project-bottom">
-
-                            <span class="project-price">
-                                &#8377;15,000 - &#8377;25,000
-                            </span>
-
-                            <span class="project-days">
-                                5 days left
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="project-card">
-
-                        <h3 class="project-title">
-                            <a href="ProjectDetails.aspx" style="color: inherit; text-decoration: none;">Unity 2D Game Development</a>
-                        </h3>
-
-                        <p class="project-description">
-                            Looking for a Unity developer to create a 2D
-                            adventure game with multiple levels and...
-                        </p>
-
-                        <div class="tags">
-
-                            <span class="tag">Unity</span>
-                            <span class="tag">C#</span>
-                            <span class="tag">2D Animation</span>
-
-                        </div>
-
-                        <div class="project-bottom">
-
-                            <span class="project-price">
-                                &#8377;15,000 - &#8377;25,000
-                            </span>
-
-                            <span class="project-days">
-                                7 days left
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="profile-card">
-
-                    <div class="profile-progress-header">
-
-                        <span class="profile-section-title">
-                            Profile Completion
-                        </span>
-
-                        <span class="profile-percentage">
-                            75%
-                        </span>
-
-                    </div>
-
-                    <div class="progress">
-                        <div class="progress-bar"></div>
-                    </div>
-
-                    <p class="profile-description">
-                        Complete your profile to get more project recommendations.
-                    </p>
-
-                    <a href="../Authentication/FreelancerSkills.aspx" class="complete-button" style="display: flex; align-items: center; justify-content: center; text-decoration: none;">
-                        Complete Profile
-                    </a>
-
-
-                    <div class="profile-divider"></div>
-
-
-                    <div class="skills-header">
-
-                        <span class="profile-section-title">
-                            My Skills
-                        </span>
-
-                        <a href="../Authentication/FreelancerSkills.aspx" class="edit-link">
-                            Edit
-                        </a>
-
-                    </div>
-
-                    <div class="skill-tags">
-
-                        <span class="skill-tag">C#</span>
-                        <span class="skill-tag">ASP.NET Core</span>
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">Unity</span>
-
-                    </div>
-
-                    <a href="../Authentication/FreelancerSkills.aspx" class="add-skill">
-                        + Add more
-                    </a>
-
-                </div>
-
-            </div>
-
+        <section class="dashboard-metrics" aria-label="Freelancer activity">
+            <a class="dashboard-metric" href="ActiveWork.aspx"><span class="metric-icon metric-blue"><i class="fa-solid fa-briefcase"></i></span><span><small>Active contracts</small><strong><asp:Literal ID="litActiveContracts" runat="server" Mode="Encode" /></strong></span></a>
+            <a class="dashboard-metric" href="MyProposals.aspx?filter=pending"><span class="metric-icon metric-amber"><i class="fa-regular fa-clock"></i></span><span><small>Pending proposals</small><strong><asp:Literal ID="litPendingProposals" runat="server" Mode="Encode" /></strong></span></a>
+            <a class="dashboard-metric" href="MyProposals.aspx?filter=completed"><span class="metric-icon metric-green"><i class="fa-regular fa-circle-check"></i></span><span><small>Completed projects</small><strong><asp:Literal ID="litCompletedProjects" runat="server" Mode="Encode" /></strong></span></a>
+            <a class="dashboard-metric" href="WorkHistory.aspx"><span class="metric-icon metric-purple"><i class="fa-solid fa-wallet"></i></span><span><small>Payments released</small><strong><asp:Literal ID="litReleasedPayments" runat="server" Mode="Encode" /></strong></span></a>
         </section>
 
-
-        <section class="section">
-
-            <div class="section-header">
-
-                <h2 class="section-title">
-                    Popular Categories
-                </h2>
-
-                <a href="FindProjects.aspx" class="view-all">
-                    View all
-                </a>
-
+        <section class="dashboard-section">
+            <div class="dashboard-section-heading">
+                <div><span class="dashboard-eyebrow">Picked for you</span><h2>Recommended projects</h2></div>
+                <a href="FindProjects.aspx" class="dashboard-text-link">Browse all <i class="fa-solid fa-arrow-right"></i></a>
             </div>
-
-
-            <div class="dashboard-grid">
-
-                <div class="categories">
-
-                    <div class="category-card">
-
-                        <div class="category-icon">
-                            <i class="fa-solid fa-code"></i>
-                        </div>
-
-                        <span class="category-name">
-                            Web Dev
-                        </span>
-
-                    </div>
-
-
-                    <div class="category-card">
-
-                        <div class="category-icon">
-                            <i class="fa-solid fa-palette"></i>
-                        </div>
-
-                        <span class="category-name">
-                            UI/UX Design
-                        </span>
-
-                    </div>
-
-
-                    <div class="category-card">
-
-                        <div class="category-icon">
-                            <i class="fa-solid fa-gamepad"></i>
-                        </div>
-
-                        <span class="category-name">
-                            Game Dev
-                        </span>
-
-                    </div>
-
-
-                    <div class="category-card">
-
-                        <div class="category-icon">
-                            <i class="fa-solid fa-ellipsis"></i>
-                        </div>
-
-                        <span class="category-name">
-                            More
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="stats-card">
-
-                    <a href="MyProposals.aspx" class="stat" style="text-decoration: none; color: inherit;">
-
-                        <div class="stat-icon">
-                            <i class="fa-solid fa-paper-plane"></i>
-                        </div>
-
-                        <div class="stat-number">
-                            12
-                        </div>
-
-                        <div class="stat-label">
-                            Proposals Sent
-                        </div>
-
-                    </a>
-
-
-                    <div class="stat">
-
-                        <div class="stat-icon">
-                            <i class="fa-solid fa-briefcase"></i>
-                        </div>
-
-                        <div class="stat-number">
-                            5
-                        </div>
-
-                        <div class="stat-label">
-                            Projects In<br />
-                            Progress
-                        </div>
-
-                    </div>
-
-
-                    <div class="stat">
-
-                        <div class="stat-icon">
-                            <i class="fa-regular fa-circle-check"></i>
-                        </div>
-
-                        <div class="stat-number">
-                            3
-                        </div>
-
-                        <div class="stat-label">
-                            Projects<br />
-                            Completed
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
+            <asp:Repeater ID="rptRecommendedProjects" runat="server">
+                <HeaderTemplate><div class="dashboard-project-grid"></HeaderTemplate>
+                <ItemTemplate>
+                    <article class="dashboard-project-card">
+                        <div class="dashboard-project-top"><span class="dashboard-category"><%#: Eval("Category") %></span><span class="dashboard-deadline"><i class="fa-regular fa-calendar"></i> <%#: Eval("Deadline") %></span></div>
+                        <h3><a href='<%#: Eval("ProjectUrl") %>'><%#: Eval("Title") %></a></h3>
+                        <p class="dashboard-project-description"><%#: Eval("Description") %></p>
+                        <div class="dashboard-project-footer"><strong><%#: Eval("Budget") %></strong><a href='<%#: Eval("ProjectUrl") %>' aria-label="View project"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></div>
+                    </article>
+                </ItemTemplate>
+                <FooterTemplate></div></FooterTemplate>
+            </asp:Repeater>
+            <asp:Panel ID="pnlNoRecommendedProjects" runat="server" CssClass="dashboard-empty" Visible="false">
+                <i class="fa-regular fa-folder-open"></i><strong>No open projects to show yet</strong><span>New opportunities will appear here as clients post them.</span>
+            </asp:Panel>
         </section>
 
-
-        <section class="benefits">
-
-            <div class="benefit">
-
-                <div class="benefit-icon">
-                    <i class="fa-solid fa-shield-halved"></i>
-                </div>
-
-                <div>
-
-                    <div class="benefit-title">
-                        Verified Clients
-                    </div>
-
-                    <div class="benefit-text">
-                        Work with trusted and verified clients.
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="benefit">
-
-                <div class="benefit-icon">
-                    <i class="fa-solid fa-money-bill-wave"></i>
-                </div>
-
-                <div>
-
-                    <div class="benefit-title">
-                        Secure Payments
-                    </div>
-
-                    <div class="benefit-text">
-                        Get paid safely for your hard work.
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="benefit">
-
-                <div class="benefit-icon">
-                    <i class="fa-solid fa-headset"></i>
-                </div>
-
-                <div>
-
-                    <div class="benefit-title">
-                        24/7 Support
-                    </div>
-
-                    <div class="benefit-text">
-                        We're here to help you anytime.
-                    </div>
-
-                </div>
-
-            </div>
-
+        <section class="dashboard-profile-progress">
+            <div class="dashboard-progress-icon"><i class="fa-regular fa-user"></i></div>
+            <div class="dashboard-progress-copy"><div class="dashboard-progress-title"><strong>Profile completeness</strong><span><asp:Literal ID="litProfileCompletion" runat="server" Mode="Encode" />%</span></div><div class="dashboard-progress-track"><asp:Panel ID="pnlProfileCompletionBar" runat="server" CssClass="dashboard-progress-fill" /></div><p>A complete profile helps clients understand your skills and experience.</p></div>
+            <a href="Profile.aspx" class="dashboard-secondary-action">Review profile</a>
         </section>
-
     </div>
-
 </asp:Content>
