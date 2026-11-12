@@ -13,6 +13,13 @@ namespace CIE_2_PROJECT
 
     public partial class Payments
     {
+        protected global::System.Web.UI.WebControls.Label lblEscrowHeld;
+        protected global::System.Web.UI.WebControls.Label lblEscrowProjects;
+        protected global::System.Web.UI.WebControls.Label lblTotalPaid;
+        protected global::System.Web.UI.WebControls.Label lblPendingAmount;
+        protected global::System.Web.UI.WebControls.Label lblPendingSummary;
+        protected global::System.Web.UI.WebControls.Label lblCompletedAmount;
+        protected global::System.Web.UI.WebControls.Label lblCompletedSummary;
 
         /// <summary>
         /// lnkPending control.
@@ -21,7 +28,7 @@ namespace CIE_2_PROJECT
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkPending;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor lnkPending;
 
         /// <summary>
         /// lnkCompleted control.
@@ -30,7 +37,13 @@ namespace CIE_2_PROJECT
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkCompleted;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor lnkCompleted;
+
+        protected global::System.Web.UI.WebControls.Label lblPendingCount;
+
+        protected global::System.Web.UI.WebControls.Label lblCompletedCount;
+
+        protected global::System.Web.UI.WebControls.Label lblPageMessage;
 
         /// <summary>
         /// pnlPending control.
@@ -49,6 +62,7 @@ namespace CIE_2_PROJECT
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rptPending;
+        protected global::System.Web.UI.WebControls.Panel pnlPendingEmpty;
 
         /// <summary>
         /// pnlCompleted control.
@@ -67,5 +81,6 @@ namespace CIE_2_PROJECT
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rptCompleted;
+        protected global::System.Web.UI.WebControls.Panel pnlCompletedEmpty;
     }
 }

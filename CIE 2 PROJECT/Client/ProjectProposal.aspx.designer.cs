@@ -15,6 +15,87 @@ namespace CIE_2_PROJECT
     {
 
         /// <summary>
+        /// lnkBack control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink lnkBack;
+
+        /// <summary>
+        /// lblPageMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPageMessage;
+
+        /// <summary>
+        /// pnlProjectSummary control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlProjectSummary;
+
+        /// <summary>
+        /// litProjectTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litProjectTitle;
+
+        /// <summary>
+        /// litProjectDescription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litProjectDescription;
+
+        /// <summary>
+        /// litProjectSkills control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litProjectSkills;
+
+        /// <summary>
+        /// litProjectBudget control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litProjectBudget;
+
+        /// <summary>
+        /// litProjectDeadline control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litProjectDeadline;
+
+        /// <summary>
+        /// litProjectStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litProjectStatus;
+
+        /// <summary>
         /// lblProposalCount control.
         /// </summary>
         /// <remarks>
@@ -22,6 +103,10 @@ namespace CIE_2_PROJECT
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblProposalCount;
+
+        protected global::System.Web.UI.WebControls.Label lblProposalHeading;
+
+        protected global::System.Web.UI.WebControls.Label lblProposalGuidance;
 
         /// <summary>
         /// ddlSort control.
@@ -31,6 +116,15 @@ namespace CIE_2_PROJECT
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlSort;
+
+        /// <summary>
+        /// pnlNoProposals control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlNoProposals;
 
         /// <summary>
         /// rptProposals control.

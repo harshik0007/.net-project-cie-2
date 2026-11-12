@@ -65,6 +65,86 @@
     gap: 16px;
 }
 
+.previous-reviews-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.previous-review-card {
+    padding: 20px 22px;
+    border: 1px solid #e1e6ee;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 3px 12px rgba(32, 72, 135, .04);
+}
+
+.previous-review-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.previous-review-label {
+    display: block;
+    margin-bottom: 4px;
+    color: #687386;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.previous-review-heading h2 {
+    margin: 0;
+    color: #18233a;
+    font-size: 15px;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+.previous-review-rating {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: #fff5d9;
+    color: #875900;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.previous-review-rating i {
+    color: #d79a00;
+}
+
+.previous-review-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+    color: #687386;
+    font-size: 12px;
+}
+
+.previous-review-meta strong {
+    color: #075cff;
+    font-weight: 600;
+}
+
+.previous-review-text {
+    margin: 14px 0 0;
+    padding-top: 13px;
+    border-top: 1px solid #edf0f4;
+    color: #45546a;
+    font-size: 13px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
 /* Proposal Card */
 .proposal-card {
     width: 100%;
@@ -73,7 +153,7 @@
     border-radius: 12px;
     background: #ffffff;
     display: grid;
-    grid-template-columns: 1fr 220px;
+    grid-template-columns: minmax(0, 1fr) minmax(190px, 220px);
     overflow: hidden;
     transition: border-color 0.2s, box-shadow 0.2s;
 }
@@ -89,6 +169,7 @@
     align-items: flex-start;
     gap: 18px;
     padding: 24px 22px;
+    min-width: 0;
 }
 
 .proposal-icon {
@@ -144,6 +225,11 @@
     font-size: 15px;
     font-weight: 700;
     line-height: 1.35;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .proposal-meta {
@@ -182,6 +268,11 @@
     color: #59677b;
     font-size: 12px;
     line-height: 1.6;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* Right Section */
@@ -194,6 +285,11 @@
     justify-content: center;
     text-align: right;
     gap: 8px;
+    min-width: 0;
+}
+
+.proposal-side > * {
+    max-width: 100%;
 }
 
 .side-group {
@@ -254,10 +350,67 @@
     color: #d93025;
 }
 
+.badge-completed {
+    background: #e6f5ec;
+    color: #16804a;
+}
+
+.client-review-status {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+    margin-top: 3px;
+}
+
+.review-state {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 9px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.review-pending {
+    background: #fff4d6;
+    color: #8a5b00;
+}
+
+.review-complete {
+    background: #e8f5ed;
+    color: #167344;
+}
+
+.rate-client-button {
+    min-height: 36px;
+    padding: 8px 14px;
+    border: 1px solid #075cff;
+    border-radius: 6px;
+    background: #075cff;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+    transition: background .2s ease, border-color .2s ease;
+}
+
+.rate-client-button:hover {
+    background: #0049d8;
+    border-color: #0049d8;
+    color: #fff;
+}
+
 /* View Project Button */
 .view-project-button {
-    height: 30px;
-    padding: 0 16px;
+    min-height: 36px;
+    height: auto;
+    max-width: 100%;
+    padding: 8px 14px;
     border: 1.5px solid #075cff;
     border-radius: 6px;
     background: transparent;
@@ -271,11 +424,40 @@
     margin-top: 4px;
     cursor: pointer;
     transition: all 0.2s ease;
+    white-space: normal;
+    text-align: center;
 }
 
 .view-project-button:hover {
     background: #075cff;
     color: #ffffff;
+}
+
+.message-client-button {
+    min-height: 34px;
+    max-width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 7px 12px;
+    border: 1px solid #d3def0;
+    border-radius: 6px;
+    background: #ffffff;
+    color: #334b6b;
+    font-size: 12px;
+    font-weight: 650;
+    text-decoration: none;
+    white-space: normal;
+    text-align: center;
+    transition: border-color .2s ease, background .2s ease, color .2s ease;
+}
+
+.message-client-button:hover {
+    border-color: #9ab7f3;
+    background: #f3f7ff;
+    color: #075cff;
+    text-decoration: none;
 }
 
 /* Empty State */
@@ -288,10 +470,39 @@
     color: #687386;
 }
 
-.empty-state i {
+.empty-state .empty-icon > i {
     font-size: 40px;
     color: #a4b0c2;
     margin-bottom: 14px;
+}
+
+.empty-action i {
+    margin: 0;
+    font-size: 14px;
+}
+
+.empty-action {
+    min-height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 18px;
+    padding: 0 15px;
+    border: 1px solid #cbd9ef;
+    border-radius: 8px;
+    color: #075cff;
+    background: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.empty-action:hover {
+    border-color: #075cff;
+    background: #f3f7ff;
+    color: #0046cf;
+    text-decoration: none;
 }
 
 .empty-state h3 {
@@ -338,7 +549,20 @@
         text-align: left;
     }
 
+    .client-review-status {
+        align-items: flex-start;
+    }
+
     .side-group {
         align-items: flex-start;
+    }
+
+    .previous-review-card {
+        padding: 17px;
+    }
+
+    .previous-review-heading {
+        flex-direction: column;
+        gap: 10px;
     }
 }

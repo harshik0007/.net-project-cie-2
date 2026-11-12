@@ -1,0 +1,34 @@
+.escrow-guide-page{width:100%;max-width:980px;margin:0 auto;padding:34px 24px 64px;color:#172238}
+.escrow-guide-back{display:inline-flex;align-items:center;gap:8px;margin-bottom:18px;color:#075cff;font-size:13px;font-weight:650;text-decoration:none}
+.escrow-guide-back:hover{color:#0047d0;text-decoration:underline}
+.escrow-guide-hero{padding:30px 34px;margin-bottom:18px;border:1px solid #dbe6f5;border-radius:16px;background:linear-gradient(135deg,#f3f8ff 0%,#fff 72%);box-shadow:0 8px 26px rgba(22,48,92,.05)}
+.escrow-guide-eyebrow{display:inline-flex;align-items:center;gap:8px;color:#075cff;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.07em}
+.escrow-guide-hero h1{margin:12px 0 8px;color:#14213d;font-size:30px;letter-spacing:-.03em}
+.escrow-guide-hero p{max-width:720px;margin:0;color:#53627a;font-size:14px;line-height:1.7}
+.escrow-simulation-tag{display:inline-flex;align-items:center;gap:7px;margin-top:18px;padding:8px 11px;border:1px solid #cfe0ff;border-radius:8px;background:#fff;color:#315b9b;font-size:11px;font-weight:650}
+.escrow-guide-card{padding:25px 28px;margin-bottom:18px;border:1px solid #dfe6f0;border-radius:14px;background:#fff;box-shadow:0 4px 18px rgba(25,45,80,.04)}
+.escrow-guide-section-heading{display:flex;align-items:center;gap:13px;margin-bottom:20px}
+.escrow-guide-section-icon{width:42px;height:42px;flex:0 0 42px;display:grid;place-items:center;border-radius:12px;background:#eaf2ff;color:#075cff;font-size:16px}
+.escrow-guide-section-heading h2{margin:0;color:#172238;font-size:18px}
+.escrow-guide-section-heading p{margin:5px 0 0;color:#6a778d;font-size:12px;line-height:1.6}
+.escrow-steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:0;padding:0;list-style:none}
+.escrow-steps li{display:flex;align-items:flex-start;gap:13px;padding:16px;border:1px solid #e8edf5;border-radius:11px;background:#fbfcfe}
+.escrow-step-number{width:30px;height:30px;flex:0 0 30px;display:grid;place-items:center;border-radius:50%;background:#075cff;color:#fff;font-size:13px;font-weight:700}
+.escrow-steps h3{margin:1px 0 5px;color:#24334b;font-size:13px}
+.escrow-steps p{margin:0;color:#67758c;font-size:12px;line-height:1.6}
+.cancellation-icon{background:#fff5e5;color:#b36b00}
+.escrow-split-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.escrow-split-item{display:flex;flex-direction:column;gap:6px;padding:17px;border:1px solid #e6ebf3;border-radius:11px;background:#fbfcfe}
+.escrow-split-item span{color:#53627a;font-size:12px;font-weight:650}
+.escrow-split-item strong{font-size:26px;line-height:1.1}
+.escrow-split-item small{color:#758198;font-size:11px}
+.client-refund strong{color:#147a50}.freelancer-payout strong{color:#075cff}.platform-fee strong{color:#9a6200}
+.escrow-example{display:flex;align-items:flex-start;gap:11px;margin-top:15px;padding:13px 15px;border-radius:9px;background:#f3f7ff;color:#315b9b}
+.escrow-example i{margin-top:3px;color:#075cff}
+.escrow-example p{margin:0;font-size:12px;line-height:1.7}
+.escrow-example strong{color:#243c68}
+.escrow-cancellation-note{margin:14px 0 0;color:#69768b;font-size:11px;line-height:1.65}
+.escrow-guide-footer-note{display:flex;align-items:flex-start;gap:11px;padding:14px 16px;border:1px solid #d9e6ff;border-radius:10px;background:#f4f8ff;color:#526783;font-size:12px;line-height:1.65}
+.escrow-guide-footer-note i{margin-top:3px;color:#075cff}
+@media(max-width:700px){.escrow-guide-page{padding:24px 15px 48px}.escrow-guide-hero{padding:23px 20px}.escrow-guide-hero h1{font-size:25px}.escrow-guide-card{padding:20px 17px}.escrow-steps{grid-template-columns:1fr}.escrow-split-grid{grid-template-columns:1fr}.escrow-split-item{display:grid;grid-template-columns:1fr auto;align-items:center}.escrow-split-item strong{grid-column:2;grid-row:1 / span 2}.escrow-split-item small{grid-column:1}}
+

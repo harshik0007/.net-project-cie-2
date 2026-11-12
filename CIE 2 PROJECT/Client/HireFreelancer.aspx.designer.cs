@@ -14,6 +14,38 @@ namespace CIE_2_PROJECT
     public partial class HireFreelancer
     {
 
+        protected global::System.Web.UI.WebControls.HyperLink lnkBack;
+
+        protected global::System.Web.UI.WebControls.HyperLink lnkCancel;
+
+        protected global::System.Web.UI.WebControls.Label lblMessage;
+
+        protected global::System.Web.UI.WebControls.Panel pnlConfirmation;
+
+        protected global::System.Web.UI.WebControls.Label lblProjectTitle;
+
+        protected global::System.Web.UI.WebControls.Label lblProjectDescription;
+
+        protected global::System.Web.UI.WebControls.Label lblProjectSkills;
+
+        protected global::System.Web.UI.WebControls.Label lblProjectBudget;
+
+        protected global::System.Web.UI.WebControls.Label lblProjectDeadline;
+
+        protected global::System.Web.UI.WebControls.HyperLink lnkFreelancerProfile;
+
+        protected global::System.Web.UI.WebControls.Label lblProposedPrice;
+
+        protected global::System.Web.UI.WebControls.Label lblDeliveryTime;
+
+        protected global::System.Web.UI.WebControls.Label lblProposalStatus;
+
+        protected global::System.Web.UI.WebControls.Label lblCoverLetter;
+
+        protected global::System.Web.UI.WebControls.Label lblProposalAttachmentDetails;
+
+        protected global::System.Web.UI.WebControls.HyperLink lnkProposalAttachment;
+
         /// <summary>
         /// btnConfirmHire control.
         /// </summary>

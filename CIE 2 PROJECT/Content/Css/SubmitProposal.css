@@ -1,53 +1,87 @@
+
+/* =========================================
+   SUBMIT PROPOSAL PAGE
+   Matching SkillLink Create Project design
+========================================= */
+
 .proposal-page {
     width: 100%;
     max-width: 1040px;
     margin: 0 auto;
     padding: 28px 0 70px;
+    color: #18233a;
+    font-family: "Segoe UI", Arial, sans-serif;
+    box-sizing: border-box;
 }
+
+    .proposal-page *,
+    .proposal-page *::before,
+    .proposal-page *::after {
+        box-sizing: border-box;
+    }
+
+/* =========================================
+   BACK NAVIGATION
+========================================= */
 
 .back-link {
     display: inline-flex;
     align-items: center;
-    gap: 7px;
+    gap: 8px;
     color: #075cff;
     text-decoration: none;
-    font-size: 12px;
-    margin-bottom: 18px;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 22px;
 }
 
+    .back-link:hover {
+        color: #0046c7;
+    }
+
+/* =========================================
+   PROJECT SUMMARY
+========================================= */
+
 .project-summary-card {
-    min-height: 164px;
-    border: 1px solid #e1e6ee;
-    border-radius: 9px;
-    background: #ffffff;
+    width: 100%;
+    min-height: 175px;
     padding: 25px;
     display: flex;
+    align-items: stretch;
     justify-content: space-between;
-    gap: 30px;
+    gap: 28px;
+    background: #ffffff;
+    border: 1px solid #dce3ee;
+    border-radius: 9px;
 }
 
 .project-summary-content {
     flex: 1;
+    min-width: 0;
 }
 
     .project-summary-content h1 {
-        margin: 0 0 12px;
+        margin: 0 0 14px;
         color: #18233a;
-        font-size: 21px;
+        font-size: 23px;
+        font-weight: 700;
+        line-height: 1.4;
     }
 
 .project-meta {
     display: flex;
     align-items: center;
-    gap: 10px;
+    flex-wrap: wrap;
+    gap: 13px;
     color: #687386;
-    font-size: 12px;
+    font-size: 13px;
 }
 
     .project-meta span {
-        display: flex;
+        display: inline-flex;
         align-items: center;
-        gap: 6px;
+        gap: 7px;
     }
 
     .project-meta a {
@@ -56,44 +90,58 @@
     }
 
 .project-summary-content p {
-    max-width: 650px;
+    max-width: 680px;
     margin: 18px 0 0;
     color: #59677b;
-    font-size: 12px;
-    line-height: 1.7;
+    font-size: 13px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
 }
 
+/* =========================================
+   SUMMARY SIDE
+========================================= */
+
 .summary-side {
-    width: 160px;
+    width: 185px;
+    flex-shrink: 0;
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    justify-content: space-between;
+    gap: 15px;
 }
 
 .view-details-button {
-    height: 36px;
-    border: 1px solid #075cff;
-    border-radius: 5px;
-    color: #075cff;
-    background: #fff;
-    text-decoration: none;
+    min-height: 40px;
+    padding: 9px 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 7px;
+    gap: 8px;
+    background: #ffffff;
+    border: 1px solid #075cff;
+    border-radius: 6px;
+    color: #075cff;
+    text-decoration: none;
     font-size: 12px;
     font-weight: 600;
+    transition: background 0.2s, color 0.2s;
 }
 
+    .view-details-button:hover {
+        background: #075cff;
+        color: #ffffff;
+    }
+
 .budget-box {
-    min-height: 65px;
-    border: 1px solid #d4ebd2;
-    border-radius: 6px;
-    background: #f4fbf3;
-    padding: 10px 12px;
+    min-height: 78px;
+    padding: 13px 15px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background: #f4fbf3;
+    border: 1px solid #d4ebd2;
+    border-radius: 7px;
 }
 
 .budget-label {
@@ -102,229 +150,408 @@
 }
 
 .budget-value {
+    margin-top: 7px;
     color: #079447;
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 700;
-    margin-top: 6px;
+    line-height: 1.4;
 }
 
+/* =========================================
+   PROPOSAL FORM CARD
+========================================= */
+
 .proposal-card {
-    margin-top: 18px;
-    border: 1px solid #e1e6ee;
+    width: 100%;
+    margin-top: 22px;
+    padding: 30px;
+    background: #ffffff;
+    border: 1px solid #dce3ee;
     border-radius: 9px;
-    background: #fff;
-    padding: 28px 25px 24px;
 }
 
 .proposal-title {
     margin: 0;
     color: #18233a;
-    font-size: 17px;
+    font-size: 21px;
+    font-weight: 700;
 }
 
 .proposal-description {
-    margin: 10px 0 26px;
-    color: #59677b;
-    font-size: 12px;
+    margin: 10px 0 30px;
+    color: #687386;
+    font-size: 13px;
+    line-height: 1.7;
 }
 
+/* =========================================
+   FORM GROUPS
+========================================= */
+
 .form-group {
-    margin-bottom: 25px;
+    margin-bottom: 27px;
 }
 
 .form-label {
     display: block;
+    margin-bottom: 10px;
     color: #18233a;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 600;
-    margin-bottom: 9px;
 }
 
 .required {
     color: #dc3545;
+    margin-left: 2px;
 }
 
 .optional {
     color: #687386;
     font-weight: 400;
+    margin-left: 3px;
 }
+
+/* =========================================
+   TEXT AREA
+========================================= */
 
 .cover-letter {
+    display: block;
     width: 100%;
-    height: 205px;
-    resize: none;
-    border: 1px solid #dce2ec;
-    border-radius: 6px;
-    padding: 13px;
+    min-height: 190px;
+    padding: 14px 15px;
+    resize: vertical;
+    border: 1px solid #cfd8e6;
+    border-radius: 7px;
     outline: none;
+    background: #ffffff;
+    color: #263142;
     font-family: "Segoe UI", Arial, sans-serif;
-    font-size: 12px;
+    font-size: 13px;
+    line-height: 1.7;
+    transition: border-color 0.2s, box-shadow 0.2s;
 }
 
+    .cover-letter::placeholder {
+        color: #8994a6;
+    }
+
+    .cover-letter:focus {
+        border-color: #075cff;
+        box-shadow: 0 0 0 3px rgba(7, 92, 255, 0.09);
+    }
+
+/* =========================================
+   INPUTS AND DROPDOWNS
+========================================= */
+
 .input-box {
+    display: block;
     width: 100%;
-    height: 34px;
-    border: 1px solid #dce2ec;
-    border-radius: 6px;
-    padding: 0 12px;
-    background: #fff;
+    height: 43px;
+    padding: 0 13px;
+    border: 1px solid #cfd8e6;
+    border-radius: 7px;
+    background: #ffffff;
     color: #263142;
     outline: none;
-    font-size: 12px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 13px;
+    transition: border-color 0.2s, box-shadow 0.2s;
 }
+
+    .input-box:focus {
+        border-color: #075cff;
+        box-shadow: 0 0 0 3px rgba(7, 92, 255, 0.09);
+    }
+
+    .input-box::placeholder {
+        color: #8994a6;
+    }
 
 .two-column {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 24px;
 }
 
 .helper-text,
 .attachment-description {
+    margin-top: 8px;
     color: #687386;
     font-size: 12px;
-    margin-top: 7px;
+    line-height: 1.6;
 }
+
+/* =========================================
+   VALIDATION
+========================================= */
 
 .validation-error {
     display: block;
+    margin-top: 7px;
     color: #dc3545;
     font-size: 12px;
-    margin-top: 7px;
+    line-height: 1.5;
 }
 
-.upload-box {
-    position: relative;
-    height: 142px;
-    border: 2px dashed #cbd8ea;
-    border-radius: 7px;
+.message-error {
+    margin-top: 16px;
+    padding: 12px 14px;
+    background: #fff5f5;
+    border: 1px solid #f2caca;
+    border-radius: 6px;
+}
+
+.validation-error ul {
+    padding-left: 22px;
+    margin: 8px 0;
+}
+
+/* =========================================
+   ATTACHMENT UPLOAD
+========================================= */
+
+.attachment-group {
+    margin-top: 5px;
+}
+
+.simple-upload-box {
+    margin-top: 12px;
+    padding: 22px;
+    background: #f9fbff;
+    border: 1px solid #dce3ee;
+    border-radius: 8px;
+}
+
+.simple-upload-heading {
     display: flex;
     align-items: center;
-    justify-content: center;
-    overflow: hidden;
+    gap: 14px;
+    margin-bottom: 19px;
 }
 
-.file-upload {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    cursor: pointer;
-}
-
-.upload-content {
-    text-align: center;
-    pointer-events: none;
-}
-
-.upload-icon {
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    background: #edf4ff;
-    color: #075cff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 10px;
-}
+    .simple-upload-heading > i {
+        width: 44px;
+        height: 44px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        background: #eaf1ff;
+        color: #075cff;
+        font-size: 19px;
+    }
 
 .upload-title {
+    margin-bottom: 5px;
     color: #18233a;
-    font-size: 12px;
-    margin-bottom: 7px;
+    font-size: 14px;
+    font-weight: 600;
 }
 
 .upload-info {
-    color: #59677b;
+    color: #687386;
     font-size: 12px;
 }
 
-.note-box {
+/* Native browser file picker */
+.native-file-upload {
+    display: block;
+    width: 100%;
     min-height: 44px;
+    padding: 7px;
+    border: 1px solid #cfd8e6;
+    border-radius: 6px;
+    background: #ffffff;
+    color: #59677b;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+    .native-file-upload::file-selector-button {
+        margin-right: 13px;
+        padding: 9px 15px;
+        border: none;
+        border-radius: 5px;
+        background: #075cff;
+        color: #ffffff;
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+        .native-file-upload::file-selector-button:hover {
+            background: #004bd1;
+        }
+
+.upload-rules {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: 13px;
+    color: #687386;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* =========================================
+   INFORMATION BOX
+========================================= */
+
+.note-box {
+    min-height: 52px;
+    margin-top: 8px;
+    padding: 13px 15px;
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    background: #eef5ff;
     border: 1px solid #bcd5ff;
     border-radius: 7px;
-    background: #eef5ff;
-    display: flex;
-    align-items: center;
-    gap: 9px;
-    padding: 10px 13px;
     color: #43536a;
     font-size: 12px;
+    line-height: 1.7;
 }
 
     .note-box i {
+        margin-top: 2px;
         color: #075cff;
+        flex-shrink: 0;
     }
+
+/* =========================================
+   BOTTOM ACTIONS
+========================================= */
 
 .proposal-divider {
     height: 1px;
+    margin: 30px 0 22px;
     background: #e5e9ef;
-    margin: 29px 0 19px;
 }
 
 .proposal-actions {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 15px;
 }
 
 .cancel-button {
-    width: 88px;
-    height: 38px;
-    border: 1px solid #dce2ec;
-    border-radius: 6px;
-    background: #fff;
-    color: #263142;
-    display: flex;
+    min-width: 95px;
+    min-height: 42px;
+    padding: 10px 17px;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
+    border: 1px solid #d5dce7;
+    border-radius: 6px;
+    background: #ffffff;
+    color: #263142;
     text-decoration: none;
-    font-size: 12px;
+    font-size: 13px;
+    font-weight: 500;
+    transition: background 0.2s;
 }
 
+    .cancel-button:hover {
+        background: #f5f7fa;
+    }
+
 .submit-button {
-    width: 155px;
-    height: 38px;
+    min-width: 165px;
+    min-height: 42px;
+    padding: 10px 18px;
     border: none;
     border-radius: 6px;
     background: #075cff;
-    color: #fff;
-    font-size: 12px;
+    color: #ffffff;
+    font-size: 13px;
     font-weight: 600;
     cursor: pointer;
+    transition: background 0.2s;
+}
+
+    .submit-button:hover {
+        background: #004bd1;
+    }
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1100px) {
+    .proposal-page {
+        padding-left: 22px;
+        padding-right: 22px;
+    }
 }
 
 @media (max-width: 750px) {
-
     .proposal-page {
-        padding: 22px 20px 60px;
+        padding: 22px 18px 60px;
     }
 
     .project-summary-card {
         flex-direction: column;
+        gap: 22px;
     }
 
     .summary-side {
         width: 100%;
         flex-direction: row;
+        align-items: stretch;
     }
+
+        .summary-side > * {
+            flex: 1;
+        }
 
     .two-column {
         grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .proposal-card {
+        padding: 24px 20px;
     }
 }
 
 @media (max-width: 500px) {
+    .project-summary-card {
+        padding: 20px;
+    }
+
+    .project-summary-content h1 {
+        font-size: 20px;
+    }
 
     .summary-side {
         flex-direction: column;
     }
 
+    .proposal-card {
+        padding: 21px 16px;
+    }
+
+    .cover-letter {
+        min-height: 170px;
+    }
+
+    .simple-upload-box {
+        padding: 15px;
+    }
+
+    .upload-rules {
+        flex-direction: column;
+    }
+
     .proposal-actions {
         flex-direction: column-reverse;
-        gap: 10px;
+        align-items: stretch;
     }
 
     .cancel-button,

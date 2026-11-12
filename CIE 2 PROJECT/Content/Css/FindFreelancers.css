@@ -218,11 +218,16 @@
     gap: 15px;
 }
 
+.freelancer-title-row > div {
+    min-width: 0;
+}
+
     .freelancer-title-row h3 {
         margin: 0 0 3px;
         color: #263142;
         font-size: 12px;
         font-weight: 700;
+        overflow-wrap: anywhere;
     }
 
 .freelancer-title {
@@ -268,6 +273,7 @@
         background: #f8faff;
         color: #53627a;
         font-size: 12px;
+        overflow-wrap: anywhere;
     }
 
 .freelancer-bio {
@@ -275,6 +281,7 @@
     color: #687386;
     font-size: 12px;
     line-height: 1.5;
+    overflow-wrap: anywhere;
 }
 
 .freelancer-actions {
@@ -371,6 +378,88 @@
     color: #b9c1cd;
     background: #f7f8fa;
     pointer-events: none;
+}
+
+.freelancer-title-row h3 a {
+    color: #14213d;
+    text-decoration: none;
+}
+
+.freelancer-title-row h3 a:hover {
+    color: #075cff;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.freelancer-location {
+    margin: 4px 0 0;
+    color: #718098;
+    font-size: 12px;
+}
+
+.freelancer-empty-state {
+    padding: 38px 20px;
+    border: 1px dashed #cfd9e8;
+    border-radius: 10px;
+    background: #f8faff;
+    color: #66758b;
+    text-align: center;
+}
+
+.freelancer-empty-state > i {
+    color: #075cff;
+    font-size: 25px;
+}
+
+.freelancer-empty-state h3 {
+    margin: 12px 0 5px;
+    color: #172238;
+    font-size: 17px;
+}
+
+.freelancer-empty-state p {
+    margin: 0;
+    font-size: 13px;
+}
+
+.profile-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 38px;
+    padding: 0 14px;
+    border: 1px solid #075cff;
+    border-radius: 6px;
+    background: #075cff;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.profile-button:hover {
+    border-color: #004bd6;
+    background: #004bd6;
+    color: #fff;
+    text-decoration: none;
+}
+
+.contact-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 38px;
+    padding: 0 12px;
+    border: 1px solid #d6deea;
+    border-radius: 6px;
+    background: #fff;
+    color: #34445d;
+    text-decoration: none;
+}
+
+.contact-button:hover {
+    border-color: #075cff;
+    color: #075cff;
+    text-decoration: none;
 }
 
 /* =========================
