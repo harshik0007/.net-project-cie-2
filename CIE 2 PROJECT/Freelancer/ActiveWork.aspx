@@ -1,20 +1,31 @@
-<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ActiveWork.aspx.cs" Inherits="CIE_2_PROJECT.ActiveWork" %>
+
+<%@ Page Title="Active Work" Language="C#" MasterPageFile="~/Site.Master"
+    AutoEventWireup="true" CodeBehind="ActiveWork.aspx.cs"
+    Inherits="CIE_2_PROJECT.ActiveWork" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link rel="stylesheet" href="../Content/Css/ActiveWork.css" />
+    <link rel="stylesheet" href="../Content/Css/ActiveWork.css?v=3" />
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="active-work-page">
 
+        <!-- Page Header -->
         <div class="page-header">
             <h1 class="page-title">Active Work</h1>
             <p class="page-subtitle">
                 Projects you are working on. Track progress and manage your active jobs.
             </p>
+            <p class="active-work-shortcuts">
+                <a href="WorkHistory.aspx">Payment history</a>
+            </p>
         </div>
 
+        <asp:Label ID="lblPageMessage" runat="server"
+            CssClass="page-message" Visible="false" />
+
+        <!-- Summary -->
         <div class="work-summary">
 
             <div class="summary-item">
@@ -24,7 +35,9 @@
 
                 <div class="summary-content">
                     <span class="summary-label">Total Active Projects</span>
-                    <span class="summary-value">4</span>
+
+                    <asp:Label ID="lblTotalActive" runat="server"
+                        CssClass="summary-value" Text="0" />
                 </div>
             </div>
 
@@ -35,7 +48,9 @@
 
                 <div class="summary-content">
                     <span class="summary-label">In Progress</span>
-                    <span class="summary-value">3</span>
+
+                    <asp:Label ID="lblInProgress" runat="server"
+                        CssClass="summary-value" Text="0" />
                 </div>
             </div>
 
@@ -46,269 +61,179 @@
 
                 <div class="summary-content">
                     <span class="summary-label">Pending Review</span>
-                    <span class="summary-value">1</span>
+
+                    <asp:Label ID="lblPendingReview" runat="server"
+                        CssClass="summary-value" Text="&#8212;" />
                 </div>
             </div>
 
             <div class="summary-item summary-last">
                 <div class="summary-icon summary-red">
-                    <i class="fa-solid fa-money-bill-wave"></i>
+                    <i class="fa-solid fa-indian-rupee-sign"></i>
                 </div>
 
                 <div class="summary-content">
-                    <span class="summary-label">Total Earnings</span>
-                    <span class="summary-value">&#8377;24,500</span>
+                    <span class="summary-label">Total Expected Payout</span>
+
+                    <asp:Label ID="lblTotalEarnings" runat="server"
+                        CssClass="summary-value" Text="&#8377;0" />
                 </div>
             </div>
 
         </div>
 
+        <!-- Empty State -->
+        <asp:Panel ID="pnlEmpty" runat="server"
+            CssClass="empty-state" Visible="false">
 
-        <div class="active-projects">
-
-            <div class="active-project-card">
-
-                <div class="project-main">
-
-                    <div class="project-icon game-icon">
-                        <i class="fa-solid fa-gamepad"></i>
-                    </div>
-
-                    <div class="project-content">
-
-                        <h2 class="project-title">
-                            Unity Game Development for 2D Adventure Game
-                        </h2>
-
-                        <div class="project-meta">
-
-                            <span>
-                                <i class="fa-regular fa-user"></i>
-                                Client:
-                                <a href="#" class="client-link">Game Studio</a>
-                            </span>
-
-                            <span class="meta-dot">•</span>
-
-                            <span>
-                                <i class="fa-regular fa-calendar"></i>
-                                Started on 18 May 2026
-                            </span>
-
-                        </div>
-
-                        <p class="project-description">
-                            Develop a 2D adventure game in Unity with multiple levels,
-                            player movement, enemies, and power-ups.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="project-side">
-
-                    <div class="side-top">
-
-                        <div class="side-info">
-                            <span class="side-label">Agreed Price</span>
-                            <span class="side-price">&#8377;9,000</span>
-                        </div>
-
-                        <span class="status-badge status-progress">
-                            <i class="fa-solid fa-rotate"></i>
-                            In Progress
-                        </span>
-
-                    </div>
-
-                    <div class="deadline-section">
-                        <span class="side-label">Deadline</span>
-                        <strong>30 May 2026</strong>
-                    </div>
-
-                    <div class="progress-row">
-                        <div class="progress-track">
-                            <div class="progress-fill progress-60"></div>
-                        </div>
-
-                        <span class="progress-value">60%</span>
-                    </div>
-
-                    <a href="SubmitWork.aspx" class="open-project-button">
-                        Open Project
-                    </a>
-
-                </div>
-
+            <div class="empty-icon">
+                <i class="fa-regular fa-folder-open"></i>
             </div>
 
+            <h2>No Active Projects Yet</h2>
 
-            <div class="active-project-card">
+            <p>
+                Projects with accepted proposals will appear here.
+                Find a project and submit a proposal to get started.
+            </p>
 
-                <div class="project-main">
+            <a href="FindProjects.aspx" class="empty-action">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                Find Projects
+            </a>
 
-                    <div class="project-icon code-icon">
-                        <i class="fa-solid fa-code"></i>
+        </asp:Panel>
+
+        <!-- Active Projects -->
+        <asp:Repeater ID="rptActiveWork" runat="server">
+
+            <HeaderTemplate>
+                <div class="active-projects">
+            </HeaderTemplate>
+
+            <ItemTemplate>
+
+                <div class="active-project-card">
+
+                    <!-- Project Information -->
+                    <div class="project-main">
+
+                        <div class='project-icon <%#: Eval("IconClass") %>'>
+                            <i class='<%#: Eval("IconFa") %>'></i>
+                        </div>
+
+                        <div class="project-content">
+
+                            <h2 class="project-title">
+                                <%#: Eval("Title") %>
+                            </h2>
+
+                            <div class="project-meta">
+
+                                <span>
+                                    <i class="fa-regular fa-user"></i>
+                                    Client:
+
+                                    <a class="client-link" href='<%#: Eval("ClientProfileUrl") %>'><%#: Eval("Client") %></a>
+                                </span>
+
+                                <span class="meta-dot">&#8226;</span>
+
+                                <span>
+                                    <i class="fa-regular fa-calendar"></i>
+                                    Started on <%#: Eval("StartedOn") %>
+                                </span>
+
+                            </div>
+
+                            <p class="project-description">
+                                <%#: Eval("Description") %>
+                            </p>
+
+                            <div class="project-skills">
+
+                                <span class="skill-label">Category</span>
+
+                                <span class="category-tag">
+                                    <%#: Eval("Category") %>
+                                </span>
+
+                            </div>
+
+                        </div>
+
                     </div>
 
-                    <div class="project-content">
+                    <!-- Project Details -->
+                    <div class="project-side">
 
-                        <h2 class="project-title">
-                            Build a .NET Core E-commerce Website
-                        </h2>
+                        <div class="side-top">
 
-                        <div class="project-meta">
+                            <div class="side-info">
+                                <span class="side-label">Expected Payout After Fee</span>
 
-                            <span>
-                                <i class="fa-regular fa-user"></i>
-                                Client:
-                                <a href="#" class="client-link">John Doe</a>
-                            </span>
+                                <span class="side-price">
+                                    <%#: Eval("AgreedPrice") %>
+                                </span>
+                            </div>
 
-                            <span class="meta-dot">•</span>
-
-                            <span>
-                                <i class="fa-regular fa-calendar"></i>
-                                Started on 22 May 2026
+                            <span class='status-badge <%#: Eval("BadgeClass") %>'>
+                                <i class='<%#: Eval("BadgeIcon") %>'></i>
+                                <%#: Eval("StatusLabel") %>
                             </span>
 
                         </div>
 
-                        <p class="project-description">
-                            Build a complete e-commerce website using ASP.NET Core
-                            with user authentication, product management, and payment
-                            gateway.
-                        </p>
+                        <div class="deadline-section">
+                            <span class="side-label">Project Deadline</span>
 
-                    </div>
-
-                </div>
-
-
-                <div class="project-side">
-
-                    <div class="side-top">
-
-                        <div class="side-info">
-                            <span class="side-label">Agreed Price</span>
-                            <span class="side-price">&#8377;12,000</span>
+                            <strong>
+                                <%#: Eval("Deadline") %>
+                            </strong>
                         </div>
 
-                        <span class="status-badge status-progress blue-status">
-                            <i class="fa-solid fa-rotate"></i>
-                            In Progress
-                        </span>
+                        <div class="deadline-section">
+                            <span class="side-label">Payment Status</span>
+                            <strong><%#: Eval("PaymentStatus") %></strong>
+                        </div>
 
-                    </div>
+                        <div class="progress-heading">
+                            <span class="side-label">Work Progress</span>
 
-                    <div class="deadline-section">
-                        <span class="side-label">Deadline</span>
-                        <strong>10 June 2026</strong>
-                    </div>
+                            <span class="progress-value">
+                                <%#: Eval("ProgressLabel") %>
+                            </span>
+                        </div>
 
-                    <div class="progress-row">
                         <div class="progress-track">
-                            <div class="progress-fill progress-40"></div>
+                            <div class="progress-fill progress-untracked"></div>
                         </div>
 
-                        <span class="progress-value">40%</span>
-                    </div>
-
-                    <a href="SubmitWork.aspx" class="open-project-button">
-                        Open Project
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <div class="active-project-card">
-
-                <div class="project-main">
-
-                    <div class="project-icon writing-icon">
-                        <i class="fa-regular fa-file-lines"></i>
-                    </div>
-
-                    <div class="project-content">
-
-                        <h2 class="project-title">
-                            Content Writing for College Blog
-                        </h2>
-
-                        <div class="project-meta">
-
-                            <span>
-                                <i class="fa-regular fa-user"></i>
-                                Client:
-                                <a href="#" class="client-link">College Blog</a>
-                            </span>
-
-                            <span class="meta-dot">•</span>
-
-                            <span>
-                                <i class="fa-regular fa-calendar"></i>
-                                Started on 12 May 2026
-                            </span>
-
-                        </div>
-
-                        <p class="project-description">
-                            Write informative and engaging blog posts related to
-                            college life, education and career tips.
-                        </p>
+                        <asp:HyperLink ID="lnkOpenProject" runat="server"
+                            CssClass="open-project-button"
+                            Text="Continue Work"
+                            NavigateUrl='<%# "SubmitWork.aspx?id=" + Eval("ContractID") %>' />
 
                     </div>
 
                 </div>
 
+            </ItemTemplate>
 
-                <div class="project-side">
-
-                    <div class="side-top">
-
-                        <div class="side-info">
-                            <span class="side-label">Agreed Price</span>
-                            <span class="side-price">&#8377;2,500</span>
-                        </div>
-
-                        <span class="status-badge status-review">
-                            <i class="fa-regular fa-clock"></i>
-                            Pending Review
-                        </span>
-
-                    </div>
-
-                    <div class="deadline-section">
-                        <span class="side-label">Deadline</span>
-                        <strong>20 May 2026</strong>
-                    </div>
-
-                    <div class="progress-row">
-                        <div class="progress-track">
-                            <div class="progress-fill progress-100"></div>
-                        </div>
-
-                        <span class="progress-value">100%</span>
-                    </div>
-
-                    <a href="SubmitWork.aspx" class="open-project-button">
-                        Open Project
-                    </a>
-
+            <FooterTemplate>
                 </div>
+            </FooterTemplate>
 
-            </div>
+        </asp:Repeater>
 
-        </div>
-
-
+        <!-- Information -->
         <div class="work-note">
             <i class="fa-regular fa-circle-info"></i>
-            <span>Keep your clients updated and deliver on time to build a strong reputation!</span>
+
+            <span>
+                Keep your clients updated and deliver your work on time
+                to build a strong reputation.
+            </span>
         </div>
 
     </div>

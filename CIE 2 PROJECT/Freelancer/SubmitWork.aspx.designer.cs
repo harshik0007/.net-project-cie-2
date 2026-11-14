@@ -15,6 +15,15 @@ namespace CIE_2_PROJECT
     {
 
         /// <summary>
+        /// lblSubmitMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSubmitMessage;
+
+        /// <summary>
         /// txtCompletionMessage control.
         /// </summary>
         /// <remarks>
@@ -50,6 +59,8 @@ namespace CIE_2_PROJECT
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload fuCompletedWork;
 
+        protected global::System.Web.UI.WebControls.Button btnAddFiles;
+
         /// <summary>
         /// cvCompletedWork control.
         /// </summary>
@@ -58,6 +69,22 @@ namespace CIE_2_PROJECT
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CustomValidator cvCompletedWork;
+
+        protected global::System.Web.UI.WebControls.Panel pnlUploadedFiles;
+
+        protected global::System.Web.UI.WebControls.Label lblUploadedFileCount;
+
+        protected global::System.Web.UI.WebControls.Repeater rptUploadedFiles;
+
+        /// <summary>
+        /// pnlRevisionFeedback control.
+        /// </summary>
+        protected global::System.Web.UI.WebControls.Panel pnlRevisionFeedback;
+
+        /// <summary>
+        /// lblRevisionFeedback control.
+        /// </summary>
+        protected global::System.Web.UI.WebControls.Label lblRevisionFeedback;
 
         /// <summary>
         /// txtDemoLink control.
@@ -103,5 +130,66 @@ namespace CIE_2_PROJECT
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSubmitWork;
+
+        /// <summary>
+        /// litProjectTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litProjectTitle;
+
+        /// <summary>
+        /// lnkClientProfile control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink lnkClientProfile;
+        protected global::System.Web.UI.WebControls.HyperLink lnkMessageClient;
+
+        /// <summary>
+        /// litAgreedPrice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litAgreedPrice;
+
+        protected global::System.Web.UI.WebControls.Literal litFreelancerFeeRate;
+
+        protected global::System.Web.UI.WebControls.Literal litFreelancerFee;
+
+        protected global::System.Web.UI.WebControls.Literal litFreelancerNet;
+
+        /// <summary>
+        /// litDeadline control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litDeadline;
+
+        /// <summary>
+        /// litStartedOn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litStartedOn;
+
+        /// <summary>
+        /// litProjectStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litProjectStatus;
     }
 }
