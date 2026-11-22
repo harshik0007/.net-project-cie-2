@@ -50,13 +50,11 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
-    <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -64,30 +62,6 @@
     <Reference Include="Microsoft.Web.Infrastructure, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.Web.Infrastructure.2.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ScriptManager.MSAjax">
-      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ScriptManager.WebForms">
-      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
-      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="WebGrease">
-      <Private>True</Private>
-      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
-    </Reference>
-    <Reference Include="Antlr3.Runtime">
-      <Private>True</Private>
-      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.FriendlyUrls">
       <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
@@ -110,7 +84,9 @@
     <Content Include="Client\ProjectDetails.aspx" />
     <Content Include="Client\ProjectProposal.aspx" />
     <Content Include="Client\ReviewSubmittedWork.aspx" />
+    <Content Include="Client\Reviews.aspx" />
     <Content Include="Client\SecurePayment.aspx" />
+    <Content Include="Client\ViewFreelancerProfile.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -130,7 +106,9 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Css\ActiveWork.css" />
     <Content Include="Content\Css\ClientHome.css" />
+    <Content Include="Content\Css\DashboardHome.css" />
     <Content Include="Content\Css\CommunityGuidelines.css" />
+    <Content Include="Content\Css\EscrowGuide.css" />
     <Content Include="Content\Css\CreateProject.css" />
     <Content Include="Content\Css\FindFreelancers.css" />
     <Content Include="Content\Css\FindProjects.css" />
@@ -145,6 +123,7 @@
     <Content Include="Content\Css\Payments.css" />
     <Content Include="Content\Css\PrivacyPolicy.css" />
     <Content Include="Content\Css\ClientProfile.css" />
+    <Content Include="Content\Css\PublicProfile.css" />
     <Content Include="Content\Css\ProjectDetails.css" />
     <Content Include="Content\Css\ClientProjectDetails.css" />
     <Content Include="Content\Css\ProjectProposal.css" />
@@ -158,6 +137,8 @@
     <Content Include="Content\Css\Login.css" />
     <Content Include="Content\Css\MyProposals.css" />
     <Content Include="Content\Css\SubmitWork.css" />
+    <Content Include="Content\Css\WorkHistory.css" />
+    <Content Include="Content\Css\ClientReview.css" />
     <Content Include="Content\Css\SupportCenter.css" />
     <Content Include="Content\Css\TermsOfService.css" />
     <Content Include="Freelancer\ActiveWork.aspx" />
@@ -174,29 +155,23 @@
     <Content Include="Authentication\ForgotPassword.aspx" />
     <Content Include="Authentication\FreelancerSkills.aspx" />
     <Content Include="Freelancer\Profile.aspx" />
+    <Content Include="Freelancer\ViewClientProfile.aspx" />
     <Content Include="Freelancer\SubmitWork.aspx" />
+    <Content Include="Freelancer\WorkHistory.aspx" />
+    <Content Include="Freelancer\ReviewClient.aspx" />
+    <Content Include="Freelancer\Reviews.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Freelancer\ProjectDetails.aspx" />
     <Content Include="Authentication\ResetPassword.aspx" />
     <Content Include="Guidelines\CommunityGuidelines.aspx" />
+    <Content Include="Guidelines\EscrowGuide.aspx" />
     <Content Include="Guidelines\PrivacyPolicy.aspx" />
     <Content Include="Guidelines\SupportCenter.aspx" />
     <Content Include="Guidelines\TermsOfService.aspx" />
     <Content Include="Landing\Landing.aspx" />
     <Content Include="Messages\Messages.aspx" />
+    <Content Include="Messages\DownloadAttachment.ashx" />
     <Content Include="Notifications\Notifications.aspx" />
-    <Content Include="Scripts\bootstrap.bundle.js" />
-    <Content Include="Scripts\bootstrap.bundle.min.js" />
-    <Content Include="Scripts\bootstrap.esm.js" />
-    <Content Include="Scripts\bootstrap.esm.min.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\bootstrap.min.js.map" />
-    <Content Include="Scripts\bootstrap.js.map" />
-    <Content Include="Scripts\bootstrap.esm.min.js.map" />
-    <Content Include="Scripts\bootstrap.esm.js.map" />
-    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
-    <Content Include="Scripts\bootstrap.bundle.js.map" />
     <Content Include="Content\bootstrap.rtl.min.css.map" />
     <Content Include="Content\bootstrap.rtl.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
@@ -215,42 +190,13 @@
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="Authentication\Login.aspx" />
     <Content Include="Freelancer\FreelancerHome.aspx" />
-    <None Include="Scripts\jquery-3.7.0.intellisense.js" />
-    <Content Include="Scripts\jquery-3.7.0.js" />
-    <Content Include="Scripts\jquery-3.7.0.min.js" />
-    <Content Include="Scripts\jquery-3.7.0.slim.js" />
-    <Content Include="Scripts\jquery-3.7.0.slim.min.js" />
-    <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Scripts\WebForms\DetailsView.js" />
-    <Content Include="Scripts\WebForms\Focus.js" />
-    <Content Include="Scripts\WebForms\GridView.js" />
-    <Content Include="Scripts\WebForms\Menu.js" />
-    <Content Include="Scripts\WebForms\MenuStandards.js" />
-    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
-    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
-    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
-    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
-    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
-    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
-    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
-    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
-    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
-    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
-    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
-    <Content Include="Scripts\WebForms\SmartNav.js" />
-    <Content Include="Scripts\WebForms\TreeView.js" />
-    <Content Include="Scripts\WebForms\WebForms.js" />
-    <Content Include="Scripts\WebForms\WebParts.js" />
-    <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Authentication\SignUp.aspx" />
     <Content Include="Freelancer\SubmitProposal.aspx" />
     <Content Include="Authentication\VerifyEmail.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
-    <Content Include="Bundle.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -308,6 +254,13 @@
     <Compile Include="Client\Profile.aspx.designer.cs">
       <DependentUpon>Profile.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Client\ViewFreelancerProfile.aspx.cs">
+      <DependentUpon>ViewFreelancerProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\ViewFreelancerProfile.aspx.designer.cs">
+      <DependentUpon>ViewFreelancerProfile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Client\ProjectDetails.aspx.cs">
       <DependentUpon>ProjectDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -328,6 +281,13 @@
     </Compile>
     <Compile Include="Client\ReviewSubmittedWork.aspx.designer.cs">
       <DependentUpon>ReviewSubmittedWork.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Reviews.aspx.cs">
+      <DependentUpon>Reviews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\Reviews.aspx.designer.cs">
+      <DependentUpon>Reviews.aspx</DependentUpon>
     </Compile>
     <Compile Include="Client\SecurePayment.aspx.cs">
       <DependentUpon>SecurePayment.aspx</DependentUpon>
@@ -357,6 +317,27 @@
     <Compile Include="Freelancer\ActiveWork.aspx.designer.cs">
       <DependentUpon>ActiveWork.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Freelancer\WorkHistory.aspx.cs">
+      <DependentUpon>WorkHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Freelancer\WorkHistory.aspx.designer.cs">
+      <DependentUpon>WorkHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Freelancer\ReviewClient.aspx.cs">
+      <DependentUpon>ReviewClient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Freelancer\ReviewClient.aspx.designer.cs">
+      <DependentUpon>ReviewClient.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Freelancer\Reviews.aspx.cs">
+      <DependentUpon>Reviews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Freelancer\Reviews.aspx.designer.cs">
+      <DependentUpon>Reviews.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Freelancer\FindProjects.aspx.cs">
       <DependentUpon>FindProjects.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -384,6 +365,13 @@
     </Compile>
     <Compile Include="Freelancer\Profile.aspx.designer.cs">
       <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Freelancer\ViewClientProfile.aspx.cs">
+      <DependentUpon>ViewClientProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Freelancer\ViewClientProfile.aspx.designer.cs">
+      <DependentUpon>ViewClientProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Freelancer\SubmitWork.aspx.cs">
       <DependentUpon>SubmitWork.aspx</DependentUpon>
@@ -443,6 +431,9 @@
     </Compile>
     <Compile Include="Messages\Messages.aspx.designer.cs">
       <DependentUpon>Messages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Messages\DownloadAttachment.ashx.cs">
+      <DependentUpon>DownloadAttachment.ashx</DependentUpon>
     </Compile>
     <Compile Include="Notifications\Notifications.aspx.cs">
       <DependentUpon>Notifications.aspx</DependentUpon>
@@ -522,6 +513,85 @@
     <Compile Include="Freelancer\MyProposals.aspx.designer.cs">
       <DependentUpon>MyProposals.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Models\WorkflowStatuses.cs" />
+    <Compile Include="Models\Notification.cs" />
+    <Compile Include="Models\MessageRecord.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\LoginAccount.cs" />
+    <Compile Include="Models\PendingFreelancerRegistration.cs" />
+    <Compile Include="Models\Project.cs" />
+    <Compile Include="Models\Proposal.cs" />
+    <Compile Include="Models\Contract.cs" />
+    <Compile Include="Models\Payment.cs" />
+    <Compile Include="Helpers\SimulatedGstCalculator.cs" />
+      <Compile Include="Helpers\SimulatedPlatformFeeCalculator.cs" />
+    <Compile Include="Models\WorkSubmission.cs" />
+    <Compile Include="Models\SubmissionFile.cs" />
+    <Compile Include="Models\Review.cs" />
+    <Compile Include="Models\WorkflowAuditEntry.cs" />
+    <Compile Include="Interfaces\IUnitOfWork.cs" />
+    <Compile Include="Interfaces\IUnitOfWorkFactory.cs" />
+    <Compile Include="Interfaces\IProjectRepository.cs" />
+    <Compile Include="Interfaces\IProposalRepository.cs" />
+    <Compile Include="Interfaces\IContractRepository.cs" />
+    <Compile Include="Interfaces\IPaymentRepository.cs" />
+    <Compile Include="Interfaces\ISubmissionRepository.cs" />
+    <Compile Include="Interfaces\IReviewRepository.cs" />
+    <Compile Include="Interfaces\IUserRepository.cs" />
+    <Compile Include="Interfaces\IProjectService.cs" />
+    <Compile Include="Interfaces\IProposalService.cs" />
+    <Compile Include="Interfaces\IContractService.cs" />
+    <Compile Include="Interfaces\IPaymentProcessor.cs" />
+    <Compile Include="Interfaces\IPaymentService.cs" />
+    <Compile Include="Interfaces\ISubmissionService.cs" />
+    <Compile Include="Interfaces\IReviewService.cs" />
+    <Compile Include="Interfaces\IUserService.cs" />
+    <Compile Include="Interfaces\IMessageRepository.cs" />
+    <Compile Include="Interfaces\IMessagingService.cs" />
+    <Compile Include="Models\PaymentResult.cs" />
+    <Compile Include="Models\UploadedFileInput.cs" />
+    <Compile Include="DataAccess\BaseRepository.cs" />
+    <Compile Include="DataAccess\NotificationRepository.cs" />
+    <Compile Include="DataAccess\MessageRepository.cs" />
+    <Compile Include="DataAccess\SqlUnitOfWork.cs" />
+    <Compile Include="DataAccess\SqlUnitOfWorkFactory.cs" />
+    <Compile Include="DataAccess\ProjectRepository.cs" />
+    <Compile Include="DataAccess\ProposalRepository.cs" />
+    <Compile Include="DataAccess\UserRepository.cs" />
+    <Compile Include="DataAccess\ContractRepository.cs" />
+    <Compile Include="DataAccess\PaymentRepository.cs" />
+    <Compile Include="DataAccess\SubmissionRepository.cs" />
+    <Compile Include="DataAccess\ReviewRepository.cs" />
+    <Compile Include="Delegates\WorkflowDelegates.cs" />
+    <Compile Include="Delegates\WorkflowAuditLogger.cs" />
+    <Compile Include="Delegates\WorkflowDiagnosticHandler.cs" />
+    <Compile Include="Services\WorkflowServiceBase.cs" />
+    <Compile Include="Services\NotificationService.cs" />
+    <Compile Include="Services\MessagingService.cs" />
+    <Compile Include="Services\ProjectService.cs" />
+    <Compile Include="Services\ProposalService.cs" />
+    <Compile Include="Services\ContractService.cs" />
+    <Compile Include="Services\PaymentService.cs" />
+    <Compile Include="Services\SubmissionService.cs" />
+    <Compile Include="Services\ReviewService.cs" />
+    <Compile Include="Services\UserService.cs" />
+    <Compile Include="Services\SimulatedPaymentProcessor.cs" />
+    <Compile Include="Factories\ServiceFactory.cs" />
+    <Compile Include="Helpers\UrlValidationHelper.cs" />
+    <Compile Include="Helpers\SavedFileBatch.cs" />
+    <Compile Include="Helpers\FileUploadHelper.cs" />
+    <Compile Include="Helpers\FreelancerPerformanceHelper.cs" />
+    <Compile Include="Helpers\DatabaseErrorMessageHelper.cs" />
+    <Compile Include="Helpers\MessageAttachmentStorage.cs" />
+    <Compile Include="Helpers\TestUserContext.cs" />
+    <Compile Include="Helpers\ProfileImageStorage.cs" />
+    <Compile Include="Helpers\PasswordHasher.cs" />
+    <Compile Include="Helpers\AuthenticatedUser.cs" />
+      <Compile Include="Helpers\FlashMessageStore.cs" />
+    <Compile Include="Validators\ProjectValidator.cs" />
+    <Compile Include="Validators\ProposalValidator.cs" />
+    <Compile Include="Validators\FileValidator.cs" />
+    <Compile Include="Validators\ReviewValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -529,8 +599,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <Content Include="Scripts\jquery-3.7.0.slim.min.map" />
-    <Content Include="Scripts\jquery-3.7.0.min.map" />
     <Content Include="Site.Master" />
     <Content Include="Site2.master" />
     <None Include="Web.Debug.config">
@@ -559,6 +627,8 @@
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
+          <StartPageUrl>Landing/Landing.aspx</StartPageUrl>
+          <StartAction>SpecificPage</StartAction>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>64345</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

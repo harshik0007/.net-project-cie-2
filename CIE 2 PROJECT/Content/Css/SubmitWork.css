@@ -200,8 +200,57 @@
 }
 
 .file-upload {
-    width: 88px;
+    width: 100%;
+    max-width: 100%;
+    min-height: 48px;
+    padding: 10px 12px;
+    border: 1px solid #d7e1ef;
+    border-radius: 9px;
+    background: #fff;
+    color: #526078;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 13px;
+    text-align: left;
+}
+
+.file-upload::file-selector-button {
+    min-height: 30px;
+    margin-right: 12px;
+    padding: 0 12px;
+    border: 1px solid #cbd9ef;
+    border-radius: 7px;
+    background: #f5f8ff;
+    color: #075cff;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.file-upload::file-selector-button:hover {
+    border-color: #075cff;
+    background: #edf4ff;
+}
+
+.add-files-button {
+    min-height: 30px;
+    margin-top: 9px;
+    padding: 0 12px;
+    border: 1px solid #075cff;
+    border-radius: 5px;
+    background: #ffffff;
+    color: #075cff;
+    font-family: "Segoe UI", Arial, sans-serif;
     font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.add-files-button:hover {
+    background: #eef5ff;
+}
+
+.uploaded-list-panel {
+    margin-top: 12px;
 }
 
 .upload-note {
@@ -463,6 +512,25 @@
     gap: 10px;
 }
 
+.summary-message-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 38px;
+    margin: 8px 0 12px;
+    padding: 0 12px;
+    border: 1px solid #cbdcff;
+    border-radius: 7px;
+    background: #f3f7ff;
+    color: #075cff;
+    font-size: 12px;
+    font-weight: 650;
+    text-decoration: none;
+}
+
+.summary-message-button:hover { border-color: #8fb0ff; background: #eaf1ff; color: #0047d0; text-decoration: none; }
+
     .summary-row > span:first-child {
         color: #687386;
         font-size: 12px;
@@ -624,4 +692,16 @@
     .file-date {
         display: none;
     }
+}
+
+.revision-feedback {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 16px 0;
+    padding: 14px 16px;
+    border-left: 4px solid #d58b17;
+    border-radius: 8px;
+    background: #fff8e8;
+    color: #593d12;
 }

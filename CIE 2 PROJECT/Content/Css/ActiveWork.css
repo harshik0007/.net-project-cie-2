@@ -9,6 +9,34 @@
     margin-bottom: 22px;
 }
 
+.active-work-shortcuts {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 14px 0 0;
+}
+
+.active-work-shortcuts a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 34px;
+    padding: 7px 12px;
+    border: 1px solid #d6e2f5;
+    border-radius: 7px;
+    background: #fff;
+    color: #075cff;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: border-color .2s ease, background .2s ease;
+}
+
+.active-work-shortcuts a:hover {
+    border-color: #075cff;
+    background: #f4f8ff;
+}
+
 .page-title {
     margin: 0 0 6px;
     color: #14213d;
@@ -21,6 +49,73 @@
     color: #596273;
     font-size: 12px;
     line-height: 1.5;
+}
+
+.empty-state {
+    display: flex;
+    min-height: 250px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 8px;
+    padding: 32px 22px;
+    border: 1px dashed #cbd8e9;
+    border-radius: 12px;
+    background: #fbfcfe;
+    color: #687386;
+    text-align: center;
+}
+
+.empty-icon {
+    display: inline-flex;
+    width: 48px;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #eaf2ff;
+    color: #075cff;
+    font-size: 19px;
+}
+
+.empty-state h2 {
+    margin: 2px 0 0;
+    color: #18233a;
+    font-size: 19px;
+}
+
+.empty-state p {
+    max-width: 500px;
+    margin: 0;
+    color: #687386;
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+.empty-action {
+    display: inline-flex;
+    min-height: 40px;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 5px;
+    padding: 0 15px;
+    border: 1px solid #075cff;
+    border-radius: 7px;
+    background: #075cff;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background .2s ease, transform .2s ease;
+}
+
+.empty-action:hover {
+    transform: translateY(-1px);
+    background: #0049d8;
+    color: #fff;
+    text-decoration: none;
 }
 
 .work-summary {

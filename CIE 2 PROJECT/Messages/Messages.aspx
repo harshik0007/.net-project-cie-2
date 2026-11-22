@@ -1,365 +1,121 @@
-﻿<%@ Page Title="Messages" Language="C#" MasterPageFile="~/Site.Master"
-    AutoEventWireup="true"
-    CodeBehind="Messages.aspx.cs"
-    Inherits="CIE_2_PROJECT.MessagesPage" %>
+<%@ Page Title="Messages" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Messages.aspx.cs" Inherits="CIE_2_PROJECT.MessagesPage" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link rel="stylesheet" href="../Content/Css/Messages.css" />
+<asp:Content ID="MessagesHead" ContentPlaceHolderID="head" runat="server">
+    <link rel="stylesheet" href="../Content/Css/Messages.css?v=4" />
 </asp:Content>
 
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-
-    <div class="messages-page">
-
-        <div class="messages-header">
+<asp:Content ID="MessagesContent" ContentPlaceHolderID="MainContent" runat="server">
+    <main class="messages-page">
+        <header class="messages-header">
             <div>
                 <h1>Messages</h1>
-                <p>Communicate with clients and freelancers about your projects.</p>
+                <p>Discuss projects and share files with clients and freelancers.</p>
             </div>
-        </div>
+        </header>
+
+        <asp:Label ID="lblMessage" runat="server" CssClass="action-message" Visible="false" />
 
         <div class="messages-layout">
-
-            <!-- CONVERSATIONS -->
-
             <aside class="conversation-panel">
-
                 <div class="conversation-header">
                     <h2>Conversations</h2>
-
-                    <span class="conversation-count">
-                        3
-                    </span>
+                    <span class="conversation-count"><asp:Literal ID="litConversationCount" runat="server" Mode="Encode" /></span>
                 </div>
-
-                <div class="conversation-search">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-
-                    <asp:TextBox
-                        ID="txtSearchConversation"
-                        runat="server"
-                        CssClass="search-input"
-                        placeholder="Search conversations">
-                    </asp:TextBox>
-                </div>
-
-                <asp:LinkButton
-                    ID="btnRahul"
-                    runat="server"
-                    CssClass="conversation-item active-conversation"
-                    OnClick="btnRahul_Click">
-
-                    <div class="conversation-avatar">
-                        RS
-                    </div>
-
-                    <div class="conversation-info">
-
-                        <div class="conversation-top">
-                            <span class="conversation-name">
-                                Rahul Sharma
-                            </span>
-
-                            <span class="conversation-time">
-                                10:42 AM
-                            </span>
+                <asp:Repeater ID="rptConversations" runat="server" OnItemCommand="rptConversations_ItemCommand">
+                    <ItemTemplate>
+                        <div class="conversation-entry">
+                            <a class='conversation-item <%#: Eval("SelectionClass") %>' href='<%#: Eval("Url") %>'>
+                                <span class="conversation-avatar"><%#: Eval("Initials") %></span>
+                                <span class="conversation-info">
+                                    <span class="conversation-top"><span class="conversation-name"><%#: Eval("PartnerName") %></span><span class="conversation-time"><%#: Eval("LastSentText") %></span></span>
+                                    <span class="conversation-project"><%#: Eval("ProjectTitle") %></span>
+                                    <span class="conversation-preview"><%#: Eval("Preview") %></span>
+                                </span>
+                                <asp:Panel ID="pnlUnreadDot" runat="server" CssClass="conversation-unread-count" Visible='<%# (int)Eval("UnreadCount") > 0 %>'>
+                                    <%#: Eval("UnreadCount") %>
+                                </asp:Panel>
+                            </a>
+                            <asp:LinkButton ID="btnClearConversation" runat="server" CssClass="conversation-delete-button"
+                                CommandName="ClearConversation" CommandArgument='<%# Eval("PartnerID") %>'
+                                CausesValidation="false" ToolTip="Delete this conversation from your inbox. The other participant keeps their history." aria-label="Delete conversation">
+                                <i class="fa-regular fa-trash-can"></i><span>Delete</span>
+                            </asp:LinkButton>
                         </div>
-
-                        <div class="conversation-project">
-                            Unity 2D Game Development
-                        </div>
-
-                        <div class="conversation-preview">
-                            I have attached the latest version...
-                        </div>
-
-                    </div>
-
-                    <span class="unread-dot"></span>
-
-                </asp:LinkButton>
-
-
-                <asp:LinkButton
-                    ID="btnPriya"
-                    runat="server"
-                    CssClass="conversation-item"
-                    OnClick="btnPriya_Click">
-
-                    <div class="conversation-avatar purple-avatar">
-                        PM
-                    </div>
-
-                    <div class="conversation-info">
-
-                        <div class="conversation-top">
-                            <span class="conversation-name">
-                                Priya Mehta
-                            </span>
-
-                            <span class="conversation-time">
-                                Yesterday
-                            </span>
-                        </div>
-
-                        <div class="conversation-project">
-                            E-commerce Website Development
-                        </div>
-
-                        <div class="conversation-preview">
-                            Can we discuss the project requirements?
-                        </div>
-
-                    </div>
-
-                </asp:LinkButton>
-
-
-                <asp:LinkButton
-                    ID="btnNeha"
-                    runat="server"
-                    CssClass="conversation-item"
-                    OnClick="btnNeha_Click">
-
-                    <div class="conversation-avatar green-avatar">
-                        NP
-                    </div>
-
-                    <div class="conversation-info">
-
-                        <div class="conversation-top">
-                            <span class="conversation-name">
-                                Neha Patel
-                            </span>
-
-                            <span class="conversation-time">
-                                18 May
-                            </span>
-                        </div>
-
-                        <div class="conversation-project">
-                            Brand Logo Design
-                        </div>
-
-                        <div class="conversation-preview">
-                            Thank you for approving the design.
-                        </div>
-
-                    </div>
-
-                </asp:LinkButton>
-
+                    </ItemTemplate>
+                </asp:Repeater>
+                <asp:Panel ID="pnlNoConversations" runat="server" CssClass="conversation-empty" Visible="false">
+                    <i class="fa-regular fa-comments"></i>
+                    <strong>No conversations yet</strong>
+                    <span>Open a client or freelancer profile and choose Message to start.</span>
+                </asp:Panel>
             </aside>
 
-
-            <!-- CHAT -->
-
             <section class="chat-panel">
+                <asp:Panel ID="pnlNoSelection" runat="server" CssClass="chat-empty-state">
+                    <i class="fa-regular fa-paper-plane"></i>
+                    <h2>Choose a conversation</h2>
+                    <p>Select a conversation or start one from a profile.</p>
+                </asp:Panel>
 
-                <div class="chat-header">
-
-                    <div class="chat-user">
-
-                        <div class="chat-avatar">
-                            RS
-                        </div>
-
-                        <div>
-                            <div class="chat-name">
-                                Rahul Sharma
-                            </div>
-
-                            <div class="chat-status">
-                                <span class="online-dot"></span>
-                                Online
+                <asp:Panel ID="pnlChat" runat="server" Visible="false">
+                    <header class="chat-header">
+                        <div class="chat-user">
+                            <span class="chat-avatar"><asp:Literal ID="litPartnerInitials" runat="server" Mode="Encode" /></span>
+                            <div>
+                                <asp:HyperLink ID="lnkPartnerProfile" runat="server" CssClass="chat-name" />
+                                <div class="chat-status"><asp:Literal ID="litPartnerRole" runat="server" Mode="Encode" /></div>
                             </div>
                         </div>
+                        <div class="chat-project"><span>Project</span><strong><asp:Literal ID="litProjectTitle" runat="server" Mode="Encode" /></strong></div>
+                    </header>
 
-                    </div>
-
-                    <div class="chat-project">
-
-                        <span>Project</span>
-
-                        <strong>
-                            Unity 2D Game Development
-                        </strong>
-
-                    </div>
-
-                </div>
-
-
-                <div class="chat-messages">
-
-                    <div class="date-divider">
-                        <span>Today</span>
-                    </div>
-
-
-                    <div class="message-row received">
-
-                        <div class="message-avatar">
-                            RS
-                        </div>
-
-                        <div class="message-content">
-
-                            <div class="message-bubble">
-                                Hello! I have started working on the Unity
-                                project. I wanted to share the initial progress
-                                with you.
-                            </div>
-
-                            <div class="message-time">
-                                10:15 AM
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="message-row sent">
-
-                        <div class="message-content">
-
-                            <div class="message-bubble">
-                                Great! Please make sure the player movement
-                                and basic game mechanics are implemented first.
-                            </div>
-
-                            <div class="message-time">
-                                10:24 AM
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="message-row received">
-
-                        <div class="message-avatar">
-                            RS
-                        </div>
-
-                        <div class="message-content">
-
-                            <div class="message-bubble">
-                                Sure. I will complete those parts and send
-                                you an update today.
-                            </div>
-
-                            <div class="message-time">
-                                10:31 AM
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="message-row received">
-
-                        <div class="message-avatar">
-                            RS
-                        </div>
-
-                        <div class="message-content">
-
-                            <div class="message-bubble attachment-message">
-
-                                <div class="attachment-file">
-                                    <div class="attachment-icon">
-                                        <i class="fa-regular fa-file"></i>
+                    <div class="chat-messages">
+                        <asp:Repeater ID="rptConversationMessages" runat="server">
+                            <ItemTemplate>
+                                <article class='message-row <%#: Eval("RowClass") %>'>
+                                    <asp:Panel ID="pnlMessageAvatar" runat="server" CssClass="message-avatar" Visible='<%# !(bool)Eval("IsSent") %>'>
+                                        <%#: Eval("SenderInitials") %>
+                                    </asp:Panel>
+                                    <div class="message-content">
+                                        <asp:Panel ID="pnlMessageText" runat="server" CssClass="message-bubble" Visible='<%# !string.IsNullOrWhiteSpace(Convert.ToString(Eval("DisplayText"))) %>'>
+                                            <span class="message-body"><%#: Eval("DisplayText") %></span>
+                                        </asp:Panel>
+                                        <asp:PlaceHolder ID="phMessageAttachment" runat="server" Visible='<%# (bool)Eval("HasAttachment") %>'>
+                                            <a class="message-attachment" href='<%#: Eval("AttachmentUrl") %>'>
+                                                <i class="fa-regular fa-file-lines"></i><span><%#: Eval("AttachmentName") %></span><i class="fa-solid fa-download"></i>
+                                            </a>
+                                        </asp:PlaceHolder>
+                                        <div class="message-time"><%#: Eval("SentText") %></div>
                                     </div>
+                                </article>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                        <asp:Panel ID="pnlThreadEmpty" runat="server" CssClass="thread-empty" Visible="false">
+                            <i class="fa-regular fa-comment-dots"></i>
+                            <span>Start the conversation with a message or file.</span>
+                        </asp:Panel>
+                    </div>
 
-                                    <div>
-                                        <div class="attachment-name">
-                                            Unity_Project_v1.zip
-                                        </div>
-
-                                        <div class="attachment-size">
-                                            8.4 MB
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <div class="message-time">
-                                10:42 AM
-                            </div>
-
+                    <asp:Panel ID="pnlComposer" runat="server" CssClass="chat-input-area">
+                        <asp:HiddenField ID="hidRecipientId" runat="server" />
+                        <asp:HiddenField ID="hidProjectId" runat="server" />
+                        <div class="attachment-preview">
+                            <asp:FileUpload ID="fuAttachment" runat="server" CssClass="file-upload"
+                                accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.csv,.zip,.png,.jpg,.jpeg" />
+                            <span>One file up to 5 MB. PDF, Office documents, text, CSV, ZIP, JPG, or PNG.</span>
                         </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="chat-input-area">
-
-                    <div class="attachment-preview">
-                        <asp:FileUpload
-                            ID="fuAttachment"
-                            runat="server"
-                            CssClass="file-upload" />
-                    </div>
-
-                    <div class="message-input-row">
-
-                        <asp:TextBox
-                            ID="txtMessage"
-                            runat="server"
-                            CssClass="message-input"
-                            TextMode="MultiLine"
-                            Rows="2"
-                            placeholder="Type your message...">
-                        </asp:TextBox>
-
-                        <asp:Button
-                            ID="btnSendMessage"
-                            runat="server"
-                            Text="Send"
-                            CssClass="send-button"
-                            OnClick="btnSendMessage_Click" />
-
-                    </div>
-
-                    <asp:RequiredFieldValidator
-                        ID="rfvMessage"
-                        runat="server"
-                        ControlToValidate="txtMessage"
-                        ErrorMessage="Please enter a message."
-                        CssClass="validation-message"
-                        Display="Dynamic">
-                    </asp:RequiredFieldValidator>
-
-                    <asp:CustomValidator
-                        ID="cvMessage"
-                        runat="server"
-                        ControlToValidate="txtMessage"
-                        OnServerValidate="cvMessage_ServerValidate"
-                        EnableClientScript="false"
-                        ErrorMessage="Message must be between 1 and 1000 characters."
-                        CssClass="validation-message"
-                        Display="Dynamic">
-                    </asp:CustomValidator>
-
-                    <asp:Label
-                        ID="lblMessage"
-                        runat="server"
-                        CssClass="action-message">
-                    </asp:Label>
-
-                </div>
-
+                        <div class="message-input-row">
+                            <asp:TextBox ID="txtMessage" runat="server" CssClass="message-input" TextMode="MultiLine" Rows="2"
+                                MaxLength="1000" placeholder="Write a message..."></asp:TextBox>
+                            <asp:Button ID="btnSendMessage" runat="server" Text="Send" CssClass="send-button" OnClick="btnSendMessage_Click" />
+                        </div>
+                        <asp:CustomValidator ID="cvMessage" runat="server" OnServerValidate="cvMessage_ServerValidate"
+                            EnableClientScript="false" ValidateEmptyText="true"
+                            ErrorMessage="Write a message or attach a file. Messages can contain up to 1,000 characters."
+                            CssClass="validation-message" Display="Dynamic" />
+                    </asp:Panel>
+                </asp:Panel>
             </section>
-
         </div>
-
-    </div>
-
+    </main>
 </asp:Content>

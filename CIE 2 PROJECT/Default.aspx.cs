@@ -11,7 +11,8 @@ namespace CIE_2_PROJECT
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Response.Redirect("~/Landing/Landing.aspx");
+            Response.Redirect("~/Landing/Landing.aspx", false);
+            Context.ApplicationInstance.CompleteRequest();
         }
     }
 }
